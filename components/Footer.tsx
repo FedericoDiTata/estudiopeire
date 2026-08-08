@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CONTACTO, SERVICIOS, waLink } from "@/lib/site";
 
@@ -7,11 +8,14 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <p className="font-display text-2xl font-semibold">Estudio Peiré</p>
-            <p className="mt-1 text-[0.55rem] font-medium tracking-[0.42em] text-paper/50 uppercase">
-              Abogados
-            </p>
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-paper/70">
+            <Image
+              src="/img/logo-blanco.png"
+              alt="Estudio Peiré · Abogados"
+              width={5441}
+              height={1238}
+              className="h-11 w-auto"
+            />
+            <p className="mt-7 max-w-xs text-sm leading-relaxed text-surface/70">
               Sucesiones y derecho inmobiliario en {CONTACTO.zona}. Atención
               presencial y virtual.
             </p>
@@ -19,7 +23,7 @@ export default function Footer() {
               href={waLink("Hola, quiero hacer una consulta")}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-block bg-paper px-6 py-3 text-xs font-medium tracking-[0.14em] text-ink uppercase transition-colors duration-300 hover:bg-petrol hover:text-paper"
+              className="mt-8 inline-block bg-paper px-6 py-3 text-xs font-medium tracking-[0.14em] text-ink uppercase transition-colors duration-300 hover:bg-burdeos hover:text-paper"
             >
               Escribinos
             </a>

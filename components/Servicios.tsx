@@ -27,17 +27,17 @@ export default function Servicios() {
               damping: 18,
               delay: i * 0.1,
             }}
-            className="group relative bg-paper transition-colors duration-500 hover:bg-sand"
+            className="group relative bg-paper transition-colors duration-500 hover:bg-burdeos-soft"
           >
             <Link
               href={`/servicios/${s.slug}`}
               className="flex h-full flex-col p-9 md:p-10"
             >
-              <span className="font-display text-sm text-faint">
+              <span className="font-display text-sm text-grey">
                 0{i + 1}
               </span>
 
-              <h3 className="mt-6 font-display text-2xl leading-tight font-semibold text-ink">
+              <h3 className="mt-6 font-display text-2xl leading-tight font-medium tracking-[-0.01em] text-ink">
                 {s.nombre}
               </h3>
 
@@ -45,7 +45,7 @@ export default function Servicios() {
                 {s.resumen}
               </p>
 
-              <span className="mt-8 inline-flex items-center gap-2 text-xs font-medium tracking-[0.14em] text-petrol uppercase">
+              <span className="mt-8 inline-flex items-center gap-2 text-xs font-medium tracking-[0.14em] text-burdeos uppercase">
                 Ver más
                 <span className="transition-transform duration-300 ease-[var(--ease-out-quint)] group-hover:translate-x-1">
                   →

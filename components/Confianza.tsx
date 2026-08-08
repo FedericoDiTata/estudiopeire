@@ -12,7 +12,7 @@ const DATOS = [
 
 export default function Confianza() {
   return (
-    <section className="border-y border-line bg-shell">
+    <section className="border-y border-line bg-surface">
       <div className="mx-auto grid max-w-6xl gap-px px-6 py-14 sm:grid-cols-3">
         {DATOS.map((d, i) => (
           <motion.div
@@ -28,7 +28,7 @@ export default function Confianza() {
             }}
             className="text-center"
           >
-            <p className="font-display text-3xl font-semibold text-petrol sm:text-4xl">
+            <p className="font-display text-3xl font-semibold text-burdeos sm:text-4xl">
               {d.valor}
             </p>
             <p className="mt-2 text-sm text-muted">{d.detalle}</p>

@@ -83,9 +83,10 @@ export default function Hero() {
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-[2rem] leading-[1.08] font-semibold text-paper sm:text-5xl md:text-6xl"
+            className="font-display text-[2rem] leading-[1.08] font-light tracking-[-0.02em] text-paper sm:text-5xl md:text-6xl"
           >
-            Sucesiones y derecho inmobiliario, explicados de manera clara
+            Sucesiones y derecho inmobiliario,{" "}
+            <span className="font-semibold">explicados de manera clara</span>
           </motion.h1>
         </div>
 
@@ -109,7 +110,7 @@ export default function Hero() {
             href={waLink("Hola, quiero hacer una consulta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-paper px-8 py-4 text-xs font-medium tracking-[0.14em] text-ink uppercase transition-colors duration-300 hover:bg-petrol hover:text-paper sm:w-auto"
+            className="w-full bg-paper px-8 py-4 text-xs font-medium tracking-[0.14em] text-ink uppercase transition-colors duration-300 hover:bg-burdeos hover:text-paper sm:w-auto"
           >
             Consultá tu caso
           </a>

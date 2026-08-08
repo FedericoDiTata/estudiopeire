@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Instrument_Sans } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// Sustituto libre de DIN Next (comercial). El logo juega con el contraste
+// entre un peso liviano y uno bold: el sitio repite ese recurso.
+const barlow = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
-});
-
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +36,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es-AR">
-      <body className={`${fraunces.variable} ${instrument.variable}`}>
+      <body className={barlow.variable}>
         <Header />
         <main>{children}</main>
         <Footer />

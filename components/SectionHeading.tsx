@@ -26,7 +26,7 @@ export default function SectionHeading({
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className={`text-[0.7rem] font-medium tracking-[0.28em] uppercase ${
-            claro ? "text-paper/70" : "text-petrol"
+            claro ? "text-surface/70" : "text-burdeos"
           }`}
         >
           {label}
@@ -39,7 +39,7 @@ export default function SectionHeading({
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className={`font-display text-3xl leading-[1.1] font-semibold sm:text-4xl md:text-5xl ${
+          className={`font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] sm:text-4xl md:text-5xl ${
             claro ? "text-paper" : "text-ink"
           }`}
         >
