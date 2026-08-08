@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Estudio Peiré — sistema de color
+  Estrategia: neutrales entintados + un acento. El acento es el cyan del logo
+  actual llevado a un petróleo profundo: mantiene el hilo con la marca y evita
+  el azul marino corporativo que usan todos los estudios jurídicos.
+*/
+@theme {
+  /* Fondos */
+  --color-paper: oklch(0.988 0.004 195);
+  --color-sand: oklch(0.958 0.014 78);
+  --color-shell: oklch(0.945 0.006 200);
+
+  /* Texto */
+  --color-ink: oklch(0.215 0.018 220);
+  --color-muted: oklch(0.485 0.014 220);
+  --color-faint: oklch(0.63 0.012 220);
+
+  /* Acento */
+  --color-petrol: oklch(0.45 0.078 212);
+  --color-petrol-deep: oklch(0.325 0.062 216);
+  --color-petrol-soft: oklch(0.93 0.022 205);
+
+  /* Líneas */
+  --color-line: oklch(0.9 0.006 210);
+  --color-line-soft: oklch(0.945 0.004 210);
+
+  /* Tipografía */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-instrument), system-ui, sans-serif;
+
+  /* Curvas */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-cine: cubic-bezier(0.43, 0.13, 0.23, 0.96);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* El texto justificado del sitio actual es uno de los problemas a corregir:
+   en pantalla genera ríos de espacio entre palabras. Todo alineado a la izquierda. */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-petrol);
+  color: var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
