@@ -34,7 +34,7 @@ export default function PaginaEstudio() {
     <>
       <PageHero
         eyebrow="El Estudio"
-        titulo="Un estudio chico, que atiende cada caso de cerca"
+        titulo="Título"
         imagen="/img/estudio_peire-equipo-background.jpg"
         imagenAlt="Sala de reuniones del estudio"
       />
