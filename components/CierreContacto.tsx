@@ -10,7 +10,7 @@ type Props = {
 /** Cierre común a todas las páginas. */
 export default function CierreContacto({
   titulo = "Contanos tu caso",
-  texto = "Escribinos y te decimos si hay algo para hacer, cómo sería el trámite y cuánto puede demorar.",
+  texto = "Descripción",
   waMensaje = "Hola, quiero hacer una consulta",
 }: Props) {
   return (

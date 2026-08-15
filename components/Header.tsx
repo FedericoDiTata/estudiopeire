@@ -46,10 +46,10 @@ export default function Header() {
           : "border-b border-line bg-paper/90 backdrop-blur-md"
       }`}
     >
-      {/* Tres columnas: logo a la izquierda, menú centrado, botón a la derecha.
-          La grilla mantiene el menú centrado en la página aunque el logo y el
-          botón tengan anchos distintos. */}
-      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-6 px-6">
+      {/* El logo va pegado al borde izquierdo y el botón al derecho. El menú se
+          posiciona aparte, centrado sobre el ancho de la página, para que no lo
+          corran los anchos distintos del logo y del botón. */}
+      <div className="relative flex h-20 items-center justify-between px-6 lg:px-8">
         <Link href="/" aria-label="Estudio Peiré, inicio" className="shrink-0">
           <Image
             src={transparent ? "/img/logo-blanco.png" : "/img/logo-negro.png"}
@@ -61,7 +61,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center justify-center gap-9 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 lg:flex">
           <div
             className="relative"
             onMouseEnter={() => setOpenServicios(true)}

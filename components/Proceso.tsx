@@ -18,7 +18,7 @@ export default function Proceso() {
         <SectionHeading
           label="Cómo trabajamos"
           titulo="Qué pasa cuando nos escribís"
-          bajada="Para mucha gente esta es la primera vez que consulta a un abogado. Así que conviene contar de antemano cómo sigue."
+          bajada="Descripción"
         />
 
         <ol className="mt-16 grid gap-px bg-line md:grid-cols-4">

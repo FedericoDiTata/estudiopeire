@@ -12,7 +12,7 @@ export default function Servicios() {
       <SectionHeading
         label="Especialidades"
         titulo="En qué trabajamos"
-        bajada="Cada área tiene su propia página, con los casos concretos que resolvemos, cómo es el trámite y qué documentación hace falta."
+        bajada="Descripción"
       />
 
       <div className="mt-16 grid gap-px border border-line bg-line md:grid-cols-3">

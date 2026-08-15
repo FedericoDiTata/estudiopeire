@@ -17,9 +17,9 @@ export default function PaginaContacto() {
       <PageHero
         eyebrow="Contacto"
         titulo="Escribinos"
-        bajada="Contanos brevemente qué necesitás y coordinamos una consulta."
-        imagen="/img/estudio_peire-homepage-background.jpg"
-        imagenAlt="Escritorio del estudio"
+        bajada="Descripción"
+        imagen="/img/estudio_peire-homepage-algunas_preguntas.jpg"
+        imagenAlt="Escritorio de atención del estudio, con la puerta al balcón"
       />
 
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
@@ -29,8 +29,7 @@ export default function PaginaContacto() {
               Dejanos tu consulta
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-muted">
-              Completá el formulario y seguimos la conversación por WhatsApp, que
-              es donde más rápido respondemos.
+              Descripción
             </p>
             <div className="mt-10">
               <FormularioContacto />

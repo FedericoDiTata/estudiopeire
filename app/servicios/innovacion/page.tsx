@@ -26,7 +26,7 @@ export default function PaginaInnovacion() {
       <PageHero
         eyebrow="En desarrollo"
         titulo="Hacia dónde va el estudio"
-        bajada="Un área nueva, en un terreno donde todavía hay más preguntas que respuestas."
+        bajada="Descripción"
         imagen="/img/estudio_peire-homepage-libros_closeup.jpg"
         imagenAlt="Material de trabajo sobre el escritorio del estudio"
       />
@@ -44,7 +44,6 @@ export default function PaginaInnovacion() {
 
       <CierreContacto
         titulo="¿Tenés una consulta de este tipo?"
-        texto="Contanos de qué se trata y te decimos si podemos ayudarte."
         waMensaje="Hola, quiero consultar por un tema de tecnología aplicada a lo inmobiliario"
       />
     </>

@@ -10,7 +10,8 @@ export type ItemAcordeon = {
 };
 
 export default function Acordeon({ items }: { items: ItemAcordeon[] }) {
-  const [abierto, setAbierto] = useState<number | null>(0);
+  // Arrancan todas cerradas: el visitante elige qué abrir.
+  const [abierto, setAbierto] = useState<number | null>(null);
 
   return (
     <div className="border-t border-line">

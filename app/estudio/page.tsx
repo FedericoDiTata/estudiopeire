@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -16,8 +17,11 @@ export const metadata: Metadata = {
  * Contenido de relleno. Lo define el estudio: historia, biografía y matrícula
  * de Silvina, integrantes del equipo y forma de trabajo.
  *
- * «Quiénes somos» vive solamente acá. En la home el bloque equivalente se
- * titula «Al frente del estudio» y presenta a Silvina, para que no se repita.
+ * «Quiénes somos» vive solamente acá. En la home el bloque equivalente presenta
+ * a Silvina, para que la sección no se repita en las dos páginas.
+ *
+ * La foto de Silvina es la única imagen real del sitio: el resto son espacios
+ * reservados hasta que el estudio elija el material definitivo.
  */
 
 const COMPROMISOS = numerados("Punto", 4).map((titulo) => ({
@@ -61,14 +65,20 @@ export default function PaginaEstudio() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <Reveal>
-              <Placeholder ratio="aspect-[4/5]" etiqueta="Foto de Silvina" />
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src="/img/estudio_peire-homepage-background.jpg"
+                  alt="Silvina Peiré en el estudio"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p className="text-[0.7rem] font-medium tracking-[0.28em] text-burdeos uppercase">
-                Al frente del estudio
-              </p>
-              <h2 className="mt-4 font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] sm:text-4xl">
+              <span aria-hidden="true" className="block h-0.5 w-12 bg-burdeos" />
+              <h2 className="mt-6 font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] sm:text-4xl">
                 Silvina Peiré
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted">
@@ -85,7 +95,7 @@ export default function PaginaEstudio() {
         <SectionHeading
           label="El equipo"
           titulo="Quiénes trabajan en el estudio"
-          bajada="Cada integrante con su foto, su rol y su especialidad."
+          bajada="Descripción"
         />
 
         <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
@@ -110,7 +120,7 @@ export default function PaginaEstudio() {
           <SectionHeading
             label="Cómo trabajamos"
             titulo="Nuestro compromiso"
-            bajada="Las cosas que nadie pregunta en voz alta antes de contratar un abogado, y que conviene dejar dichas."
+            bajada="Descripción"
           />
 
           <div className="mt-14 grid gap-px bg-line sm:grid-cols-2">
@@ -137,7 +147,7 @@ export default function PaginaEstudio() {
         <SectionHeading
           label="Dónde trabajamos"
           titulo="La oficina"
-          bajada="Fotos del estudio, para que sepan a dónde están viniendo."
+          bajada="Descripción"
         />
 
         <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
@@ -151,7 +161,6 @@ export default function PaginaEstudio() {
 
       <CierreContacto
         titulo="Vení a contarnos tu caso"
-        texto="Coordinamos una entrevista en la oficina o una videollamada, como te quede mejor."
       />
     </>
   );

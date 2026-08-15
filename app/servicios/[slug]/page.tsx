@@ -80,7 +80,7 @@ export default async function PaginaServicio({
           <SectionHeading
             label="Situaciones"
             titulo="En qué casos te ayudamos"
-            bajada="Si alguna de estas se parece a lo tuyo, ya sabemos por dónde arrancar."
+            bajada="Descripción"
           />
 
           <div className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
@@ -233,7 +233,6 @@ export default async function PaginaServicio({
 
       <CierreContacto
         titulo="Contanos tu caso"
-        texto="Escribinos y te decimos si hay algo para hacer, cómo sería el trámite y cuánto puede demorar."
         waMensaje={servicio.waMensaje}
       />
     </>

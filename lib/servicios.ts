@@ -47,7 +47,7 @@ const preguntasRelleno = numerados("Pregunta", 4).map((pregunta) => ({
 }));
 
 const documentacionRelleno = {
-  intro: LOREM_CORTO,
+  intro: "Descripción",
   items: numerados("Documento", 5),
 };
 
@@ -56,14 +56,14 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
     slug: "sucesiones",
     nombre: "Sucesiones",
     titulo: "Sucesiones",
-    bajada: LOREM_CORTO,
+    bajada: "Descripción",
     waMensaje: "Hola, quiero consultar por una sucesión",
     imagen: "/img/estudio_peire-homepage-libros_closeup.jpg",
     imagenAlt: "Códigos y material de trabajo sobre el escritorio",
     deQueSeTrata: [LOREM_MEDIO, LOREM_CORTO],
     casos: casosRelleno,
     proceso: {
-      intro: LOREM_CORTO,
+      intro: "Descripción",
       pasos: pasosRelleno,
       nota: LOREM_MEDIO,
     },
@@ -78,14 +78,14 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
     slug: "derecho-inmobiliario",
     nombre: "Derecho Inmobiliario",
     titulo: "Derecho inmobiliario",
-    bajada: LOREM_CORTO,
+    bajada: "Descripción",
     waMensaje: "Hola, quiero consultar por un tema inmobiliario",
     imagen: "/img/estudio_peire-equipo-background.jpg",
     imagenAlt: "Sala de reuniones del estudio",
     deQueSeTrata: [LOREM_MEDIO, LOREM_CORTO],
     casos: casosRelleno,
     proceso: {
-      intro: LOREM_CORTO,
+      intro: "Descripción",
       pasos: pasosRelleno,
       nota: LOREM_MEDIO,
     },

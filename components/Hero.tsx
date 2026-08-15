@@ -119,19 +119,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-2">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            aria-label={`Ver imagen ${i + 1}`}
-            onClick={() => setIndex(i)}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              i === index ? "w-8 bg-paper" : "w-3 bg-paper/40 hover:bg-paper/70"
-            }`}
-          />
-        ))}
-      </div>
     </section>
   );
 }
