@@ -14,7 +14,7 @@ export default function CierreContacto({
   waMensaje = "Hola, quiero hacer una consulta",
 }: Props) {
   return (
-    <section className="bg-ink">
+    <section className="bg-burdeos-deep">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
         <Reveal className="max-w-2xl">
           <h2 className="font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] text-paper sm:text-4xl md:text-5xl">
@@ -27,7 +27,7 @@ export default function CierreContacto({
               href={waLink(waMensaje)}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-paper px-8 py-4 text-center text-xs font-medium tracking-[0.14em] text-ink uppercase transition-colors duration-300 hover:bg-burdeos hover:text-paper"
+              className="bg-paper px-8 py-4 text-center text-xs font-medium tracking-[0.14em] text-burdeos-deep uppercase transition-colors duration-300 hover:bg-ink hover:text-paper"
             >
               Escribinos por WhatsApp
             </a>

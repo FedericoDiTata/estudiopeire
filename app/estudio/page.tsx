@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import Placeholder from "@/components/Placeholder";
 import CierreContacto from "@/components/CierreContacto";
+import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO, numerados } from "@/lib/placeholder";
 
 export const metadata: Metadata = {
   title: "El Estudio",
@@ -12,50 +13,17 @@ export const metadata: Metadata = {
 };
 
 /**
- * REVISAR con el estudio antes de publicar:
- * - matrícula, universidad y años de ejercicio de Silvina
- * - integrantes del equipo, con foto y rol
- * - listado de charlas y apariciones para la sección de prensa
- * Nada de eso se inventa: los bloques quedan armados y se completan.
+ * Contenido de relleno. Lo define el estudio: historia, biografía y matrícula
+ * de Silvina, integrantes del equipo y forma de trabajo.
+ *
+ * «Quiénes somos» vive solamente acá. En la home el bloque equivalente se
+ * titula «Al frente del estudio» y presenta a Silvina, para que no se repita.
  */
 
-const COMPROMISOS = [
-  {
-    titulo: "Confidencialidad",
-    detalle:
-      "Lo que se habla en el estudio no sale del estudio. En sucesiones, donde suele haber conflictos de familia, esto importa más que en ningún otro lado.",
-  },
-  {
-    titulo: "Te contestamos",
-    detalle:
-      "Si escribís, tenés respuesta. Podés preguntar en qué estado está tu trámite las veces que necesites, sin sentir que estás molestando.",
-  },
-  {
-    titulo: "Sin letra chica",
-    detalle:
-      "Los honorarios y el alcance del trabajo se acuerdan por escrito antes de empezar. Sabés qué incluye y qué no.",
-  },
-  {
-    titulo: "En castellano",
-    detalle:
-      "Te explicamos lo que está pasando sin jerga jurídica. Si no se entiende, no sirve.",
-  },
-];
-
-const FOTOS = [
-  {
-    src: "/img/estudio_peire-equipo-background.jpg",
-    alt: "Sala de reuniones del estudio",
-  },
-  {
-    src: "/img/estudio_peire-homepage-background.jpg",
-    alt: "Escritorio de trabajo del estudio",
-  },
-  {
-    src: "/img/estudio_peire-homepage-libros_closeup.jpg",
-    alt: "Códigos y material de consulta",
-  },
-];
+const COMPROMISOS = numerados("Punto", 4).map((titulo) => ({
+  titulo,
+  detalle: LOREM_MEDIO,
+}));
 
 export default function PaginaEstudio() {
   return (
@@ -71,29 +39,18 @@ export default function PaginaEstudio() {
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
           <Reveal>
+            <span
+              aria-hidden="true"
+              className="mb-6 block h-0.5 w-12 bg-burdeos"
+            />
             <h2 className="font-display text-2xl leading-tight font-light tracking-[-0.01em] sm:text-3xl">
               Quiénes somos
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-5 text-[1.05rem] leading-relaxed text-muted">
-              <p>
-                Somos un estudio especializado en derecho inmobiliario y
-                sucesiones. Trabajamos con dos tipos de clientes bastante
-                distintos: familias que necesitan resolver una herencia, y
-                profesionales del rubro inmobiliario que necesitan que alguien
-                revise los papeles antes de firmar.
-              </p>
-              <p>
-                Lo que tienen en común es que en los dos casos hay una propiedad
-                de por medio y un trámite que si sale mal cuesta caro. Por eso
-                trabajamos tanto en el conflicto como en evitarlo.
-              </p>
-              <p>
-                Atendemos en toda el área metropolitana, de manera presencial en
-                nuestras oficinas y también a distancia, para quienes están lejos
-                o no pueden acercarse.
-              </p>
+              <p>{LOREM_LARGO}</p>
+              <p>{LOREM_MEDIO}</p>
             </div>
           </Reveal>
         </div>
@@ -104,15 +61,7 @@ export default function PaginaEstudio() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <Reveal>
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <Image
-                  src="/img/estudio_peire-homepage-background.jpg"
-                  alt="Silvina Peiré en el estudio"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
+              <Placeholder ratio="aspect-[4/5]" etiqueta="Foto de Silvina" />
             </Reveal>
 
             <Reveal delay={0.1}>
@@ -123,70 +72,80 @@ export default function PaginaEstudio() {
                 Silvina Peiré
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted">
-                <p>
-                  Abogada especializada en derecho inmobiliario y sucesiones.
-                  Acompaña operaciones de compraventa, procesos de obra y
-                  conflictos de propiedad horizontal, además de llevar adelante
-                  las sucesiones del estudio.
-                </p>
-                <p>
-                  Da charlas, talleres y jornadas de capacitación sobre derecho
-                  inmobiliario, orientadas a estudiantes, profesionales del rubro
-                  y empresas, y participa de espacios del sector donde se discute
-                  hacia dónde va el mercado.
-                </p>
+                <p>{LOREM_LARGO}</p>
+                <p>{LOREM_CORTO}</p>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Compromiso */}
+      {/* Equipo */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
         <SectionHeading
-          label="Cómo trabajamos"
-          titulo="Nuestro compromiso"
-          bajada="Las cosas que nadie pregunta en voz alta antes de contratar un abogado, y que preferimos dejar dichas."
+          label="El equipo"
+          titulo="Quiénes trabajan en el estudio"
+          bajada="Cada integrante con su foto, su rol y su especialidad."
         />
 
-        <div className="mt-14 grid gap-px bg-line sm:grid-cols-2">
-          {COMPROMISOS.map((c, i) => (
-            <Reveal
-              key={c.titulo}
-              delay={i * 0.07}
-              className="bg-paper p-8 md:p-9"
-            >
-              <h3 className="text-[1.05rem] font-medium">{c.titulo}</h3>
-              <p className="mt-3 leading-relaxed text-muted">{c.detalle}</p>
+        <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
+          {numerados("Integrante", 3).map((nombre, i) => (
+            <Reveal key={nombre} delay={i * 0.08} className="bg-paper">
+              <Placeholder ratio="aspect-[4/5]" etiqueta="Foto" />
+              <div className="p-8">
+                <h3 className="text-lg font-medium">{nombre}</h3>
+                <p className="mt-1 text-sm text-burdeos">Rol</p>
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
+                  {LOREM_CORTO}
+                </p>
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      {/* La oficina */}
-      <section className="border-t border-line bg-surface">
+      {/* Compromiso */}
+      <section className="border-y border-line bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
           <SectionHeading
-            label="Dónde trabajamos"
-            titulo="La oficina"
-            bajada="Atendemos con turno previo. Si preferís resolverlo a distancia, también se puede."
+            label="Cómo trabajamos"
+            titulo="Nuestro compromiso"
+            bajada="Las cosas que nadie pregunta en voz alta antes de contratar un abogado, y que conviene dejar dichas."
           />
 
-          <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
-            {FOTOS.map((foto, i) => (
-              <Reveal key={foto.src} delay={i * 0.08}>
-                <div className="group relative aspect-[4/3] overflow-hidden bg-paper">
-                  <Image
-                    src={foto.src}
-                    alt={foto.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-[var(--ease-out-quint)] group-hover:scale-105"
-                  />
-                </div>
+          <div className="mt-14 grid gap-px bg-line sm:grid-cols-2">
+            {COMPROMISOS.map((c, i) => (
+              <Reveal
+                key={c.titulo}
+                delay={i * 0.07}
+                className="bg-surface p-8 md:p-9"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mb-5 block h-0.5 w-8 bg-burdeos"
+                />
+                <h3 className="text-[1.05rem] font-medium">{c.titulo}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{c.detalle}</p>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* La oficina */}
+      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <SectionHeading
+          label="Dónde trabajamos"
+          titulo="La oficina"
+          bajada="Fotos del estudio, para que sepan a dónde están viniendo."
+        />
+
+        <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
+          {numerados("Foto", 3).map((etiqueta, i) => (
+            <Reveal key={etiqueta} delay={i * 0.08}>
+              <Placeholder ratio="aspect-[4/3]" etiqueta={etiqueta} />
+            </Reveal>
+          ))}
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CierreContacto from "@/components/CierreContacto";
+import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO } from "@/lib/placeholder";
 
 /**
  * BORRADOR. Falta que el estudio defina de qué se trata esta área para poder
@@ -32,23 +33,11 @@ export default function PaginaInnovacion() {
 
       <section className="mx-auto max-w-3xl px-6 py-24 md:py-32">
         <Reveal>
+          <span aria-hidden="true" className="mb-8 block h-0.5 w-12 bg-burdeos" />
           <div className="space-y-6 text-[1.05rem] leading-relaxed text-muted">
-            <p>
-              El mercado inmobiliario está cambiando por donde se lo mire. Las
-              operaciones se firman de otra manera, aparecen formas nuevas de
-              invertir en ladrillos y buena parte de eso todavía no tiene una
-              regulación clara.
-            </p>
-            <p>
-              En el estudio decidimos meternos ahí antes de que sea urgente. Nos
-              estamos capacitando y siguiendo de cerca cómo se va ordenando el
-              tema, para poder acompañar a nuestros clientes cuando les toque y
-              no cuando ya sea tarde.
-            </p>
-            <p>
-              Es un área que estamos armando. Si tenés una consulta de este tipo,
-              escribinos y la vemos.
-            </p>
+            <p>{LOREM_LARGO}</p>
+            <p>{LOREM_MEDIO}</p>
+            <p>{LOREM_CORTO}</p>
           </div>
         </Reveal>
       </section>

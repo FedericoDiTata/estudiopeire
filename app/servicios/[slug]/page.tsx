@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Acordeon from "@/components/Acordeon";
+import Placeholder from "@/components/Placeholder";
 import CierreContacto from "@/components/CierreContacto";
 import { SERVICIOS_DETALLE, getServicio } from "@/lib/servicios";
 import { waLink } from "@/lib/site";
@@ -57,8 +58,8 @@ export default async function PaginaServicio({
           </Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-5 text-[1.05rem] leading-relaxed text-muted">
-              {servicio.deQueSeTrata.map((p) => (
-                <p key={p.slice(0, 24)}>{p}</p>
+              {servicio.deQueSeTrata.map((p, i) => (
+                <p key={i}>{p}</p>
               ))}
             </div>
             <a
@@ -84,17 +85,16 @@ export default async function PaginaServicio({
 
           <div className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
             {servicio.casos.map((caso, i) => (
-              <Reveal
-                key={caso.titulo}
-                delay={i * 0.06}
-                className="bg-surface p-8"
-              >
-                <h3 className="text-[1.05rem] leading-snug font-medium">
-                  {caso.titulo}
-                </h3>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
-                  {caso.detalle}
-                </p>
+              <Reveal key={caso.titulo} delay={i * 0.06} className="bg-surface">
+                <Placeholder ratio="aspect-[16/9]" etiqueta="Foto" />
+                <div className="p-8">
+                  <h3 className="text-[1.05rem] leading-snug font-medium">
+                    {caso.titulo}
+                  </h3>
+                  <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
+                    {caso.detalle}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -113,7 +113,7 @@ export default async function PaginaServicio({
           {servicio.proceso.pasos.map((paso, i) => (
             <Reveal key={paso.titulo} delay={i * 0.06}>
               <li className="grid gap-4 bg-paper py-8 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-10">
-                <span className="font-display text-3xl leading-none font-light text-burdeos/35 sm:w-16">
+                <span className="font-display text-3xl leading-none font-light text-burdeos sm:w-16">
                   0{i + 1}
                 </span>
                 <div className="max-w-2xl">
@@ -197,8 +197,8 @@ export default async function PaginaServicio({
               {servicio.extra.titulo}
             </h2>
             <div className="mt-5 space-y-4 leading-relaxed text-muted">
-              {servicio.extra.texto.map((t) => (
-                <p key={t.slice(0, 24)}>{t}</p>
+              {servicio.extra.texto.map((t, i) => (
+                <p key={i}>{t}</p>
               ))}
             </div>
           </Reveal>

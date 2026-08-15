@@ -3,6 +3,8 @@
  * Lo marcado como PENDIENTE espera confirmación del cliente (audios del 2026-08-07).
  */
 
+import { LOREM_CORTO } from "./placeholder";
+
 export const CONTACTO = {
   telefono: "11 5843-5856",
   telefonoLink: "+541158435856",
@@ -27,19 +29,19 @@ export type Servicio = {
   pendiente?: boolean;
 };
 
+// Los nombres son la estructura acordada. Los resúmenes van en relleno hasta
+// que el estudio defina qué dice de cada área.
 export const SERVICIOS: Servicio[] = [
   {
     slug: "sucesiones",
     nombre: "Sucesiones",
-    resumen:
-      "Transferir un inmueble después de un fallecimiento, ordenar una herencia entre varios herederos o destrabar un acuerdo familiar.",
+    resumen: LOREM_CORTO,
     waMensaje: "Hola, quiero consultar por una sucesión",
   },
   {
     slug: "derecho-inmobiliario",
     nombre: "Derecho Inmobiliario",
-    resumen:
-      "Compraventas, boletos y reservas, conflictos de propiedad horizontal y asesoramiento a brokers y desarrolladores.",
+    resumen: LOREM_CORTO,
     waMensaje: "Hola, quiero consultar por un tema inmobiliario",
   },
   {
@@ -48,8 +50,7 @@ export const SERVICIOS: Servicio[] = [
     // un nombre que la gente busque. Este es provisorio.
     slug: "innovacion",
     nombre: "Innovación y Tecnología",
-    resumen:
-      "Un área en formación: contratos digitales y nuevas formas de operar con inmuebles, en un terreno donde todavía hay poca regulación.",
+    resumen: LOREM_CORTO,
     waMensaje: "Hola, quiero consultar por temas de tecnología",
     pendiente: true,
   },

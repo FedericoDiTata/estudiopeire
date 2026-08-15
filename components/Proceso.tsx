@@ -2,29 +2,14 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import Placeholder from "./Placeholder";
+import { LOREM_CORTO, numerados } from "@/lib/placeholder";
 
-const PASOS = [
-  {
-    titulo: "Primera consulta",
-    detalle:
-      "Nos contás qué te pasa y traés la documentación que tengas. Si no tenés nada todavía, también sirve.",
-  },
-  {
-    titulo: "Revisamos el caso",
-    detalle:
-      "Estudiamos la situación y te decimos con claridad si hay algo para hacer y cuál es el camino más corto.",
-  },
-  {
-    titulo: "Propuesta de trabajo",
-    detalle:
-      "Te pasamos por escrito qué incluye, cómo son los honorarios y una estimación de plazos. Sin sorpresas.",
-  },
-  {
-    titulo: "Seguimiento",
-    detalle:
-      "Mientras el trámite avanza, podés preguntar en qué estado está las veces que necesites.",
-  },
-];
+// De relleno: falta que el estudio defina cómo describe su forma de trabajo.
+const PASOS = numerados("Paso", 4).map((titulo) => ({
+  titulo,
+  detalle: LOREM_CORTO,
+}));
 
 export default function Proceso() {
   return (
@@ -33,7 +18,7 @@ export default function Proceso() {
         <SectionHeading
           label="Cómo trabajamos"
           titulo="Qué pasa cuando nos escribís"
-          bajada="Para mucha gente esta es la primera vez que consulta a un abogado. Así que te contamos de antemano cómo sigue."
+          bajada="Para mucha gente esta es la primera vez que consulta a un abogado. Así que conviene contar de antemano cómo sigue."
         />
 
         <ol className="mt-16 grid gap-px bg-line md:grid-cols-4">
@@ -49,15 +34,19 @@ export default function Proceso() {
                 damping: 18,
                 delay: i * 0.08,
               }}
-              className="bg-surface p-8 md:p-9"
+              className="bg-surface"
             >
-              <span className="font-display text-4xl leading-none font-light text-burdeos/35">
-                0{i + 1}
-              </span>
-              <h3 className="mt-6 text-lg font-medium">{p.titulo}</h3>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
-                {p.detalle}
-              </p>
+              <Placeholder ratio="aspect-[4/3]" etiqueta="Foto" />
+
+              <div className="p-8 md:p-9">
+                <span className="font-display text-3xl leading-none font-light text-burdeos">
+                  0{i + 1}
+                </span>
+                <h3 className="mt-5 text-lg font-medium">{p.titulo}</h3>
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
+                  {p.detalle}
+                </p>
+              </div>
             </motion.li>
           ))}
         </ol>

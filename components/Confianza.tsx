@@ -1,26 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LOREM_CORTO, numerados } from "@/lib/placeholder";
 
-/**
- * Datos verificables, tomados de la propia web del estudio.
- * REVISAR: cuando confirmen años de ejercicio y cantidad de casos, conviene
- * reemplazar alguno de estos por ese dato, que pesa más. No se inventa nada
- * mientras tanto.
- */
-const DATOS = [
-  { valor: "CABA y GBA", detalle: "Trabajamos en toda el área metropolitana" },
-  { valor: "Presencial y virtual", detalle: "Por Meet, Skype o videollamada" },
-  {
-    valor: "Inmobiliario y sucesiones",
-    detalle: "Las dos especialidades del estudio",
-  },
-];
+// De relleno: acá irían trayectoria, zona de trabajo y modalidad de atención,
+// pero los define el estudio.
+const DATOS = numerados("Dato", 3).map((valor) => ({
+  valor,
+  detalle: LOREM_CORTO,
+}));
 
 export default function Confianza() {
   return (
     <section className="border-b border-line bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-3 sm:gap-6">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-3 sm:gap-8">
         {DATOS.map((d, i) => (
           <motion.div
             key={d.valor}
@@ -34,7 +27,11 @@ export default function Confianza() {
               delay: i * 0.1,
             }}
           >
-            <p className="text-lg leading-snug font-medium">{d.valor}</p>
+            <span
+              aria-hidden="true"
+              className="block h-0.5 w-10 bg-burdeos"
+            />
+            <p className="mt-4 text-lg leading-snug font-medium">{d.valor}</p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               {d.detalle}
             </p>

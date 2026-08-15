@@ -64,53 +64,49 @@ export default function Hero() {
       {/* Overlay más liviano que el estándar de la agencia: en la primera foto
           aparece Silvina, y su cara es el activo de confianza más fuerte que
           tienen. El degradado vertical carga el contraste donde va el texto. */}
-      <div className="absolute inset-0 bg-ink/38" />
+      <div className="absolute inset-0 bg-ink/42" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/35 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-burdeos-deep/30 to-transparent" />
 
       <div className="relative mx-auto w-full max-w-3xl px-6 pt-24 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[0.7rem] font-medium tracking-[0.32em] text-paper/75 uppercase"
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-center"
         >
-          Abogados · CABA y GBA
-        </motion.p>
+          <Image
+            src="/img/logo-blanco.png"
+            alt="Estudio Peiré · Abogados"
+            width={5441}
+            height={1238}
+            priority
+            className="h-14 w-auto sm:h-20"
+          />
+        </motion.div>
 
-        <div className="mt-6 overflow-hidden">
+        <div className="mt-10 overflow-hidden">
           <motion.h1
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-[2rem] leading-[1.08] font-light tracking-[-0.02em] text-paper sm:text-5xl md:text-6xl"
+            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-[1.6rem] leading-[1.15] font-light tracking-[-0.01em] text-paper sm:text-3xl md:text-4xl"
           >
-            Sucesiones y derecho inmobiliario,{" "}
-            <span className="font-semibold">explicados de manera clara</span>
+            Sucesiones y derecho inmobiliario
           </motion.h1>
         </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-paper/85 sm:text-lg"
-        >
-          Un equipo que se ocupa del trámite y te explica en qué estado está tu
-          caso, cada vez que lo necesitás.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <a
             href={waLink("Hola, quiero hacer una consulta")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-paper px-8 py-4 text-xs font-medium tracking-[0.14em] text-ink uppercase transition-colors duration-300 hover:bg-burdeos hover:text-paper sm:w-auto"
+            className="w-full bg-burdeos px-8 py-4 text-xs font-medium tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-burdeos-deep sm:w-auto"
           >
             Consultá tu caso
           </a>
@@ -135,10 +131,6 @@ export default function Hero() {
             }`}
           />
         ))}
-      </div>
-
-      <div className="absolute right-8 bottom-8 hidden font-sans text-xs tracking-[0.2em] text-paper/60 md:block">
-        0{index + 1} / 0{SLIDES.length}
       </div>
     </section>
   );
