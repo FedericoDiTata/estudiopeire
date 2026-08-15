@@ -8,13 +8,19 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <Image
-              src="/img/logo-blanco.png"
-              alt="Estudio Peiré · Abogados"
-              width={5441}
-              height={1238}
-              className="h-11 w-auto"
-            />
+            <Link
+              href="/"
+              aria-label="Estudio Peiré, ir al inicio"
+              className="inline-block transition-opacity duration-300 hover:opacity-70"
+            >
+              <Image
+                src="/img/logo-blanco.png"
+                alt="Estudio Peiré · Abogados"
+                width={5441}
+                height={1238}
+                className="h-11 w-auto"
+              />
+            </Link>
             <p className="mt-7 max-w-xs text-sm leading-relaxed text-surface/70">
               Sucesiones y derecho inmobiliario en {CONTACTO.zona}. Atención
               presencial y virtual.
