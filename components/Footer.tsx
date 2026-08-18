@@ -22,7 +22,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-7 max-w-xs text-sm leading-relaxed text-surface/70">
-              Sucesiones y derecho inmobiliario en {CONTACTO.zona}. Atención
+              Derecho inmobiliario y sucesiones en {CONTACTO.zona}. Atención
               presencial y virtual.
             </p>
             <a

@@ -92,7 +92,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-[1.6rem] leading-[1.15] font-light tracking-[-0.01em] text-paper sm:text-3xl md:text-4xl"
           >
-            Sucesiones y derecho inmobiliario
+            Derecho Inmobiliario y Sucesiones
           </motion.h1>
         </div>
 
