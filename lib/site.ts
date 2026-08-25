@@ -45,13 +45,11 @@ export const SERVICIOS: Servicio[] = [
     waMensaje: "Hola, quiero consultar por un tema inmobiliario",
   },
   {
-    // PENDIENTE: el cliente pidió reemplazar «Civil y Comercial» por un servicio
-    // ligado a innovación y tecnología. Falta definir de qué se trata para elegir
-    // un nombre que la gente busque. Este es provisorio.
-    slug: "innovacion",
-    nombre: "Innovación y Tecnología",
+    // Nombre definido por el estudio (2026-08-24). «Proptech» es el término que
+    // usa el propio sector inmobiliario, que es el público de esta área.
+    slug: "proptech-ia",
+    nombre: "Proptech e IA",
     resumen: LOREM_CORTO,
-    waMensaje: "Hola, quiero consultar por temas de tecnología",
-    pendiente: true,
+    waMensaje: "Hola, quiero consultar por un tema de proptech o IA",
   },
 ];

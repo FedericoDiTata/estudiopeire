@@ -5,27 +5,30 @@ import CierreContacto from "@/components/CierreContacto";
 import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO } from "@/lib/placeholder";
 
 /**
- * BORRADOR. Falta que el estudio defina de qué se trata esta área para poder
- * elegir un nombre que la gente busque en Google y escribir el contenido real.
+ * Área definida por el estudio: asesoramiento a clientes del rubro inmobiliario
+ * sobre uso de inteligencia artificial (publicidad, disclaimers, límites y
+ * defensa del consumidor) y sobre tokenización, blockchain y smart contracts.
  *
- * A diferencia de las otras dos, esta no es una página de servicio: es una
- * página de posicionamiento. El área todavía se está armando, así que no puede
- * prometer casos, plazos ni documentación. Lo que sí puede hacer es explicar
- * hacia dónde va el estudio, que es lo que la diferencia.
+ * Queda fuera el uso interno de herramientas, que no es un servicio.
+ *
+ * A diferencia de las otras dos, no lleva «paso a paso del trámite» ni
+ * «documentación necesaria»: es asesoramiento, no un trámite con etapas.
+ *
+ * Contenido todavía de relleno, a redactar con el estudio.
  */
 
 export const metadata: Metadata = {
-  title: "Innovación y tecnología",
+  title: "Proptech e IA",
   description:
-    "El área que el estudio está desarrollando alrededor de la tecnología aplicada a las operaciones inmobiliarias.",
+    "Asesoramiento legal en uso de inteligencia artificial para el sector inmobiliario, tokenización, blockchain y smart contracts.",
 };
 
 export default function PaginaInnovacion() {
   return (
     <>
       <PageHero
-        eyebrow="En desarrollo"
-        titulo="Hacia dónde va el estudio"
+        eyebrow="Proptech e IA"
+        titulo="Título"
         bajada="Descripción"
         imagen="/img/estudio_peire-homepage-libros_closeup.jpg"
         imagenAlt="Material de trabajo sobre el escritorio del estudio"
@@ -44,7 +47,7 @@ export default function PaginaInnovacion() {
 
       <CierreContacto
         titulo="¿Tenés una consulta de este tipo?"
-        waMensaje="Hola, quiero consultar por un tema de tecnología aplicada a lo inmobiliario"
+        waMensaje="Hola, quiero consultar por un tema de proptech o IA"
       />
     </>
   );
