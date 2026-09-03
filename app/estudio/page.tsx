@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Placeholder from "@/components/Placeholder";
 import BloqueTexto from "@/components/BloqueTexto";
+import ColorChangeCards from "@/components/ui/color-change-card";
 import CierreContacto from "@/components/CierreContacto";
 import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO, numerados } from "@/lib/placeholder";
 
@@ -113,22 +114,13 @@ export default function PaginaEstudio() {
             bajada="Descripción"
           />
 
-          <div className="mt-14 grid gap-px bg-line sm:grid-cols-2">
-            {COMPROMISOS.map((c, i) => (
-              <Reveal
-                key={c.titulo}
-                delay={i * 0.07}
-                className="bg-surface p-8 md:p-9"
-              >
-                <span
-                  aria-hidden="true"
-                  className="mb-5 block h-0.5 w-8 bg-burdeos"
-                />
-                <h3 className="text-[1.05rem] font-medium">{c.titulo}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{c.detalle}</p>
-              </Reveal>
-            ))}
-          </div>
+          <ColorChangeCards
+            className="mt-14"
+            items={COMPROMISOS.map((c) => ({
+              heading: c.titulo,
+              description: c.detalle,
+            }))}
+          />
         </div>
       </section>
 
