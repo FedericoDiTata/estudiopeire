@@ -76,3 +76,9 @@ h1, h2, h3 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Franja de texto en movimiento continuo */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}

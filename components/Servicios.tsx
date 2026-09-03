@@ -12,7 +12,7 @@ export default function Servicios() {
       <SectionHeading
         label="Especialidades"
         titulo="En qué trabajamos"
-        bajada="Descripción"
+        bajada="Dos especialidades que se cruzan todo el tiempo, y un área nueva que estamos construyendo. Cada una con su propia página."
       />
 
       <div className="mt-16 grid gap-px border border-line bg-line md:grid-cols-3">

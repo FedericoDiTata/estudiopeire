@@ -1,18 +1,18 @@
 /**
  * Datos del estudio en un solo lugar.
- * Lo marcado como PENDIENTE espera confirmación del cliente (audios del 2026-08-07).
+ * Contenido confirmado por el estudio el 2026-09-03.
  */
-
-import { LOREM_CORTO } from "./placeholder";
 
 export const CONTACTO = {
   telefono: "11 5843-5856",
   telefonoLink: "+541158435856",
   whatsapp: "5491158435856",
   email: "consultas@estudiopeire.com.ar",
-  // PENDIENTE: el sitio actual publica dos direcciones (Caballito y Puerto Madero).
-  // Silvina tiene que confirmar cuál es la vigente antes de publicar.
+  // Confirmada por el estudio el 2026-09-03: Puerto Madero.
   direccion: "Alicia Moreau de Justo 1750, piso 1° «C»",
+  barrio: "Puerto Madero",
+  horario: "Lunes a viernes de 10 a 18 hs",
+  atencion: "Con entrevista previa coordinada. También atendemos de forma virtual.",
   ciudad: "(1107) CABA",
   zona: "CABA y GBA",
 } as const;
@@ -29,19 +29,20 @@ export type Servicio = {
   pendiente?: boolean;
 };
 
-// Los nombres son la estructura acordada. Los resúmenes van en relleno hasta
-// que el estudio defina qué dice de cada área.
+// Resúmenes tomados del material que envió el estudio.
 export const SERVICIOS: Servicio[] = [
   {
     slug: "sucesiones",
     nombre: "Sucesiones",
-    resumen: LOREM_CORTO,
+    resumen:
+      "Iniciar una sucesión, vender una propiedad que está en proceso, destrabar un acuerdo entre herederos u ordenar el patrimonio antes de que sea un problema.",
     waMensaje: "Hola, quiero consultar por una sucesión",
   },
   {
     slug: "derecho-inmobiliario",
     nombre: "Derecho Inmobiliario",
-    resumen: LOREM_CORTO,
+    resumen:
+      "Compraventas, contratos, conflictos con inmuebles y estructuración de desarrollos. Asesoramiento permanente a inmobiliarias, brokers y desarrolladores.",
     waMensaje: "Hola, quiero consultar por un tema inmobiliario",
   },
   {
@@ -49,7 +50,8 @@ export const SERVICIOS: Servicio[] = [
     // usa el propio sector inmobiliario, que es el público de esta área.
     slug: "proptech-ia",
     nombre: "Proptech e IA",
-    resumen: LOREM_CORTO,
+    resumen:
+      "Asesoramiento sobre el uso de inteligencia artificial en el negocio inmobiliario, y sobre tokenización, blockchain y contratos digitales.",
     waMensaje: "Hola, quiero consultar por un tema de proptech o IA",
   },
 ];

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     "Escribinos por WhatsApp, llamanos o dejanos tu consulta. Atención presencial en CABA y virtual para todo el país.",
 };
 
-/** REVISAR: horarios de atención y dirección definitiva, pendientes de confirmar. */
+/** Dirección y horarios confirmados por el estudio el 2026-09-03. */
 export default function PaginaContacto() {
   return (
     <>
       <PageHero
         eyebrow="Contacto"
         titulo="Escribinos"
-        bajada="Descripción"
+        bajada="Contanos brevemente el motivo de la consulta y coordinamos la modalidad y el horario más conveniente."
         imagen="/img/estudio_peire-homepage-algunas_preguntas.jpg"
         imagenAlt="Escritorio de atención del estudio, con la puerta al balcón"
       />
@@ -29,7 +29,8 @@ export default function PaginaContacto() {
               Dejanos tu consulta
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-muted">
-              Descripción
+              Nuestro equipo se comunica para conocer brevemente el motivo de la
+              consulta y coordinar la entrevista.
             </p>
             <div className="mt-10">
               <FormularioContacto />
@@ -93,8 +94,7 @@ export default function PaginaContacto() {
                 <div>
                   <dt className="text-sm text-muted">Atención</dt>
                   <dd className="mt-1 leading-relaxed">
-                    Presencial con turno previo, y virtual por Google Meet, Skype
-                    o videollamada de WhatsApp para todo el país.
+                    {CONTACTO.horario}. {CONTACTO.atencion}
                   </dd>
                 </div>
               </dl>

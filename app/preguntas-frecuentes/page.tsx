@@ -34,7 +34,7 @@ export default function PaginaFaq() {
       <PageHero
         eyebrow="Preguntas frecuentes"
         titulo="Las dudas que más nos llegan"
-        bajada="Descripción"
+        bajada="Si lo tuyo no está acá, escribinos y te respondemos igual."
         imagen="/img/estudio_peire-homepage-libros_closeup.jpg"
         imagenAlt="Códigos y material de consulta del estudio"
       />

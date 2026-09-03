@@ -1,18 +1,17 @@
 /**
  * Contenido de las páginas de servicio.
  *
- * TODO EL CONTENIDO ES DE RELLENO. Los nombres de servicio y de sección son la
- * estructura acordada con el estudio; lo demás va en lorem para no dar por
- * sentado qué dicen ni cómo lo dicen. Se completa cuando ellos lo definan.
+ * Los casos y sus descripciones son texto real del estudio (documento
+ * «Material para web», 2026-09-03). Se quitaron las anotaciones internas que
+ * venían en el documento y que no van publicadas («cliente premium», «la más
+ * frecuente», etc.).
  *
- * Al final del archivo quedó guardado el material real que tienen publicado en
- * su web actual, que sirve como punto de partida para esa redacción.
+ * PENDIENTE del estudio: documentación por servicio y archivos descargables.
  */
 
-import { LOREM_CORTO, LOREM_MEDIO, numerados } from "./placeholder";
+import { faqPorTema, type ItemFaq } from "./faq";
 
-export type Paso = { titulo: string; detalle: string };
-export type Pregunta = { pregunta: string; respuesta: string };
+export type Caso = { titulo: string; detalle: string; ampliacion?: string };
 
 export type ServicioDetalle = {
   slug: string;
@@ -23,32 +22,9 @@ export type ServicioDetalle = {
   imagen: string;
   imagenAlt: string;
   deQueSeTrata: string[];
-  casos: { titulo: string; detalle: string }[];
-  proceso: { intro: string; pasos: Paso[]; nota?: string };
-  documentacion?: { intro: string; items: string[] };
-  descargable?: { titulo: string; detalle: string };
-  preguntas: Pregunta[];
+  casos: Caso[];
+  preguntas: ItemFaq[];
   extra?: { titulo: string; texto: string[] };
-};
-
-const casosRelleno = numerados("Situación", 6).map((titulo) => ({
-  titulo,
-  detalle: LOREM_CORTO,
-}));
-
-const pasosRelleno = numerados("Paso", 4).map((titulo) => ({
-  titulo,
-  detalle: LOREM_CORTO,
-}));
-
-const preguntasRelleno = numerados("Pregunta", 4).map((pregunta) => ({
-  pregunta,
-  respuesta: LOREM_MEDIO,
-}));
-
-const documentacionRelleno = {
-  intro: "Descripción",
-  items: numerados("Documento", 5),
 };
 
 export const SERVICIOS_DETALLE: ServicioDetalle[] = [
@@ -56,79 +32,112 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
     slug: "sucesiones",
     nombre: "Sucesiones",
     titulo: "Sucesiones",
-    bajada: "Descripción",
+    bajada:
+      "Cada sucesión comienza con un buen diagnóstico: la situación familiar, los bienes y la documentación definen la estrategia.",
     waMensaje: "Hola, quiero consultar por una sucesión",
     imagen: "/img/estudio_peire-homepage-libros_closeup.jpg",
     imagenAlt: "Códigos y material de trabajo sobre el escritorio",
-    deQueSeTrata: [LOREM_MEDIO, LOREM_CORTO],
-    casos: casosRelleno,
-    proceso: {
-      intro: "Descripción",
-      pasos: pasosRelleno,
-      nota: LOREM_MEDIO,
-    },
-    documentacion: documentacionRelleno,
-    descargable: {
-      titulo: "Título del material descargable",
-      detalle: LOREM_CORTO,
-    },
-    preguntas: preguntasRelleno,
+    deQueSeTrata: [
+      "Analizamos la situación familiar, los bienes y la documentación para definir desde el inicio la estrategia más adecuada.",
+      "A partir de allí acompañamos y coordinamos todo el proceso de forma clara, ordenada y eficiente, hasta la adjudicación e inscripción o la venta de los bienes.",
+    ],
+    casos: [
+      {
+        titulo: "Falleció un familiar y necesito iniciar la sucesión",
+        detalle:
+          "Acompañamos todo el proceso sucesorio, desde el análisis inicial hasta la adjudicación e inscripción, o la venta de los bienes.",
+      },
+      {
+        titulo: "Necesito vender una propiedad que está en sucesión",
+        detalle:
+          "Une nuestras dos especialidades. Asesoramos y guiamos a herederos, compradores, inmobiliarias y escribanías en toda la operatoria.",
+        ampliacion:
+          "Documentación, declaratoria, reservas, boletos, cesiones, tracto abreviado y coordinación con escribano.",
+      },
+      {
+        titulo: "Los herederos no se ponen de acuerdo",
+        detalle:
+          "Intervenimos estratégicamente cuando hay diferencias sobre la administración, distribución, adjudicación o venta de los bienes, para que puedan decidir sin perder dinero ni vínculos.",
+        ampliacion:
+          "Desacuerdos sobre venta, administración, uso de los inmuebles, distribución de bienes, valuaciones, partición o compensaciones entre coherederos.",
+      },
+      {
+        titulo: "Necesito ordenar la sucesión de mi negocio o empresa",
+        detalle:
+          "Sucesiones con múltiples inmuebles, sociedades, participaciones empresarias, inversiones y bienes en distintas jurisdicciones.",
+        ampliacion:
+          "También documentación incompleta, sucesiones encadenadas, herederos numerosos o estructuras patrimoniales que requieren coordinación con escribanos, contadores y otros profesionales.",
+      },
+      {
+        titulo: "Quiero organizar mi patrimonio antes de que sea un problema",
+        detalle:
+          "Planificación sucesoria y patrimonial para transmitir patrimonio, negocio o empresa, y prevenir conflictos futuros.",
+        ampliacion:
+          "Testamentos, donaciones, organización de inmuebles, protección de herederos y empresas familiares.",
+      },
+    ],
+    preguntas: faqPorTema("sucesiones"),
   },
   {
     slug: "derecho-inmobiliario",
     nombre: "Derecho Inmobiliario",
     titulo: "Derecho inmobiliario",
-    bajada: "Descripción",
+    bajada:
+      "Partners legales del negocio inmobiliario: desde la negociación inicial de una operación hasta la estructuración de un desarrollo.",
     waMensaje: "Hola, quiero consultar por un tema inmobiliario",
     imagen: "/img/estudio_peire-equipo-background.jpg",
     imagenAlt: "Sala de reuniones del estudio",
-    deQueSeTrata: [LOREM_MEDIO, LOREM_CORTO],
-    casos: casosRelleno,
-    proceso: {
-      intro: "Descripción",
-      pasos: pasosRelleno,
-      nota: LOREM_MEDIO,
-    },
-    documentacion: documentacionRelleno,
-    descargable: {
-      titulo: "Título del material descargable",
-      detalle: LOREM_CORTO,
-    },
-    // Civil y comercial va acá adentro, según lo que pidió el estudio.
+    deQueSeTrata: [
+      "Acompañamos operaciones inmobiliarias desde la negociación inicial hasta su instrumentación definitiva, anticipando riesgos y protegiendo los intereses de nuestros clientes.",
+      "Trabajamos tanto con particulares como con inmobiliarias, brokers, desarrolladores e inversores, en operaciones puntuales o con asesoramiento permanente.",
+    ],
+    casos: [
+      {
+        titulo: "Soy una empresa o profesional inmobiliario",
+        detalle:
+          "Asesoramiento estratégico y permanente para inmobiliarias, brokers, desarrolladores y empresas del sector en las decisiones jurídicas de su actividad cotidiana.",
+        ampliacion:
+          "Consultoría, revisión y armado de contratos, operaciones especiales, cláusulas, prevención de contingencias, negociación, documentación comercial, nuevos modelos de negocio y regulación.",
+      },
+      {
+        titulo: "Voy a comprar o vender un inmueble",
+        detalle:
+          "Asesoramos y acompañamos la operación desde la negociación inicial hasta su instrumentación definitiva.",
+        ampliacion:
+          "Análisis de antecedentes, reservas, ofertas, boletos, cesiones, escrituración, negociación de condiciones y coordinación con inmobiliarias y escribanías.",
+      },
+      {
+        titulo: "Necesito resolver un problema con un inmueble",
+        detalle:
+          "Intervenimos frente a conflictos derivados de operaciones, contratos, ocupación, tenencia, administración o utilización de inmuebles.",
+        ampliacion:
+          "Incumplimientos contractuales, conflictos de compraventas, restituciones, medianería, propiedad horizontal, daños, escrituración y litigios ya planteados.",
+      },
+      {
+        titulo: "Tengo que armar un contrato",
+        detalle:
+          "Diseñamos, revisamos y negociamos contratos adaptados a cada operación, con foco en la claridad, la previsibilidad y la adecuada distribución de riesgos.",
+        ampliacion:
+          "Reservas, boletos, locaciones comerciales y residenciales, cesiones, opciones, acuerdos entre inversores, contratos de desarrollos y corretaje.",
+      },
+      {
+        titulo: "Quiero desarrollar o invertir en un proyecto",
+        detalle:
+          "Acompañamos a desarrolladores, inversores y propietarios en la estructuración jurídica de proyectos, desde su análisis inicial hasta su implementación.",
+        ampliacion:
+          "Diseño del proyecto, adquisición del inmueble, fideicomisos y vehículos jurídicos, contratos, preventas, relaciones entre inversores y comercialización.",
+      },
+    ],
     extra: {
       titulo: "También trabajamos en civil y comercial",
-      texto: [LOREM_MEDIO],
+      texto: [
+        "Contratos, cobros, daños y perjuicios y conflictos entre socios. Son temas que suelen aparecer junto a una operación inmobiliaria y los resolvemos en el mismo estudio.",
+      ],
     },
-    preguntas: preguntasRelleno,
+    preguntas: faqPorTema("inmobiliario"),
   },
 ];
 
 export function getServicio(slug: string) {
   return SERVICIOS_DETALLE.find((s) => s.slug === slug);
 }
-
-/**
- * Material real publicado hoy en estudiopeire.com.ar. No se muestra en el
- * sitio: queda guardado como insumo para cuando el estudio redacte el
- * contenido definitivo, así no hay que volver a buscarlo.
- */
-export const MATERIAL_WEB_ACTUAL = {
-  sucesiones: {
-    documentacion:
-      "Partida de defunción, partidas de nacimiento de los herederos, partida de matrimonio (si el fallecido fuera casado), títulos de propiedad de los bienes (autos, casa, etc), y testamento si lo hubiere.",
-    demora:
-      "Depende de varios factores relacionados con la documentación en general e individual de cada heredero, el juzgado que interviene y si hay acuerdo entre los destinatarios de la herencia.",
-  },
-  inmobiliario: {
-    desarrolladores:
-      "Sí, acompañamos a los profesionales y empresas en todo el proceso de edificación hasta el final del proyecto.",
-    propiedadHorizontal: "Sí, es una de las especialidades del estudio.",
-    capacitaciones:
-      "Sí, brindamos charlas, talleres y jornadas de capacitación, virtuales y presenciales orientados a estudiantes, profesionales inmobiliarios y empresas.",
-  },
-  generales: {
-    zona: "Sí, trabajamos en AMBA.",
-    virtual:
-      "Sí, trabajamos de manera virtual y presencial. En caso de querer comunicarte por esa vía, habilitamos un Skype, Google Meet o Videollamada por WhatsApp.",
-  },
-} as const;

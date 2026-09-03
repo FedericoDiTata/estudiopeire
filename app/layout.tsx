@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import LenisProvider from "@/components/LenisProvider";
 import { CONTACTO } from "@/lib/site";
 
 // Sustituto libre de DIN Next (comercial). El logo juega con el contraste
@@ -71,6 +72,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <LenisProvider />
         <Header />
         <main>{children}</main>
         <Footer />
