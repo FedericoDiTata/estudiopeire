@@ -46,5 +46,5 @@ export default function CasosExpandibles({ casos }: { casos: Caso[] }) {
     };
   });
 
-  return <ExpandingCards items={items} defaultActiveIndex={0} />;
+  return <ExpandingCards items={items} />;
 }

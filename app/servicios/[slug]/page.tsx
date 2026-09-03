@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
-import Reveal from "@/components/Reveal";
+import BloqueTexto from "@/components/BloqueTexto";
 import SectionHeading from "@/components/SectionHeading";
 import CasosExpandibles from "@/components/CasosExpandibles";
 import ListaCasos from "@/components/ListaCasos";
@@ -51,32 +51,21 @@ export default async function PaginaServicio({
 
       {/* De qué se trata */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
-        <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
-          <Reveal>
-            <span
-              aria-hidden="true"
-              className="mb-6 block h-0.5 w-12 bg-burdeos"
-            />
-            <h2 className="font-display text-2xl leading-tight font-light tracking-[-0.01em] sm:text-3xl">
-              De qué se trata
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="space-y-5 text-[1.05rem] leading-relaxed text-muted">
-              {servicio.deQueSeTrata.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <a
-              href={waLink(servicio.waMensaje)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block bg-burdeos px-7 py-3.5 text-xs font-medium tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-burdeos-deep"
-            >
-              Consultar por WhatsApp
-            </a>
-          </Reveal>
-        </div>
+        <BloqueTexto
+          eyebrow={servicio.nombre}
+          titulo="De qué se trata"
+          parrafos={servicio.deQueSeTrata}
+          icono={servicio.slug === "sucesiones" ? "sucesiones" : "inmobiliario"}
+        >
+          <a
+            href={waLink(servicio.waMensaje)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-burdeos px-7 py-3.5 text-xs font-medium tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-burdeos-deep"
+          >
+            Consultar por WhatsApp
+          </a>
+        </BloqueTexto>
       </section>
 
       {/* En qué casos te ayudamos */}
@@ -102,20 +91,12 @@ export default async function PaginaServicio({
       {/* Civil y comercial dentro de inmobiliario */}
       {servicio.extra && (
         <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
-          <Reveal className="max-w-2xl">
-            <span
-              aria-hidden="true"
-              className="mb-6 block h-0.5 w-12 bg-burdeos"
-            />
-            <h2 className="font-display text-2xl leading-tight font-light tracking-[-0.01em] sm:text-3xl">
-              {servicio.extra.titulo}
-            </h2>
-            <div className="mt-5 space-y-4 leading-relaxed text-muted">
-              {servicio.extra.texto.map((t, i) => (
-                <p key={i}>{t}</p>
-              ))}
-            </div>
-          </Reveal>
+          <BloqueTexto
+            eyebrow="Otras áreas"
+            titulo={servicio.extra.titulo}
+            parrafos={servicio.extra.texto}
+            icono="civil"
+          />
         </section>
       )}
 

@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Placeholder from "@/components/Placeholder";
+import BloqueTexto from "@/components/BloqueTexto";
 import CierreContacto from "@/components/CierreContacto";
 import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO, numerados } from "@/lib/placeholder";
 
@@ -41,23 +42,12 @@ export default function PaginaEstudio() {
 
       {/* Quiénes somos */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
-        <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
-          <Reveal>
-            <span
-              aria-hidden="true"
-              className="mb-6 block h-0.5 w-12 bg-burdeos"
-            />
-            <h2 className="font-display text-2xl leading-tight font-light tracking-[-0.01em] sm:text-3xl">
-              Quiénes somos
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="space-y-5 text-[1.05rem] leading-relaxed text-muted">
-              <p>{LOREM_LARGO}</p>
-              <p>{LOREM_MEDIO}</p>
-            </div>
-          </Reveal>
-        </div>
+        <BloqueTexto
+          eyebrow="El estudio"
+          titulo="Quiénes somos"
+          parrafos={[LOREM_LARGO, LOREM_MEDIO]}
+          icono="estudio"
+        />
       </section>
 
       {/* Silvina */}

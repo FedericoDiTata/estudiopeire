@@ -18,7 +18,6 @@ export interface CardItem {
 
 interface ExpandingCardsProps extends React.HTMLAttributes<HTMLUListElement> {
   items: CardItem[];
-  defaultActiveIndex?: number;
 }
 
 /**
@@ -30,14 +29,18 @@ interface ExpandingCardsProps extends React.HTMLAttributes<HTMLUListElement> {
  * fondo se resuelve con vino y la trama diagonal de la marca, y el icono pasa
  * a ser el protagonista. Si un item trae `imgSrc`, la foto reemplaza al fondo
  * sin tocar nada más.
+ *
+ * Dos cambios sobre el original:
+ * - En reposo no hay ningún panel abierto. Quedan todos iguales hasta que el
+ *   mouse entra, y al salir vuelven a emparejarse.
+ * - El texto del panel que se cierra desaparece de golpe. Con transición se
+ *   lo veía reacomodarse mientras la columna se angostaba y quedaba sucio.
  */
 export const ExpandingCards = React.forwardRef<
   HTMLUListElement,
   ExpandingCardsProps
->(({ className, items, defaultActiveIndex = 0, ...props }, ref) => {
-  const [activeIndex, setActiveIndex] = React.useState<number>(
-    defaultActiveIndex,
-  );
+>(({ className, items, ...props }, ref) => {
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const [isDesktop, setIsDesktop] = React.useState(false);
 
   React.useEffect(() => {
@@ -60,6 +63,7 @@ export const ExpandingCards = React.forwardRef<
   return (
     <ul
       ref={ref}
+      onMouseLeave={() => setActiveIndex(null)}
       className={cn(
         "grid w-full gap-1.5",
         "h-[520px]",
@@ -79,7 +83,7 @@ export const ExpandingCards = React.forwardRef<
             aria-current={activo}
             onMouseEnter={() => setActiveIndex(index)}
             onFocus={() => setActiveIndex(index)}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => setActiveIndex(activo ? null : index)}
             className={cn(
               "group relative min-h-0 min-w-0 cursor-pointer overflow-hidden",
               "rounded-[var(--radius-card)] bg-burdeos-deep",
@@ -123,31 +127,34 @@ export const ExpandingCards = React.forwardRef<
             </span>
 
             <article className="absolute inset-0 flex flex-col justify-end gap-3 p-6 md:p-7">
-              {/* Título vertical mientras el panel está cerrado (solo desktop) */}
-              <span className="absolute bottom-7 left-7 hidden origin-bottom-left rotate-[-90deg] font-display text-xs font-medium tracking-[0.22em] whitespace-nowrap text-paper/75 uppercase opacity-100 transition-opacity duration-300 ease-out group-data-[active=true]:opacity-0 md:block">
+              {/* Etiqueta vertical del panel cerrado. Vuelve con un retardo
+                  corto para no cruzarse con el texto que se está yendo. */}
+              <span className="absolute bottom-7 left-7 hidden origin-bottom-left rotate-[-90deg] font-display text-xs font-medium tracking-[0.22em] whitespace-nowrap text-paper/75 uppercase opacity-100 transition-opacity delay-150 duration-300 ease-out group-data-[active=true]:opacity-0 group-data-[active=true]:delay-0 group-data-[active=true]:duration-100 md:block">
                 {item.label}
               </span>
 
-              <div className="relative text-paper opacity-0 transition-opacity duration-500 delay-100 ease-out group-data-[active=true]:opacity-100">
+              {/* El contenido entra escalonado y se va de golpe: la transición
+                  vive solo en el estado activo. */}
+              <div className="relative text-paper opacity-0 group-data-[active=true]:opacity-100 group-data-[active=true]:transition-opacity group-data-[active=true]:delay-150 group-data-[active=true]:duration-500">
                 {item.icon}
               </div>
 
-              <h3 className="relative max-w-md font-display text-xl leading-snug font-medium tracking-[-0.01em] text-paper opacity-0 transition-opacity duration-500 delay-150 ease-out group-data-[active=true]:opacity-100 md:text-2xl">
+              <h3 className="relative max-w-md font-display text-xl leading-snug font-medium tracking-[-0.01em] text-paper opacity-0 group-data-[active=true]:opacity-100 group-data-[active=true]:transition-opacity group-data-[active=true]:delay-200 group-data-[active=true]:duration-500 md:text-2xl">
                 {item.title}
               </h3>
 
-              <p className="relative max-w-lg leading-relaxed text-paper/80 opacity-0 transition-opacity duration-500 delay-200 ease-out group-data-[active=true]:opacity-100">
+              <p className="relative max-w-lg leading-relaxed text-paper/80 opacity-0 group-data-[active=true]:opacity-100 group-data-[active=true]:transition-opacity group-data-[active=true]:delay-[250ms] group-data-[active=true]:duration-500">
                 {item.description}
               </p>
 
               {item.extra && (
-                <p className="relative max-w-lg border-t border-paper/20 pt-4 text-[0.9rem] leading-relaxed text-paper/60 opacity-0 transition-opacity duration-500 delay-250 ease-out group-data-[active=true]:opacity-100">
+                <p className="relative max-w-lg border-t border-paper/20 pt-4 text-[0.9rem] leading-relaxed text-paper/60 opacity-0 group-data-[active=true]:opacity-100 group-data-[active=true]:transition-opacity group-data-[active=true]:delay-300 group-data-[active=true]:duration-500">
                   {item.extra}
                 </p>
               )}
             </article>
 
-            {/* Filo inferior en vino claro sobre el panel activo */}
+            {/* Filo inferior en claro sobre el panel activo */}
             <span
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-paper/60 transition-transform duration-600 ease-[var(--ease-out-quint)] group-data-[active=true]:scale-x-100"
