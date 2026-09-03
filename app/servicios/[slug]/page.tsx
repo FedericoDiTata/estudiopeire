@@ -84,7 +84,7 @@ export default async function PaginaServicio({
           <SectionHeading
             label="Situaciones"
             titulo="En qué casos te ayudamos"
-            bajada="Si alguna de estas se parece a lo tuyo, tocala para ver el detalle."
+            bajada="Si alguna de estas se parece a lo tuyo, ya sabemos por dónde arrancar."
           />
           <div className="mt-14">
             <ListaCasos casos={servicio.casos} />

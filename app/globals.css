@@ -37,6 +37,12 @@
   --font-display: var(--font-barlow), "DIN Next", system-ui, sans-serif;
   --font-sans: var(--font-barlow), "DIN Next", system-ui, sans-serif;
 
+  /* Profundidad y radios: lo que le faltaba al sitio para no verse plano */
+  --radius-card: 3px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(14,14,12,0.04), 0 8px 24px -12px rgba(14,14,12,0.10);
+  --shadow-card-hover: 0 2px 4px rgba(80,21,40,0.06), 0 20px 44px -18px rgba(80,21,40,0.28);
+
   /* Curvas */
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-cine: cubic-bezier(0.43, 0.13, 0.23, 0.96);

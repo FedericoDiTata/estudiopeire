@@ -11,7 +11,26 @@
 
 import { faqPorTema, type ItemFaq } from "./faq";
 
-export type Caso = { titulo: string; detalle: string; ampliacion?: string };
+/** El icono da identidad a cada tarjeta: sin fotos, es lo que evita que la
+ *  sección sea una lista de rectángulos iguales. */
+export type IconoCaso =
+  | "sucesion"
+  | "venta"
+  | "acuerdo"
+  | "empresa"
+  | "patrimonio"
+  | "partner"
+  | "operacion"
+  | "conflicto"
+  | "contrato"
+  | "desarrollo";
+
+export type Caso = {
+  titulo: string;
+  detalle: string;
+  ampliacion?: string;
+  icono: IconoCaso;
+};
 
 export type ServicioDetalle = {
   slug: string;
@@ -44,11 +63,13 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
     casos: [
       {
         titulo: "Falleció un familiar y necesito iniciar la sucesión",
+        icono: "sucesion",
         detalle:
           "Acompañamos todo el proceso sucesorio, desde el análisis inicial hasta la adjudicación e inscripción, o la venta de los bienes.",
       },
       {
         titulo: "Necesito vender una propiedad que está en sucesión",
+        icono: "venta",
         detalle:
           "Une nuestras dos especialidades. Asesoramos y guiamos a herederos, compradores, inmobiliarias y escribanías en toda la operatoria.",
         ampliacion:
@@ -56,6 +77,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Los herederos no se ponen de acuerdo",
+        icono: "acuerdo",
         detalle:
           "Intervenimos estratégicamente cuando hay diferencias sobre la administración, distribución, adjudicación o venta de los bienes, para que puedan decidir sin perder dinero ni vínculos.",
         ampliacion:
@@ -63,6 +85,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Necesito ordenar la sucesión de mi negocio o empresa",
+        icono: "empresa",
         detalle:
           "Sucesiones con múltiples inmuebles, sociedades, participaciones empresarias, inversiones y bienes en distintas jurisdicciones.",
         ampliacion:
@@ -70,6 +93,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Quiero organizar mi patrimonio antes de que sea un problema",
+        icono: "patrimonio",
         detalle:
           "Planificación sucesoria y patrimonial para transmitir patrimonio, negocio o empresa, y prevenir conflictos futuros.",
         ampliacion:
@@ -94,6 +118,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
     casos: [
       {
         titulo: "Soy una empresa o profesional inmobiliario",
+        icono: "partner",
         detalle:
           "Asesoramiento estratégico y permanente para inmobiliarias, brokers, desarrolladores y empresas del sector en las decisiones jurídicas de su actividad cotidiana.",
         ampliacion:
@@ -101,6 +126,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Voy a comprar o vender un inmueble",
+        icono: "operacion",
         detalle:
           "Asesoramos y acompañamos la operación desde la negociación inicial hasta su instrumentación definitiva.",
         ampliacion:
@@ -108,6 +134,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Necesito resolver un problema con un inmueble",
+        icono: "conflicto",
         detalle:
           "Intervenimos frente a conflictos derivados de operaciones, contratos, ocupación, tenencia, administración o utilización de inmuebles.",
         ampliacion:
@@ -115,6 +142,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Tengo que armar un contrato",
+        icono: "contrato",
         detalle:
           "Diseñamos, revisamos y negociamos contratos adaptados a cada operación, con foco en la claridad, la previsibilidad y la adecuada distribución de riesgos.",
         ampliacion:
@@ -122,6 +150,7 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
       },
       {
         titulo: "Quiero desarrollar o invertir en un proyecto",
+        icono: "desarrollo",
         detalle:
           "Acompañamos a desarrolladores, inversores y propietarios en la estructuración jurídica de proyectos, desde su análisis inicial hasta su implementación.",
         ampliacion:
