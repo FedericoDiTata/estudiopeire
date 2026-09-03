@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Route, Users, CheckCircle2 } from "lucide-react";
+import { Search, Route, Users, CheckCircle2, type LucideIcon } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import ScrollRevealContentA, {
+  type ItemContent,
+} from "./ui/scroll-reveal-content-a";
 
 /**
  * Los cuatro pasos salen del propio texto del estudio: «cada caso comienza con
@@ -11,7 +14,7 @@ import SectionHeading from "./SectionHeading";
  *
  * REVISAR: los títulos de cada paso son nuestros, derivados de ese párrafo.
  */
-const PASOS = [
+const PASOS: { icono: LucideIcon; titulo: string; detalle: string }[] = [
   {
     icono: Search,
     titulo: "Diagnóstico",
@@ -38,54 +41,81 @@ const PASOS = [
   },
 ];
 
+/**
+ * Espacio reservado para la foto del paso. Mientras no estén, el panel se
+ * resuelve con el vino de la marca y el icono del paso.
+ */
+function VisualPaso({ Icono, numero }: { Icono: LucideIcon; numero: number }) {
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-[var(--radius-card)] bg-burdeos-deep">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.13]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, var(--color-paper) 0 1px, transparent 1px 14px)",
+        }}
+      />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <Icono className="h-20 w-20 text-paper/80" strokeWidth={0.9} aria-hidden="true" />
+      </div>
+      <span className="absolute top-6 left-6 font-display text-xs tracking-[0.24em] text-paper/45 uppercase">
+        0{numero}
+      </span>
+      <span className="absolute bottom-6 left-6 text-[0.65rem] font-medium tracking-[0.24em] text-paper/40 uppercase">
+        Foto
+      </span>
+    </div>
+  );
+}
+
 export default function Proceso() {
+  const items: ItemContent[] = PASOS.map((p, i) => ({
+    title: p.titulo,
+    description: p.detalle,
+    visual: <VisualPaso Icono={p.icono} numero={i + 1} />,
+  }));
+
   return (
     <section className="border-y border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6 pt-24 md:pt-32">
         <SectionHeading
           label="Cómo trabajamos"
           titulo="Detrás de cada consulta hay una decisión importante"
           bajada="Por eso combinamos conocimiento jurídico, estrategia y una atención cercana. Así es el recorrido."
         />
+      </div>
 
-        <ol className="relative mt-16 grid gap-8 md:grid-cols-4 md:gap-6">
-          {/* Hilo que conecta los cuatro pasos */}
-          <span
-            aria-hidden="true"
-            className="absolute top-7 right-0 left-0 hidden h-px bg-line md:block"
-          />
+      {/* Los pasos se encienden con el scroll. Solo en pantalla grande: en un
+          celular, retener el scroll para animar molesta más de lo que aporta. */}
+      <div className="hidden lg:block">
+        <ScrollRevealContentA items={items} alturaPista="h-[230vh]" />
+      </div>
 
+      {/* En pantalla chica, la misma información en lista */}
+      <div className="mx-auto max-w-6xl px-6 pb-24 lg:hidden">
+        <ol className="mt-14 space-y-10">
           {PASOS.map((p, i) => {
             const Icono = p.icono;
             return (
               <motion.li
                 key={p.titulo}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  type: "spring",
-                  stiffness: 85,
-                  damping: 18,
-                  delay: i * 0.09,
-                }}
-                className="group relative"
+                transition={{ type: "spring", stiffness: 85, damping: 18 }}
+                className="flex gap-5"
               >
-                <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-line bg-paper text-burdeos shadow-[var(--shadow-card)] transition-colors duration-500 group-hover:border-burdeos group-hover:bg-burdeos group-hover:text-paper">
-                  <Icono
-                    className="h-5 w-5"
-                    strokeWidth={1.6}
-                    aria-hidden="true"
-                  />
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-burdeos-soft text-burdeos">
+                  <Icono className="h-5 w-5" strokeWidth={1.6} aria-hidden="true" />
                 </span>
-
-                <p className="mt-6 font-display text-xs tracking-[0.24em] text-burdeos uppercase">
-                  Paso 0{i + 1}
-                </p>
-                <h3 className="mt-2 text-lg font-medium">{p.titulo}</h3>
-                <p className="mt-3 max-w-xs text-[0.95rem] leading-relaxed text-muted">
-                  {p.detalle}
-                </p>
+                <div>
+                  <span className="font-display text-xs tracking-[0.24em] text-burdeos uppercase">
+                    Paso 0{i + 1}
+                  </span>
+                  <h3 className="mt-1 text-lg font-medium">{p.titulo}</h3>
+                  <p className="mt-2 leading-relaxed text-muted">{p.detalle}</p>
+                </div>
               </motion.li>
             );
           })}
