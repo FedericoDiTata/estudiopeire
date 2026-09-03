@@ -1,11 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Route, Users, CheckCircle2, type LucideIcon } from "lucide-react";
+import {
+  Search,
+  Route,
+  Users,
+  CheckCircle2,
+  type LucideIcon,
+} from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import ScrollRevealContentA, {
-  type ItemContent,
-} from "./ui/scroll-reveal-content-a";
+import StepsCarousel, { type StepItem } from "./ui/steps-carousel";
 
 /**
  * Los cuatro pasos salen del propio texto del estudio: «cada caso comienza con
@@ -57,12 +61,16 @@ function VisualPaso({ Icono, numero }: { Icono: LucideIcon; numero: number }) {
         }}
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <Icono className="h-20 w-20 text-paper/80" strokeWidth={0.9} aria-hidden="true" />
+        <Icono
+          className="h-16 w-16 text-paper/80"
+          strokeWidth={0.9}
+          aria-hidden="true"
+        />
       </div>
-      <span className="absolute top-6 left-6 font-display text-xs tracking-[0.24em] text-paper/45 uppercase">
+      <span className="absolute top-5 left-5 font-display text-xs tracking-[0.24em] text-paper/45 uppercase">
         0{numero}
       </span>
-      <span className="absolute bottom-6 left-6 text-[0.65rem] font-medium tracking-[0.24em] text-paper/40 uppercase">
+      <span className="absolute bottom-5 left-5 text-[0.65rem] font-medium tracking-[0.24em] text-paper/40 uppercase">
         Foto
       </span>
     </div>
@@ -70,51 +78,56 @@ function VisualPaso({ Icono, numero }: { Icono: LucideIcon; numero: number }) {
 }
 
 export default function Proceso() {
-  const items: ItemContent[] = PASOS.map((p, i) => ({
-    title: p.titulo,
-    description: p.detalle,
+  const items: StepItem[] = PASOS.map((p, i) => ({
+    titulo: p.titulo,
+    detalle: p.detalle,
+    icono: p.icono,
     visual: <VisualPaso Icono={p.icono} numero={i + 1} />,
   }));
 
   return (
     <section className="border-y border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-6 pt-24 md:pt-32">
+      <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
         <SectionHeading
           label="Cómo trabajamos"
           titulo="Detrás de cada consulta hay una decisión importante"
           bajada="Por eso combinamos conocimiento jurídico, estrategia y una atención cercana. Así es el recorrido."
         />
-      </div>
 
-      {/* Los pasos se encienden con el scroll. Solo en pantalla grande: en un
-          celular, retener el scroll para animar molesta más de lo que aporta. */}
-      <div className="hidden lg:block">
-        <ScrollRevealContentA items={items} alturaPista="h-[230vh]" />
-      </div>
+        {/* Rota solo y se puede elegir cada paso con un clic */}
+        <div className="mt-14 hidden lg:block">
+          <StepsCarousel items={items} />
+        </div>
 
-      {/* En pantalla chica, la misma información en lista */}
-      <div className="mx-auto max-w-6xl px-6 pb-24 lg:hidden">
-        <ol className="mt-14 space-y-10">
+        {/* En pantalla chica, todo desplegado: no hay lugar para la columna
+            visual y esconder el texto detrás de un clic solo estorba. */}
+        <ol className="mt-12 space-y-9 lg:hidden">
           {PASOS.map((p, i) => {
             const Icono = p.icono;
             return (
               <motion.li
                 key={p.titulo}
-                initial={{ opacity: 0, y: 22 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ type: "spring", stiffness: 85, damping: 18 }}
                 className="flex gap-5"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-burdeos-soft text-burdeos">
-                  <Icono className="h-5 w-5" strokeWidth={1.6} aria-hidden="true" />
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-burdeos text-paper">
+                  <Icono
+                    className="h-[1.15rem] w-[1.15rem]"
+                    strokeWidth={1.6}
+                    aria-hidden="true"
+                  />
                 </span>
                 <div>
-                  <span className="font-display text-xs tracking-[0.24em] text-burdeos uppercase">
+                  <span className="font-display text-[0.65rem] tracking-[0.24em] text-burdeos uppercase">
                     Paso 0{i + 1}
                   </span>
                   <h3 className="mt-1 text-lg font-medium">{p.titulo}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{p.detalle}</p>
+                  <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">
+                    {p.detalle}
+                  </p>
                 </div>
               </motion.li>
             );

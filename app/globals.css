@@ -88,3 +88,11 @@ h1, h2, h3 {
   from { transform: translate3d(0, 0, 0); }
   to   { transform: translate3d(-50%, 0, 0); }
 }
+
+/* Barra de avance de cada paso en «Cómo trabajamos». El fin de esta
+   animación es lo que dispara el salto al paso siguiente, así el tiempo y
+   la barra nunca se desincronizan. */
+@keyframes barra-paso {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
