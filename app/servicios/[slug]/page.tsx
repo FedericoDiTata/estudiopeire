@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import CasosExpandibles from "@/components/CasosExpandibles";
 import ListaCasos from "@/components/ListaCasos";
 import Acordeon from "@/components/Acordeon";
 import CierreContacto from "@/components/CierreContacto";
@@ -84,9 +85,15 @@ export default async function PaginaServicio({
           <SectionHeading
             label="Situaciones"
             titulo="En qué casos te ayudamos"
-            bajada="Si alguna de estas se parece a lo tuyo, ya sabemos por dónde arrancar."
+            bajada="Recorré las situaciones y quedate en la que se parece a lo tuyo."
           />
-          <div className="mt-14">
+
+          {/* Mismo contenido en los dos formatos: paneles cuando hay lugar
+              para recorrerlos con el mouse, tarjetas en pantalla chica. */}
+          <div className="mt-14 hidden md:block">
+            <CasosExpandibles casos={servicio.casos} />
+          </div>
+          <div className="mt-14 md:hidden">
             <ListaCasos casos={servicio.casos} />
           </div>
         </div>
