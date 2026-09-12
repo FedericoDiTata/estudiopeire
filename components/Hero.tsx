@@ -5,24 +5,29 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { waLink } from "@/lib/site";
 
-// Fotos propias del estudio. Más lento que un slideshow comercial: acá el
-// visitante muchas veces está atravesando un fallecimiento o un conflicto,
-// el ritmo tiene que acompañar eso.
+// Fotos del equipo, sesión de septiembre de 2026. Primero las dos del equipo
+// completo en la oficina, después una del estudio fotográfico.
+// `posicion` sube el encuadre para que las caras queden por encima del texto.
 const SLIDES = [
   {
-    src: "/img/estudio_peire-homepage-background.jpg",
-    alt: "Silvina Peiré en su escritorio, durante una consulta",
+    src: "/img/hero/equipo-oficina-1.webp",
+    alt: "El equipo de Estudio Peiré en la oficina del estudio",
+    posicion: "center 35%",
   },
   {
-    src: "/img/estudio_peire-equipo-background.jpg",
-    alt: "Sala de reuniones del estudio",
+    src: "/img/hero/equipo-oficina-2.webp",
+    alt: "Las ocho integrantes del estudio reunidas en la oficina",
+    posicion: "center 30%",
   },
   {
-    src: "/img/estudio_peire-homepage-libros_closeup.jpg",
-    alt: "Códigos y material de trabajo sobre el escritorio",
+    src: "/img/hero/equipo-estudio-1.webp",
+    alt: "Parte del equipo del estudio",
+    posicion: "center 30%",
   },
 ];
 
+// Más lento que un slideshow comercial: acá el visitante muchas veces está
+// atravesando un fallecimiento o un conflicto, el ritmo tiene que acompañar.
 const SLIDE_DURATION = 6000;
 
 export default function Hero() {
@@ -37,13 +42,15 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[92svh] items-center overflow-hidden">
+    <section className="relative flex min-h-[92svh] items-end overflow-hidden">
       <AnimatePresence mode="sync">
         <motion.div
           key={index}
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 1, scale: 1.14 }}
+          // Acercamiento más corto que antes: en las grupales hay gente en los
+          // bordes, y un zoom fuerte las dejaba afuera del cuadro.
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1.08 }}
           exit={{ opacity: 0 }}
           transition={{
             opacity: { duration: 1.4, ease: [0.43, 0.13, 0.23, 0.96] },
@@ -57,18 +64,20 @@ export default function Hero() {
             priority={index === 0}
             sizes="100vw"
             className="object-cover"
+            style={{ objectPosition: SLIDES[index].posicion }}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlay más liviano que el estándar de la agencia: en la primera foto
-          aparece Silvina, y su cara es el activo de confianza más fuerte que
-          tienen. El degradado vertical carga el contraste donde va el texto. */}
-      <div className="absolute inset-0 bg-ink/42" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-burdeos-deep/30 to-transparent" />
+      {/* Las fotos muestran al equipo: el velo es liviano arriba, donde están
+          las caras, y carga la oscuridad abajo, donde va el texto. La franja
+          superior mantiene legible el menú transparente. */}
+      <div className="absolute inset-0 bg-ink/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/35 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ink/55 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-burdeos-deep/25 via-transparent to-burdeos-deep/25" />
 
-      <div className="relative mx-auto w-full max-w-3xl px-6 pt-24 text-center">
+      <div className="relative mx-auto w-full max-w-3xl px-6 pb-20 text-center md:pb-24 md:[@media(max-height:820px)]:pb-14">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,11 +90,11 @@ export default function Hero() {
             width={5441}
             height={1238}
             priority
-            className="h-14 w-auto sm:h-20"
+            className="h-14 w-auto sm:h-20 sm:[@media(max-height:820px)]:h-14"
           />
         </motion.div>
 
-        <div className="mt-10 overflow-hidden">
+        <div className="mt-10 overflow-hidden [@media(max-height:820px)]:mt-6">
           <motion.h1
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -100,7 +109,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row [@media(max-height:820px)]:mt-8"
         >
           <a
             href={waLink("Hola, quiero hacer una consulta")}
@@ -118,7 +127,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
     </section>
   );
 }

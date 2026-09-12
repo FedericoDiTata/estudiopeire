@@ -6,6 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Placeholder from "@/components/Placeholder";
 import BloqueTexto from "@/components/BloqueTexto";
 import ColorChangeCards from "@/components/ui/color-change-card";
+import TarjetasEquipo from "@/components/TarjetasEquipo";
 import CierreContacto from "@/components/CierreContacto";
 import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO, numerados } from "@/lib/placeholder";
 
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
  * «Quiénes somos» vive solamente acá. En la home el bloque equivalente presenta
  * a Silvina, para que la sección no se repita en las dos páginas.
  *
- * La foto de Silvina es la única imagen real del sitio: el resto son espacios
- * reservados hasta que el estudio elija el material definitivo.
+ * Las fotos del equipo son de la sesión de septiembre de 2026. La oficina
+ * sigue con espacios reservados hasta que el estudio elija esas fotos.
  */
 
 const COMPROMISOS = numerados("Punto", 4).map((titulo) => ({
@@ -58,7 +59,7 @@ export default function PaginaEstudio() {
             <Reveal>
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/img/estudio_peire-homepage-background.jpg"
+                  src="/img/equipo/silvina-peire-4x5.webp"
                   alt="Silvina Peiré en el estudio"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -89,20 +90,7 @@ export default function PaginaEstudio() {
           bajada="Descripción"
         />
 
-        <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
-          {numerados("Integrante", 3).map((nombre, i) => (
-            <Reveal key={nombre} delay={i * 0.08} className="bg-paper">
-              <Placeholder ratio="aspect-[4/5]" etiqueta="Foto" />
-              <div className="p-8">
-                <h3 className="text-lg font-medium">{nombre}</h3>
-                <p className="mt-1 text-sm text-burdeos">Rol</p>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
-                  {LOREM_CORTO}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <TarjetasEquipo className="mt-14" />
       </section>
 
       {/* Compromiso */}

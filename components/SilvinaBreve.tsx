@@ -7,8 +7,8 @@ import { LOREM_MEDIO, LOREM_CORTO } from "@/lib/placeholder";
  * Presentación breve en la home. La versión completa vive en El Estudio, y
  * «Quiénes somos» es una sección propia de esa página: acá no se repite.
  *
- * La foto de Silvina es la única imagen real del sitio: el resto son espacios
- * reservados. La biografía sí va de relleno hasta que ella la defina.
+ * Retrato de la sesión de septiembre de 2026. La biografía sigue de relleno
+ * hasta que ella la defina.
  */
 export default function SilvinaBreve() {
   return (
@@ -17,7 +17,7 @@ export default function SilvinaBreve() {
         <Reveal>
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
-              src="/img/estudio_peire-homepage-background.jpg"
+              src="/img/equipo/silvina-peire-4x5.webp"
               alt="Silvina Peiré en el estudio"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
