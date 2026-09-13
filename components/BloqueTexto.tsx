@@ -81,7 +81,7 @@ export default function BloqueTexto({
         <div>
           <span aria-hidden="true" className="block h-0.5 w-12 bg-burdeos" />
           {eyebrow && (
-            <p className="mt-6 text-[0.7rem] font-medium tracking-[0.28em] text-burdeos uppercase">
+            <p className="mt-6 text-[0.75rem] font-medium tracking-[0.28em] text-burdeos uppercase">
               {eyebrow}
             </p>
           )}

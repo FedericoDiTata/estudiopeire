@@ -6,6 +6,7 @@ import { FAQ } from "@/lib/faq";
 
 export const metadata: Metadata = {
   title: "Preguntas frecuentes",
+  alternates: { canonical: "/preguntas-frecuentes" },
   description:
     "Dudas habituales sobre sucesiones, derecho inmobiliario y cómo trabaja el estudio. Documentación, plazos y primera consulta.",
 };

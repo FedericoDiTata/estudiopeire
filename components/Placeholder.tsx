@@ -27,7 +27,7 @@ export default function Placeholder({
         }}
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-[0.65rem] font-medium tracking-[0.24em] text-burdeos uppercase">
+        <span className="text-[0.75rem] font-medium tracking-[0.24em] text-burdeos uppercase">
           {etiqueta}
         </span>
       </div>

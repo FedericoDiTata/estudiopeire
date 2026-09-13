@@ -66,7 +66,7 @@ export default function Testimonios() {
           transition={{ type: "spring", stiffness: 85, damping: 18 }}
           className="mt-6 bg-burdeos-deep p-9 text-paper md:p-12"
         >
-          <p className="text-[0.65rem] font-medium tracking-[0.28em] text-paper/55 uppercase">
+          <p className="text-[0.75rem] font-medium tracking-[0.28em] text-paper/55 uppercase">
             En los medios
           </p>
           <blockquote className="mt-6 max-w-3xl text-[1.05rem] leading-relaxed text-paper/90">

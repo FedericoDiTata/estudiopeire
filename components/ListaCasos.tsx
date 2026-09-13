@@ -67,14 +67,6 @@ export default function ListaCasos({ casos }: { casos: Caso[] }) {
               ultimaSola ? "md:col-span-2" : ""
             }`}
           >
-            {/* Número como marca de agua, no como viñeta */}
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -top-4 right-4 font-display text-[6rem] leading-none font-light text-burdeos/[0.06] transition-colors duration-500 group-hover:text-burdeos/[0.11]"
-            >
-              0{i + 1}
-            </span>
-
             <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-burdeos-soft text-burdeos transition-colors duration-500 group-hover:bg-burdeos group-hover:text-paper">
               <Icono className="h-5 w-5" strokeWidth={1.6} aria-hidden="true" />
             </span>

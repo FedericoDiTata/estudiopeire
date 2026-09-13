@@ -119,13 +119,7 @@ export const ExpandingCards = React.forwardRef<
             )}
 
             {/* Numeración, siempre visible */}
-            <span
-              aria-hidden="true"
-              className="absolute top-5 left-5 font-display text-xs tracking-[0.24em] text-paper/45 uppercase transition-colors duration-500 group-data-[active=true]:text-paper/70"
-            >
-              0{index + 1}
-            </span>
-
+            
             <article className="absolute inset-0 flex flex-col justify-end gap-3 p-6 md:p-7">
               {/* Etiqueta vertical del panel cerrado. Vuelve con un retardo
                   corto para no cruzarse con el texto que se está yendo. */}

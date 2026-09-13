@@ -36,7 +36,7 @@ export default function VideoRecomendacion() {
             transition={{ type: "spring", stiffness: 85, damping: 18 }}
           >
             <span aria-hidden="true" className="block h-0.5 w-12 bg-burdeos" />
-            <p className="mt-6 text-[0.7rem] font-medium tracking-[0.28em] text-paper/60 uppercase">
+            <p className="mt-6 text-[0.75rem] font-medium tracking-[0.28em] text-paper/60 uppercase">
               Recomendación
             </p>
             <h2 className="mt-4 font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] text-paper sm:text-4xl md:text-5xl">

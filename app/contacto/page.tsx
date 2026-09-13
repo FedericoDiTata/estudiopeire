@@ -6,6 +6,7 @@ import { CONTACTO, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
+  alternates: { canonical: "/contacto" },
   description:
     "Escribinos por WhatsApp, llamanos o dejanos tu consulta. Atención presencial en CABA y virtual para todo el país.",
 };
@@ -39,7 +40,7 @@ export default function PaginaContacto() {
 
           <Reveal delay={0.1}>
             <div className="border border-line bg-surface p-8 md:p-10">
-              <h2 className="text-[0.7rem] font-medium tracking-[0.24em] text-burdeos uppercase">
+              <h2 className="text-[0.75rem] font-medium tracking-[0.24em] text-burdeos uppercase">
                 Datos directos
               </h2>
 

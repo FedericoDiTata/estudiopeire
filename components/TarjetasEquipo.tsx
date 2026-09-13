@@ -90,7 +90,7 @@ function Tarjeta({ persona, indice }: { persona: Integrante; indice: number }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Escribirle a ${nombrePila} por WhatsApp`}
-            className="inline-flex items-center gap-2 bg-paper px-4 py-2.5 text-[0.7rem] font-medium tracking-[0.14em] text-burdeos-deep uppercase transition-colors duration-300 hover:bg-burdeos hover:text-paper"
+            className="inline-flex items-center gap-2 bg-paper px-4 py-2.5 text-[0.75rem] font-medium tracking-[0.14em] text-burdeos-deep uppercase transition-colors duration-300 hover:bg-burdeos hover:text-paper"
           >
             <IconoWhatsApp className="h-3.5 w-3.5" />
             WhatsApp

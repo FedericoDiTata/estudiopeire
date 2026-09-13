@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <nav className="text-sm">
-            <p className="text-[0.65rem] font-medium tracking-[0.24em] text-paper/45 uppercase">
+            <p className="text-[0.75rem] font-medium tracking-[0.24em] text-paper/60 uppercase">
               Servicios
             </p>
             <ul className="mt-5 space-y-3">
@@ -52,7 +52,7 @@ export default function Footer() {
               ))}
             </ul>
 
-            <p className="mt-9 text-[0.65rem] font-medium tracking-[0.24em] text-paper/45 uppercase">
+            <p className="mt-9 text-[0.75rem] font-medium tracking-[0.24em] text-paper/60 uppercase">
               El sitio
             </p>
             <ul className="mt-5 space-y-3">
@@ -75,7 +75,7 @@ export default function Footer() {
           </nav>
 
           <div className="text-sm">
-            <p className="text-[0.65rem] font-medium tracking-[0.24em] text-paper/45 uppercase">
+            <p className="text-[0.75rem] font-medium tracking-[0.24em] text-paper/60 uppercase">
               Contacto
             </p>
             <ul className="mt-5 space-y-4 text-paper/75">
@@ -98,7 +98,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-8 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-8 text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Estudio Peiré. Todos los derechos reservados.</p>
         </div>
       </div>

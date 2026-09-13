@@ -55,10 +55,7 @@ export default function Servicios() {
                       aria-hidden="true"
                     />
                   </div>
-                  <span className="absolute bottom-4 left-5 font-display text-xs tracking-[0.24em] text-paper/45 uppercase">
-                    0{i + 1}
-                  </span>
-                  <span className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-paper/12 text-paper transition-colors duration-500 group-hover:bg-paper group-hover:text-burdeos-deep">
+                                    <span className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-paper/12 text-paper transition-colors duration-500 group-hover:bg-paper group-hover:text-burdeos-deep">
                     <ArrowUpRight
                       className="h-4 w-4"
                       strokeWidth={1.8}

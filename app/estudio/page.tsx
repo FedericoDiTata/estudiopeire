@@ -12,6 +12,7 @@ import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO, numerados } from "@/lib/placehol
 
 export const metadata: Metadata = {
   title: "El Estudio",
+  alternates: { canonical: "/estudio" },
   description:
     "Quiénes somos, cómo trabajamos y dónde atendemos. Estudio jurídico especializado en derecho inmobiliario y sucesiones en CABA y GBA.",
 };

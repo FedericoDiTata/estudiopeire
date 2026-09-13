@@ -91,8 +91,8 @@ export default function StepsCarousel({
                 <span className="min-w-0 flex-1">
                   <span
                     className={cn(
-                      "block font-display text-[0.65rem] tracking-[0.24em] uppercase transition-colors duration-500",
-                      esActivo ? "text-burdeos" : "text-grey",
+                      "block font-display text-[0.75rem] tracking-[0.24em] uppercase transition-colors duration-500",
+                      esActivo ? "text-burdeos" : "text-muted/85",
                     )}
                   >
                     Paso 0{i + 1}

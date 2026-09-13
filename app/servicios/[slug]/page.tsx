@@ -26,7 +26,13 @@ export async function generateMetadata({
   return {
     title: servicio.titulo,
     description: servicio.bajada,
-    openGraph: { title: servicio.titulo, description: servicio.bajada },
+    alternates: { canonical: `/servicios/${slug}` },
+    // Al redefinir openGraph en la página se pierde la imagen del sitio: se vuelve a indicar.
+    openGraph: {
+      title: servicio.titulo,
+      description: servicio.bajada,
+      images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "Estudio Peiré · Abogados" }],
+    },
   };
 }
 

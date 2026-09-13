@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/analytics";
 import { SERVICIOS, waLink } from "@/lib/site";
 
 /**
@@ -11,6 +12,13 @@ import { SERVICIOS, waLink } from "@/lib/site";
 export default function FormularioContacto() {
   const [enviado, setEnviado] = useState(false);
 
+  function alEmpezar(e: React.FocusEvent<HTMLFormElement>) {
+    const form = e.currentTarget;
+    if (form.dataset.iniciado) return;
+    form.dataset.iniciado = "1";
+    track("form_start", { formulario: "contacto" });
+  }
+
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const datos = new FormData(e.currentTarget);
@@ -20,6 +28,7 @@ export default function FormularioContacto() {
       `${datos.get("mensaje")}`,
       `Mi teléfono: ${datos.get("telefono")}`,
     ].join("\n");
+    track("form_submit", { formulario: "contacto", tema: String(datos.get("tema")) });
     setEnviado(true);
     window.open(waLink(mensaje), "_blank", "noopener");
   }
@@ -27,10 +36,10 @@ export default function FormularioContacto() {
   const campo =
     "w-full border border-line bg-paper px-4 py-3.5 text-[0.95rem] outline-none transition-colors duration-300 focus:border-ink";
   const etiqueta =
-    "block text-[0.7rem] font-medium tracking-[0.18em] text-muted uppercase";
+    "block text-[0.75rem] font-medium tracking-[0.18em] text-muted uppercase";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
+    <form onSubmit={onSubmit} onFocusCapture={alEmpezar} className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="nombre" className={etiqueta}>

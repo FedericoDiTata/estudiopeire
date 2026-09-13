@@ -67,10 +67,7 @@ function VisualPaso({ Icono, numero }: { Icono: LucideIcon; numero: number }) {
           aria-hidden="true"
         />
       </div>
-      <span className="absolute top-5 left-5 font-display text-xs tracking-[0.24em] text-paper/45 uppercase">
-        0{numero}
-      </span>
-      <span className="absolute bottom-5 left-5 text-[0.65rem] font-medium tracking-[0.24em] text-paper/40 uppercase">
+      <span className="absolute bottom-5 left-5 text-[0.75rem] font-medium tracking-[0.24em] text-paper/60 uppercase">
         Foto
       </span>
     </div>
@@ -121,7 +118,7 @@ export default function Proceso() {
                   />
                 </span>
                 <div>
-                  <span className="font-display text-[0.65rem] tracking-[0.24em] text-burdeos uppercase">
+                  <span className="font-display text-[0.75rem] tracking-[0.24em] text-burdeos uppercase">
                     Paso 0{i + 1}
                   </span>
                   <h3 className="mt-1 text-lg font-medium">{p.titulo}</h3>
