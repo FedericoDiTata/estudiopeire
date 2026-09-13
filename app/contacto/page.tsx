@@ -6,6 +6,7 @@ import { CONTACTO, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
+  alternates: { canonical: "/contacto" },
   description:
     "Escribinos por WhatsApp, llamanos o dejanos tu consulta. Atención presencial en CABA y virtual para todo el país.",
 };

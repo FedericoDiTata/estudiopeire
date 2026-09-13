@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import LenisProvider from "@/components/LenisProvider";
+import { Analytics } from "@/components/Analytics";
 import { CONTACTO } from "@/lib/site";
 
 // Sustituto libre de DIN Next (comercial). El logo juega con el contraste
@@ -15,8 +16,17 @@ const barlow = Barlow({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+// Base de las URLs para compartir. En Vercel usa el dominio real del deploy (el de producción, o el link del
+// preview): mientras estudiopeire.com.ar siga siendo el WordPress viejo, la imagen para compartir no existe ahí.
+const sitio =
+  process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_BRANCH_URL
+      ? `https://${process.env.VERCEL_BRANCH_URL}`
+      : "https://estudiopeire.com.ar";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://estudiopeire.com.ar"),
+  metadataBase: new URL(sitio),
   title: {
     default: "Estudio Peiré · Abogados en derecho inmobiliario y sucesiones",
     template: "%s · Estudio Peiré",
@@ -31,6 +41,7 @@ export const metadata: Metadata = {
     description:
       "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA y GBA. Atención presencial y virtual.",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 /**
@@ -73,6 +84,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LenisProvider />
+        <Analytics />
         <Header />
         <main>{children}</main>
         <Footer />

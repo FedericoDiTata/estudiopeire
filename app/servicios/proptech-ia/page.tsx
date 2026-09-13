@@ -19,6 +19,7 @@ import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO } from "@/lib/placeholder";
 
 export const metadata: Metadata = {
   title: "Proptech e IA",
+  alternates: { canonical: "/servicios/proptech-ia" },
   description:
     "Asesoramiento legal en uso de inteligencia artificial para el sector inmobiliario, tokenización, blockchain y smart contracts.",
 };
