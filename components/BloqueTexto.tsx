@@ -70,11 +70,12 @@ export default function BloqueTexto({
         }}
       />
 
-      {/* Marca de agua: el icono del área desbordando la esquina */}
+      {/* Marca de agua: el icono del área desbordando la esquina. Solo en
+          pantallas anchas: en celular cruzaba el párrafo y el botón. */}
       <Icono
         aria-hidden="true"
         strokeWidth={0.6}
-        className="pointer-events-none absolute -right-10 -bottom-12 h-64 w-64 text-burdeos/[0.07]"
+        className="pointer-events-none absolute -right-10 -bottom-12 hidden h-64 w-64 text-burdeos/[0.07] md:block"
       />
 
       <div className="relative grid gap-10 p-9 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:p-14">

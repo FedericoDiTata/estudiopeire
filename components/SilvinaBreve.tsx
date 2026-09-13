@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
-import { LOREM_MEDIO, LOREM_CORTO } from "@/lib/placeholder";
+import { EQUIPO, SILVINA_INTRO, SILVINA_TEMAS } from "@/lib/equipo";
 
 /**
- * Presentación breve en la home. La versión completa vive en El Estudio, y
- * «Quiénes somos» es una sección propia de esa página: acá no se repite.
- *
- * Retrato de la sesión de septiembre de 2026. La biografía sigue de relleno
- * hasta que ella la defina.
+ * Presentación breve en la home: quién es y su trayectoria. La biografía
+ * completa vive en El Estudio, y «Quiénes somos» es una sección propia de
+ * esa página: acá no se repite.
  */
 export default function SilvinaBreve() {
+  const silvina = EQUIPO[0];
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
@@ -30,12 +30,16 @@ export default function SilvinaBreve() {
           <span aria-hidden="true" className="block h-0.5 w-12 bg-burdeos" />
 
           <h2 className="mt-6 font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] sm:text-4xl">
-            Silvina Peiré
+            {silvina.nombre}
           </h2>
+          <p className="mt-3 text-sm text-muted">{silvina.profesion}</p>
+          <p className="mt-0.5 text-sm font-medium text-burdeos">
+            {silvina.cargo}
+          </p>
 
           <div className="mt-6 space-y-4 leading-relaxed text-muted">
-            <p>{LOREM_MEDIO}</p>
-            <p>{LOREM_CORTO}</p>
+            <p className="text-[1.1rem] text-ink">{SILVINA_INTRO}</p>
+            <p>{SILVINA_TEMAS[0].texto}</p>
           </div>
 
           <Link

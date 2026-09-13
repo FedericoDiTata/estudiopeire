@@ -61,13 +61,18 @@ body {
 }
 
 /* El texto justificado del sitio actual es uno de los problemas a corregir:
-   en pantalla genera ríos de espacio entre palabras. Todo alineado a la izquierda. */
-p {
-  text-wrap: pretty;
-}
+   en pantalla genera ríos de espacio entre palabras. Todo alineado a la izquierda.
 
-h1, h2, h3 {
-  text-wrap: balance;
+   Van en la capa base para que un text-balance puesto en un párrafo puntual
+   pueda pisarlos: fuera de capa, estas reglas les ganaban a las utilidades. */
+@layer base {
+  p {
+    text-wrap: pretty;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
 }
 
 ::selection {

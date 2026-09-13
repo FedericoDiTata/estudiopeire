@@ -1,52 +1,69 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import BloqueTexto from "@/components/BloqueTexto";
+import SectionHeading from "@/components/SectionHeading";
+import AreasProptech from "@/components/AreasProptech";
 import CierreContacto from "@/components/CierreContacto";
-import { LOREM_CORTO, LOREM_LARGO, LOREM_MEDIO } from "@/lib/placeholder";
+import { PROPTECH } from "@/lib/proptech";
+import { waLink } from "@/lib/site";
 
 /**
- * Área definida por el estudio: asesoramiento a clientes del rubro inmobiliario
- * sobre uso de inteligencia artificial (publicidad, disclaimers, límites y
- * defensa del consumidor) y sobre tokenización, blockchain y smart contracts.
- *
- * Queda fuera el uso interno de herramientas, que no es un servicio.
+ * Área definida por el estudio: asesoramiento legal para incorporar nuevas
+ * tecnologías en el sector inmobiliario. Textos del documento «INFO WEB»
+ * (septiembre de 2026).
  *
  * A diferencia de las otras dos, no lleva «paso a paso del trámite» ni
  * «documentación necesaria»: es asesoramiento, no un trámite con etapas.
- *
- * Contenido todavía de relleno, a redactar con el estudio.
  */
 
 export const metadata: Metadata = {
   title: "Proptech e IA",
   alternates: { canonical: "/servicios/proptech-ia" },
   description:
-    "Asesoramiento legal en uso de inteligencia artificial para el sector inmobiliario, tokenización, blockchain y smart contracts.",
+    "Asesoramiento legal para incorporar nuevas tecnologías en el sector inmobiliario: inteligencia artificial, protección de datos, smart contracts y tokenización.",
 };
 
-export default function PaginaInnovacion() {
+export default function PaginaProptech() {
   return (
     <>
       <PageHero
-        eyebrow="Proptech e IA"
-        titulo="Título"
-        bajada="Descripción"
-        imagen="/img/estudio_peire-homepage-libros_closeup.jpg"
-        imagenAlt="Material de trabajo sobre el escritorio del estudio"
+        eyebrow="Especialidades"
+        titulo="Proptech e IA"
+        bajada={PROPTECH.lema}
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+      {/* De qué se trata */}
+      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
         <BloqueTexto
           eyebrow="Proptech e IA"
           titulo="De qué se trata"
-          parrafos={[LOREM_LARGO, LOREM_MEDIO, LOREM_CORTO]}
+          parrafos={PROPTECH.deQueSeTrata}
           icono="proptech"
-        />
+        >
+          <a
+            href={waLink(PROPTECH.waMensaje)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-burdeos px-7 py-3.5 text-xs font-medium tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-burdeos-deep"
+          >
+            Consultar por WhatsApp
+          </a>
+        </BloqueTexto>
+      </section>
+
+      {/* En qué te asesoramos */}
+      <section className="border-y border-line bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+          <SectionHeading label="Asesoramiento" titulo="En qué te asesoramos" />
+
+          <AreasProptech className="mt-14" />
+        </div>
       </section>
 
       <CierreContacto
         titulo="¿Tenés una consulta de este tipo?"
-        waMensaje="Hola, quiero consultar por un tema de proptech o IA"
+        texto="Nuestro equipo se comunica para conocer el motivo de la consulta y coordinar la modalidad y el horario más conveniente."
+        waMensaje={PROPTECH.waMensaje}
       />
     </>
   );

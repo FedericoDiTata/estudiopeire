@@ -7,41 +7,52 @@ type Props = {
   eyebrow: string;
   titulo: string;
   bajada?: string;
-  imagen: string;
-  imagenAlt: string;
+  /** Sin imagen, la portada va en vino liso y un poco más baja. */
+  imagen?: string;
+  imagenAlt?: string;
 };
 
 /**
  * Portada de las páginas internas. Más baja que la de la home y sin
  * slideshow: acá el visitante ya sabe a qué vino.
+ *
+ * Una página sin foto propia va sin imagen antes que repetir la de otra.
  */
 export default function PageHero({
   eyebrow,
   titulo,
   bajada,
   imagen,
-  imagenAlt,
+  imagenAlt = "",
 }: Props) {
   return (
-    <section className="relative flex min-h-[62svh] items-end overflow-hidden">
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <Image
-          src={imagen}
-          alt={imagenAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-      </motion.div>
+    <section
+      className={`relative flex items-end overflow-hidden ${
+        imagen ? "min-h-[62svh]" : "min-h-[52svh] bg-burdeos-deep"
+      }`}
+    >
+      {imagen && (
+        <>
+          <motion.div
+            className="absolute inset-0"
+            initial={{ scale: 1.08 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image
+              src={imagen}
+              alt={imagenAlt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </motion.div>
 
-      <div className="absolute inset-0 bg-ink/45" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/25" />
+          <div className="absolute inset-0 bg-ink/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/25" />
+        </>
+      )}
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-16">
         <motion.p

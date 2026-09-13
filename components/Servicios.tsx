@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Scale, Building2, Cpu, ArrowUpRight } from "lucide-react";
+import { Scale, Building2, Cpu } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { SERVICIOS } from "@/lib/site";
 
@@ -11,11 +11,7 @@ const ICONOS = [Scale, Building2, Cpu];
 export default function Servicios() {
   return (
     <section id="servicios" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <SectionHeading
-        label="Especialidades"
-        titulo="En qué trabajamos"
-        bajada="Dos especialidades que se cruzan todo el tiempo, y un área nueva que estamos construyendo. Cada una con su propia página."
-      />
+      <SectionHeading label="Especialidades" titulo="En qué trabajamos" />
 
       <div className="mt-16 grid gap-5 md:grid-cols-3">
         {SERVICIOS.map((s, i) => {
@@ -55,13 +51,6 @@ export default function Servicios() {
                       aria-hidden="true"
                     />
                   </div>
-                                    <span className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-paper/12 text-paper transition-colors duration-500 group-hover:bg-paper group-hover:text-burdeos-deep">
-                    <ArrowUpRight
-                      className="h-4 w-4"
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                    />
-                  </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-8 md:p-9">

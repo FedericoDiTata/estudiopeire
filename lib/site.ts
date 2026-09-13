@@ -14,7 +14,8 @@ export const CONTACTO = {
   horario: "Lunes a viernes de 10 a 18 hs",
   atencion: "Con entrevista previa coordinada. También atendemos de forma virtual.",
   ciudad: "(1107) CABA",
-  zona: "CABA y GBA",
+  // GBA sin confirmar por el estudio: se muestra solo CABA hasta que lo confirmen.
+  zona: "CABA",
 } as const;
 
 export function waLink(mensaje: string) {
@@ -51,7 +52,7 @@ export const SERVICIOS: Servicio[] = [
     slug: "proptech-ia",
     nombre: "Proptech e IA",
     resumen:
-      "Asesoramiento sobre el uso de inteligencia artificial en el negocio inmobiliario, y sobre tokenización, blockchain y contratos digitales.",
+      "Asesoramiento legal para incorporar nuevas tecnologías en el sector inmobiliario: inteligencia artificial, protección de datos, smart contracts y tokenización.",
     waMensaje: "Hola, quiero consultar por un tema de proptech o IA",
   },
 ];

@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     template: "%s · Estudio Peiré",
   },
   description:
-    "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA y GBA. Atención presencial y virtual.",
+    "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA. Atención presencial y virtual.",
   openGraph: {
     type: "website",
     locale: "es_AR",
     siteName: "Estudio Peiré",
     title: "Estudio Peiré · Abogados en derecho inmobiliario y sucesiones",
     description:
-      "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA y GBA. Atención presencial y virtual.",
+      "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA. Atención presencial y virtual.",
   },
   twitter: { card: "summary_large_image" },
 };
@@ -54,7 +54,7 @@ const jsonLd = {
   "@type": "LegalService",
   name: "Estudio Peiré",
   description:
-    "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA y GBA.",
+    "Estudio jurídico especializado en sucesiones y derecho inmobiliario en CABA.",
   url: "https://estudiopeire.com.ar",
   telephone: CONTACTO.telefonoLink,
   email: CONTACTO.email,
@@ -64,12 +64,15 @@ const jsonLd = {
     addressLocality: "Ciudad Autónoma de Buenos Aires",
     addressCountry: "AR",
   },
-  areaServed: "Área Metropolitana de Buenos Aires",
+  areaServed: "Ciudad Autónoma de Buenos Aires",
+  foundingDate: "2008",
+  founder: { "@type": "Person", name: "Silvina Peiré", jobTitle: "Abogada" },
   knowsAbout: [
     "Sucesiones",
     "Derecho inmobiliario",
     "Propiedad horizontal",
     "Fideicomisos inmobiliarios",
+    "Proptech e inteligencia artificial",
   ],
 };
 
