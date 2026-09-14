@@ -53,7 +53,7 @@ export default function AmbasAreas() {
     <motion.div
       initial={reducido ? "visible" : "oculto"}
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "100% 0px -18% 0px" }}
       variants={contenedor}
       className="rounded-[var(--radius-card)] bg-burdeos-deep px-7 py-12 text-paper sm:px-10 md:px-14 md:py-16"
     >

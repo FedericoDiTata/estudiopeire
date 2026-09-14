@@ -15,7 +15,7 @@ export default function CierreContacto({
 }: Props) {
   return (
     <section className="bg-burdeos-deep">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <Reveal className="max-w-2xl">
           <h2 className="font-display text-3xl leading-[1.1] font-light tracking-[-0.02em] text-paper sm:text-4xl md:text-5xl">
             {titulo}

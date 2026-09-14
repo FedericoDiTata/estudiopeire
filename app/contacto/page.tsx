@@ -23,7 +23,7 @@ export default function PaginaContacto() {
         imagenAlt="Escritorio de atención del estudio, con la puerta al balcón"
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="grid gap-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-20">
           <Reveal>
             <h2 className="font-display text-2xl leading-tight font-light tracking-[-0.01em] sm:text-3xl">

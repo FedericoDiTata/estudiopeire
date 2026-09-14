@@ -108,7 +108,7 @@ function Tarjeta({
     <motion.li
       initial="oculta"
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "100% 0px -18% 0px" }}
       variants={{
         oculta: { opacity: 0, y: 32 },
         visible: {

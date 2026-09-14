@@ -27,12 +27,12 @@ export default function VideoRecomendacion() {
 
   return (
     <section className="bg-ink">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-20">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true, margin: "100% 0px -18% 0px" }}
             transition={{ type: "spring", stiffness: 85, damping: 18 }}
           >
             <span aria-hidden="true" className="block h-0.5 w-12 bg-burdeos" />
@@ -55,9 +55,9 @@ export default function VideoRecomendacion() {
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true, margin: "100% 0px -18% 0px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto w-full max-w-[340px] lg:mx-0"
+            className="relative mx-auto w-full max-w-[300px] lg:mx-0"
           >
             {/* El video vino grabado en vertical, así que se muestra en su
                 proporción real en vez de recortarlo a panorámico. */}

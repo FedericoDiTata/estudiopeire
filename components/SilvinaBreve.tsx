@@ -12,8 +12,10 @@ export default function SilvinaBreve() {
   const silvina = EQUIPO[0];
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+    <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      {/* La foto ocupa menos que el texto: a mitad y mitad la sección medía
+          más que la pantalla. */}
+      <div className="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-16">
         <Reveal>
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image

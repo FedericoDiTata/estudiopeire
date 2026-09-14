@@ -5,10 +5,10 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Placeholder from "@/components/Placeholder";
 import AmbasAreas from "@/components/AmbasAreas";
-import ColorChangeCards from "@/components/ui/color-change-card";
+import CompromisoScroll from "@/components/CompromisoScroll";
 import TarjetasEquipo from "@/components/TarjetasEquipo";
 import CierreContacto from "@/components/CierreContacto";
-import { COMPROMISOS, QUIENES_SOMOS } from "@/lib/estudio";
+import { QUIENES_SOMOS } from "@/lib/estudio";
 import { EQUIPO, SILVINA_INTRO, SILVINA_TEMAS } from "@/lib/equipo";
 import { numerados } from "@/lib/placeholder";
 
@@ -21,8 +21,10 @@ export const metadata: Metadata = {
 
 /**
  * Historia, biografías y compromiso con los textos del estudio (documento
- * «INFO WEB», septiembre de 2026). Siguen de relleno el título de la portada
- * y las fotos de la oficina.
+ * «INFO WEB», septiembre de 2026). Siguen de relleno las fotos de la oficina.
+ *
+ * El título de la portada usa las palabras del propio estudio («una firma
+ * boutique especializada en Derecho Inmobiliario y Sucesorio»).
  *
  * «Quiénes somos» vive solamente acá. En la home el bloque equivalente presenta
  * a Silvina, para que la sección no se repita en las dos páginas.
@@ -34,13 +36,13 @@ export default function PaginaEstudio() {
     <>
       <PageHero
         eyebrow="El Estudio"
-        titulo="Título"
-        imagen="/img/estudio_peire-equipo-background.jpg"
-        imagenAlt="Sala de reuniones del estudio"
+        titulo="Una firma boutique de Derecho Inmobiliario y Sucesorio"
+        imagen="/img/stock/portadas/puerto-madero.webp"
+        imagenAlt="Torres de Puerto Madero al atardecer, el barrio donde está el estudio"
       />
 
       {/* Quiénes somos */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
           <div>
             <SectionHeading label="El estudio" titulo="Quiénes somos" />
@@ -57,41 +59,45 @@ export default function PaginaEstudio() {
             </Reveal>
           </div>
 
+          {/* Foto con las ocho integrantes: en 3:2 entran todas sin recorte */}
           <Reveal
             delay={0.15}
-            className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-card)] bg-line"
+            className="relative aspect-[3/2] overflow-hidden rounded-[var(--radius-card)] bg-line"
           >
             <Image
-              src="/img/hero/equipo-estudio-2.webp"
-              alt="Parte del equipo de Estudio Peiré"
+              src="/img/hero/equipo-oficina-1.webp"
+              alt="Las ocho integrantes de Estudio Peiré en la oficina"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover object-[15%_50%]"
+              className="object-cover"
             />
           </Reveal>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-12">
           <AmbasAreas />
         </div>
       </section>
 
       {/* Silvina. Su tarjeta del equipo trae hasta acá. */}
       <section id="silvina" className="scroll-mt-20 border-y border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
-            {/* En compu la foto acompaña todo el alto de la biografía. Es un
-                recorte de la grupal en la oficina: su retrato de estudio ya
-                está en la tarjeta del equipo, más abajo. */}
-            <Reveal className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-line sm:aspect-[4/3] lg:aspect-auto">
-              <Image
-                src="/img/equipo/silvina-peire-oficina.jpg"
-                alt="Silvina Peiré en la oficina del estudio"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-[55%_15%]"
-              />
-            </Reveal>
+            {/* La foto no se estira al alto de la biografía: queda en 4:5 y
+                en compu acompaña la lectura fija arriba. Retrato de la sesión
+                de estudio, recortado del original para que se vea nítido. */}
+            <div>
+              <Reveal className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-line sm:mx-auto sm:max-w-sm lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
+                <Image
+                  src="/img/equipo/silvina-peire-retrato.webp"
+                  alt="Silvina Peiré, abogada y fundadora de Estudio Peiré"
+                  fill
+                  quality={90}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 384px, 40vw"
+                  className="object-cover object-top"
+                />
+              </Reveal>
+            </div>
 
             <div>
               <Reveal>
@@ -130,44 +136,43 @@ export default function PaginaEstudio() {
       </section>
 
       {/* Equipo */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <SectionHeading
           label="El equipo"
           titulo="Quiénes trabajan en el estudio"
           bajada={QUIENES_SOMOS.equipo}
         />
 
-        <TarjetasEquipo className="mt-14" />
+        <TarjetasEquipo className="mt-10" />
       </section>
 
-      {/* Compromiso */}
+      {/* Compromiso: el encabezado queda fijo mientras los cinco títulos se
+          tiñen con el scroll */}
       <section className="border-y border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
-          <SectionHeading
-            label="Cómo trabajamos"
-            titulo="Nuestro compromiso"
-            bajada={QUIENES_SOMOS.formaDeTrabajar}
-          />
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <SectionHeading
+                label="Forma de trabajo"
+                titulo="Nuestro compromiso"
+                bajada={QUIENES_SOMOS.formaDeTrabajar}
+              />
+            </div>
 
-          <ColorChangeCards
-            className="mt-14"
-            items={COMPROMISOS.map((c) => ({
-              heading: c.titulo,
-              icono: c.icono,
-            }))}
-          />
+            <CompromisoScroll />
+          </div>
         </div>
       </section>
 
       {/* La oficina */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <SectionHeading
           label="Dónde trabajamos"
           titulo="La oficina"
           bajada="Descripción"
         />
 
-        <div className="mt-14 grid gap-px bg-line sm:grid-cols-3">
+        <div className="mt-10 grid gap-px bg-line sm:grid-cols-3">
           {numerados("Foto", 3).map((etiqueta, i) => (
             <Reveal key={etiqueta} delay={i * 0.08}>
               <Placeholder ratio="aspect-[4/3]" etiqueta={etiqueta} />

@@ -1,0 +1,142 @@
+{
+ "portadas/puerto-madero.webp": {
+  "fuente": "unsplash",
+  "autor": "telmo-filho",
+  "pagina": "https://unsplash.com/photos/jvibkBbR-xc",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "3000x2250"
+ },
+ "servicios/sucesiones.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5903963/photo-image-background-public-domain-hand",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "1024x681"
+ },
+ "servicios/derecho-inmobiliario.webp": {
+  "fuente": "unsplash",
+  "autor": "theo-laflamme",
+  "pagina": "https://unsplash.com/photos/90kZ3TlPhho",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "1750x2621"
+ },
+ "servicios/proptech-ia.webp": {
+  "fuente": "stocksnap",
+  "autor": "energepic.com",
+  "pagina": "https://stocksnap.io/photo/office-work-42H3JH8QI5",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "960x720"
+ },
+ "casos/sucesion.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5962416/free-public-domain-cc0-photo",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "1024x683"
+ },
+ "casos/venta.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5969541/house-keys",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "1024x683"
+ },
+ "casos/acuerdo.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/3336872/free-photo-image-desk-meeting-men",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "1024x683"
+ },
+ "casos/empresa.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5913556/image-public-domain-business-office",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "682x1024"
+ },
+ "casos/patrimonio.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5916855/woman-writing-notepad",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "1024x684"
+ },
+ "casos/partner.webp": {
+  "fuente": "stocksnap",
+  "autor": "Startup Stock Photos",
+  "pagina": "https://stocksnap.io/photo/team-meeting-2R1OMUFVO5",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "960x640"
+ },
+ "casos/operacion.webp": {
+  "fuente": "unsplash",
+  "autor": "jakub-zerdzicki",
+  "pagina": "https://unsplash.com/photos/Ebj87ehFNNU",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "2000x1334"
+ },
+ "casos/conflicto.webp": {
+  "fuente": "unsplash",
+  "autor": "evgeniy-beloshytskiy",
+  "pagina": "https://unsplash.com/photos/U9oiF9S7QbE",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "2000x2000"
+ },
+ "casos/contrato.webp": {
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5917619/signing-contract-free-public-domain-cc0-photo",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "1024x683"
+ },
+ "casos/desarrollo.webp": {
+  "fuente": "unsplash",
+  "autor": "novila-misastra",
+  "pagina": "https://unsplash.com/photos/4BTjXeMwcb8",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "2000x1335"
+ },
+ "pasos/diagnostico.webp": {
+  "fuente": "stocksnap",
+  "autor": "Alejandro Escamilla",
+  "pagina": "https://stocksnap.io/photo/work-bag-96E1A8F1CB",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "960x643"
+ },
+ "pasos/estrategia.webp": {
+  "fuente": "stocksnap",
+  "autor": "Steve Johnson",
+  "pagina": "https://stocksnap.io/photo/notepad-pen-A4GPO5BBZD",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "960x640"
+ },
+ "pasos/coordinacion.webp": {
+  "fuente": "stocksnap",
+  "autor": "Direct Media",
+  "pagina": "https://stocksnap.io/photo/business-working-RRJH1KMRMW",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "960x640"
+ },
+ "pasos/resolucion.webp": {
+  "fuente": "stocksnap",
+  "autor": "Kristin Hardwick",
+  "pagina": "https://stocksnap.io/photo/work-business-J5LXKNDREC",
+  "licencia": "CC0 o dominio público, vía Openverse",
+  "original": "960x640"
+ },
+ "portadas/puerto-madero-obras.webp": {
+  "fuente": "unsplash",
+  "autor": "matias-santana",
+  "pagina": "https://unsplash.com/photos/2ykXqiKHNfk",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "3000x3750"
+ },
+ "portadas/llaves.webp": {
+  "fuente": "unsplash",
+  "autor": "jakub-zerdzicki",
+  "pagina": "https://unsplash.com/photos/3HfGnyPfWqQ",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "3000x2001"
+ }
+}

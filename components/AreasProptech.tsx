@@ -6,18 +6,14 @@ import { cn } from "@/lib/utils";
 
 const SUAVE = [0.22, 1, 0.36, 1] as const;
 
-const grilla: Variants = {
-  oculto: {},
-  visible: { transition: { staggerChildren: 0.07 } },
-};
-
+// `custom` es el retardo: escalona las tarjetas de una misma fila.
 const tarjeta: Variants = {
   oculto: { opacity: 0, y: 28 },
-  visible: {
+  visible: (retardo: number) => ({
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 90, damping: 18 },
-  },
+    transition: { type: "spring", stiffness: 90, damping: 18, delay: retardo },
+  }),
 };
 
 const icono: Variants = {
@@ -37,8 +33,9 @@ const icono: Variants = {
  * equipos y no para una operación puntual, así que cierra como franja a lo
  * ancho.
  *
- * Un solo observador del scroll en la lista: las tarjetas entran escalonadas
- * y el ícono de cada una aparece apenas después.
+ * Cada tarjeta dispara su propia entrada al llegar a la pantalla: con la
+ * lista entera como disparador, en celular las de abajo animaban antes de
+ * verse. El ícono aparece apenas después que su tarjeta.
  */
 export default function AreasProptech({ className }: { className?: string }) {
   const reducido = useReducedMotion();
@@ -47,19 +44,17 @@ export default function AreasProptech({ className }: { className?: string }) {
   const IconoCapacitacion = capacitacion.icono;
 
   return (
-    <motion.ul
-      initial={reducido ? "visible" : "oculto"}
-      whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
-      variants={grilla}
-      className={cn("grid gap-4 md:grid-cols-2 lg:grid-cols-4", className)}
-    >
+    <ul className={cn("grid gap-4 md:grid-cols-2 lg:grid-cols-4", className)}>
       {areas.map(({ titulo, detalle, icono: Icono }, i) => {
         const ancha = i === 0 || i === areas.length - 1;
 
         return (
           <motion.li
             key={titulo}
+            initial={reducido ? "visible" : "oculto"}
+            whileInView="visible"
+            viewport={{ once: true, margin: "100% 0px -18% 0px" }}
+            custom={(i % 4) * 0.07}
             variants={tarjeta}
             className={cn(
               "group relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface p-7 shadow-[var(--shadow-card)] transition-[border-color,box-shadow] duration-500 ease-[var(--ease-out-quint)] hover:border-burdeos/35 hover:shadow-[var(--shadow-card-hover)] md:p-8",
@@ -90,6 +85,10 @@ export default function AreasProptech({ className }: { className?: string }) {
       })}
 
       <motion.li
+        initial={reducido ? "visible" : "oculto"}
+        whileInView="visible"
+        viewport={{ once: true, margin: "100% 0px -18% 0px" }}
+        custom={0}
         variants={tarjeta}
         className="rounded-[var(--radius-card)] bg-burdeos p-7 text-paper md:col-span-2 md:p-10 lg:col-span-4"
       >
@@ -112,6 +111,6 @@ export default function AreasProptech({ className }: { className?: string }) {
           </div>
         </div>
       </motion.li>
-    </motion.ul>
+    </ul>
   );
 }

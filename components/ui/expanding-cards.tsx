@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export interface CardItem {
@@ -25,10 +26,9 @@ interface ExpandingCardsProps extends React.HTMLAttributes<HTMLUListElement> {
  * Peiré: sin `bg-card` ni `rounded-lg` de shadcn, con la paleta vino, la
  * geometría recta de la marca y el contraste de pesos del logotipo.
  *
- * El original necesita una foto por panel. Como todavía no las tenemos, el
- * fondo se resuelve con vino y la trama diagonal de la marca, y el icono pasa
- * a ser el protagonista. Si un item trae `imgSrc`, la foto reemplaza al fondo
- * sin tocar nada más.
+ * Cada panel lleva una foto en color relacionada con su caso, con un velo
+ * vino que se aclara al abrirse. Un item sin `imgSrc` se resuelve con vino y
+ * la trama diagonal de la marca.
  *
  * Dos cambios sobre el original:
  * - En reposo no hay ningún panel abierto. Quedan todos iguales hasta que el
@@ -93,14 +93,17 @@ export const ExpandingCards = React.forwardRef<
           >
             {item.imgSrc ? (
               <>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={item.imgSrc}
                   alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 h-full w-full scale-110 object-cover grayscale transition-all duration-700 ease-[var(--ease-out-quint)] group-data-[active=true]:scale-100 group-data-[active=true]:grayscale-0"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  className="scale-110 object-cover transition-transform duration-700 ease-[var(--ease-out-quint)] group-data-[active=true]:scale-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/25" />
+                {/* Degradé para leer el texto y un velo vino en los paneles
+                    cerrados, que se aclara al abrir */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/30" />
+                <div className="absolute inset-0 bg-burdeos-deep/40 transition-opacity duration-700 group-data-[active=true]:opacity-0" />
               </>
             ) : (
               <>

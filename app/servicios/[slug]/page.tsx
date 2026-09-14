@@ -56,7 +56,7 @@ export default async function PaginaServicio({
       />
 
       {/* De qué se trata */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <BloqueTexto
           eyebrow={servicio.nombre}
           titulo="De qué se trata"
@@ -76,7 +76,7 @@ export default async function PaginaServicio({
 
       {/* En qué casos te ayudamos */}
       <section className="border-y border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <SectionHeading
             label="Situaciones"
             titulo="En qué casos te ayudamos"
@@ -85,10 +85,10 @@ export default async function PaginaServicio({
 
           {/* Mismo contenido en los dos formatos: paneles cuando hay lugar
               para recorrerlos con el mouse, tarjetas en pantalla chica. */}
-          <div className="mt-14 hidden md:block">
+          <div className="mt-10 hidden md:block">
             <CasosExpandibles casos={servicio.casos} />
           </div>
-          <div className="mt-14 md:hidden">
+          <div className="mt-10 md:hidden">
             <ListaCasos casos={servicio.casos} />
           </div>
         </div>
@@ -96,7 +96,7 @@ export default async function PaginaServicio({
 
       {/* Civil y comercial dentro de inmobiliario */}
       {servicio.extra && (
-        <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <BloqueTexto
             eyebrow="Otras áreas"
             titulo={servicio.extra.titulo}
@@ -109,7 +109,7 @@ export default async function PaginaServicio({
       {/* Preguntas del servicio */}
       {servicio.preguntas.length > 0 && (
         <section className="border-t border-line bg-surface">
-          <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+          <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
             <SectionHeading
               label="Preguntas"
               titulo={`Dudas sobre ${servicio.nombre.toLowerCase()}`}

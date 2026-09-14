@@ -36,7 +36,7 @@ export default function SectionHeading({
     <motion.div
       initial="oculto"
       whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, margin: "100% 0px -18% 0px" }}
       className={centrado ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}
     >
       <div className="overflow-hidden">

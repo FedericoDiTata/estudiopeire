@@ -13,7 +13,7 @@ import {
   HardHat,
 } from "lucide-react";
 import { ExpandingCards, type CardItem } from "@/components/ui/expanding-cards";
-import type { Caso, IconoCaso } from "@/lib/servicios";
+import { fotoCaso, type Caso, type IconoCaso } from "@/lib/servicios";
 
 const ICONOS: Record<IconoCaso, typeof Scale> = {
   sucesion: Scale,
@@ -43,6 +43,7 @@ export default function CasosExpandibles({ casos }: { casos: Caso[] }) {
       description: caso.detalle,
       extra: caso.ampliacion,
       icon: <Icono className="h-7 w-7" strokeWidth={1.4} aria-hidden="true" />,
+      imgSrc: fotoCaso(caso),
     };
   });
 

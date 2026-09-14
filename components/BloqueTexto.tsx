@@ -53,7 +53,7 @@ export default function BloqueTexto({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, margin: "100% 0px -18% 0px" }}
       transition={{ type: "spring", stiffness: 85, damping: 18 }}
       className={cn(
         "relative overflow-hidden rounded-[var(--radius-card)] border border-line bg-paper shadow-[var(--shadow-card)]",

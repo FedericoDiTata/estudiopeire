@@ -40,7 +40,7 @@ export default function PaginaFaq() {
         imagenAlt="Códigos y material de consulta del estudio"
       />
 
-      <section className="mx-auto max-w-4xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-4xl px-6 py-16 md:py-20">
         <FaqNavegable />
       </section>
 

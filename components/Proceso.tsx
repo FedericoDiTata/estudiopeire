@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Search,
@@ -18,73 +19,65 @@ import StepsCarousel, { type StepItem } from "./ui/steps-carousel";
  *
  * REVISAR: los títulos de cada paso son nuestros, derivados de ese párrafo.
  */
-const PASOS: { icono: LucideIcon; titulo: string; detalle: string }[] = [
+const PASOS: {
+  icono: LucideIcon;
+  titulo: string;
+  detalle: string;
+  foto: string;
+}[] = [
   {
     icono: Search,
     titulo: "Diagnóstico",
     detalle:
       "Analizamos la situación, los bienes y la documentación para entender con qué estamos trabajando.",
+    foto: "/img/stock/pasos/diagnostico.webp",
   },
   {
     icono: Route,
     titulo: "Estrategia",
     detalle:
       "Definimos desde el inicio el camino más adecuado, anticipando riesgos y evitando pasos innecesarios.",
+    foto: "/img/stock/pasos/estrategia.webp",
   },
   {
     icono: Users,
     titulo: "Coordinación",
     detalle:
       "Llevamos adelante el proceso y coordinamos con escribanos, contadores y demás profesionales cuando hace falta.",
+    foto: "/img/stock/pasos/coordinacion.webp",
   },
   {
     icono: CheckCircle2,
     titulo: "Resolución",
     detalle:
       "Cerramos la operación o el trámite, y te explicamos en qué estado está cada vez que lo necesitás.",
+    foto: "/img/stock/pasos/resolucion.webp",
   },
 ];
 
 /**
- * Espacio reservado para la foto del paso. Mientras no estén, el panel se
- * resuelve con el vino de la marca y el icono del paso.
+ * Foto de stock de cada paso, relacionada con lo que dice (créditos en
+ * brief/fotos-stock.md). Decorativa: el paso ya está escrito al lado.
  */
-function VisualPaso({ Icono, numero }: { Icono: LucideIcon; numero: number }) {
+function VisualPaso({ foto }: { foto: string }) {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-[var(--radius-card)] bg-burdeos-deep">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.13]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, var(--color-paper) 0 1px, transparent 1px 14px)",
-        }}
-      />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <Icono
-          className="h-16 w-16 text-paper/80"
-          strokeWidth={0.9}
-          aria-hidden="true"
-        />
-      </div>
-      <span className="absolute bottom-5 left-5 text-[0.75rem] font-medium tracking-[0.24em] text-paper/60 uppercase">
-        Foto
-      </span>
+    <div className="relative h-full w-full overflow-hidden rounded-[var(--radius-card)] bg-line">
+      <Image src={foto} alt="" fill sizes="40vw" className="object-cover" />
     </div>
   );
 }
 
 export default function Proceso() {
-  const items: StepItem[] = PASOS.map((p, i) => ({
+  const items: StepItem[] = PASOS.map((p) => ({
     titulo: p.titulo,
     detalle: p.detalle,
     icono: p.icono,
-    visual: <VisualPaso Icono={p.icono} numero={i + 1} />,
+    visual: <VisualPaso foto={p.foto} />,
   }));
 
   return (
     <section className="border-y border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <SectionHeading
           label="Cómo trabajamos"
           titulo="Detrás de cada consulta hay una decisión importante"
@@ -92,7 +85,7 @@ export default function Proceso() {
         />
 
         {/* Rota solo y se puede elegir cada paso con un clic */}
-        <div className="mt-14 hidden lg:block">
+        <div className="mt-10 hidden lg:block">
           <StepsCarousel items={items} />
         </div>
 
@@ -106,7 +99,7 @@ export default function Proceso() {
                 key={p.titulo}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "100% 0px -18% 0px" }}
                 transition={{ type: "spring", stiffness: 85, damping: 18 }}
                 className="flex gap-5"
               >

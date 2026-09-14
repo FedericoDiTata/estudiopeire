@@ -5,24 +5,30 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { waLink } from "@/lib/site";
 
-// Fotos del equipo, sesión de septiembre de 2026. Primero las dos del equipo
-// completo en la oficina, después una del estudio fotográfico.
-// `posicion` sube el encuadre para que las caras queden por encima del texto.
+// Alterna fotos del equipo (sesión de septiembre de 2026) con fotos de stock
+// del barrio y del trabajo del estudio, para que no sean todas grupales.
+// La grupal con todas sentadas va en Quiénes somos: acá no se repite.
+// `posicion` sube el encuadre para que lo importante quede sobre el texto.
 const SLIDES = [
-  {
-    src: "/img/hero/equipo-oficina-1.webp",
-    alt: "El equipo de Estudio Peiré en la oficina del estudio",
-    posicion: "center 35%",
-  },
   {
     src: "/img/hero/equipo-oficina-2.webp",
     alt: "Las ocho integrantes del estudio reunidas en la oficina",
     posicion: "center 30%",
   },
   {
+    src: "/img/stock/portadas/puerto-madero-obras.webp",
+    alt: "Torres en construcción en Puerto Madero, el barrio del estudio",
+    posicion: "center 50%",
+  },
+  {
     src: "/img/hero/equipo-estudio-1.webp",
-    alt: "Parte del equipo del estudio",
+    alt: "Cuatro integrantes del equipo del estudio",
     posicion: "center 30%",
+  },
+  {
+    src: "/img/stock/portadas/llaves.webp",
+    alt: "Entrega de las llaves de una casa",
+    posicion: "center 40%",
   },
 ];
 

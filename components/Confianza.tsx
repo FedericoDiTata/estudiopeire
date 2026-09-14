@@ -34,7 +34,7 @@ export default function Confianza() {
               key={d.valor}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
+              viewport={{ once: true, margin: "100% 0px -18% 0px" }}
               transition={{
                 type: "spring",
                 stiffness: 85,

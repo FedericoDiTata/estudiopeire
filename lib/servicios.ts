@@ -11,8 +11,7 @@
 
 import { faqPorTema, type ItemFaq } from "./faq";
 
-/** El icono da identidad a cada tarjeta: sin fotos, es lo que evita que la
- *  sección sea una lista de rectángulos iguales. */
+/** Identifica cada caso: define su icono y el nombre de su foto. */
 export type IconoCaso =
   | "sucesion"
   | "venta"
@@ -182,4 +181,12 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
 
 export function getServicio(slug: string) {
   return SERVICIOS_DETALLE.find((s) => s.slug === slug);
+}
+
+/**
+ * Foto de stock de cada caso, nombrada por su icono. Es decorativa: el título
+ * del caso ya dice de qué se trata. Créditos en brief/fotos-stock.md.
+ */
+export function fotoCaso(caso: Caso) {
+  return `/img/stock/casos/${caso.icono}.webp`;
 }

@@ -14,7 +14,7 @@ export default function Reveal({ children, delay = 0, className }: Props) {
     <motion.div
       initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, margin: "100% 0px -18% 0px" }}
       transition={{ type: "spring", stiffness: 85, damping: 18, delay }}
       className={className}
     >

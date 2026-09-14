@@ -33,7 +33,7 @@ export default function PaginaProptech() {
       />
 
       {/* De qué se trata */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <BloqueTexto
           eyebrow="Proptech e IA"
           titulo="De qué se trata"
@@ -53,10 +53,10 @@ export default function PaginaProptech() {
 
       {/* En qué te asesoramos */}
       <section className="border-y border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <SectionHeading label="Asesoramiento" titulo="En qué te asesoramos" />
 
-          <AreasProptech className="mt-14" />
+          <AreasProptech className="mt-10" />
         </div>
       </section>
 
