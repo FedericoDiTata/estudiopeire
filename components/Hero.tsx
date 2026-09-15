@@ -26,9 +26,9 @@ const SLIDES = [
     posicion: "center 30%",
   },
   {
-    src: "/img/stock/portadas/llaves.webp",
-    alt: "Entrega de las llaves de una casa",
-    posicion: "center 40%",
+    src: "/img/stock/portadas/buenos-aires-plaza-de-mayo.webp",
+    alt: "Vista aérea de Plaza de Mayo con las torres de Puerto Madero al fondo",
+    posicion: "center 45%",
   },
 ];
 
@@ -83,7 +83,9 @@ export default function Hero() {
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ink/55 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-burdeos-deep/25 via-transparent to-burdeos-deep/25" />
 
-      <div className="relative mx-auto w-full max-w-3xl px-6 pb-20 text-center md:pb-24 md:[@media(max-height:820px)]:pb-14">
+      {/* Bloque bajo y compacto: en las grupales hay una integrante sentada
+          al centro, y con el logo más arriba le quedaba sobre la cara. */}
+      <div className="relative mx-auto w-full max-w-3xl px-6 pb-10 text-center md:pb-14">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,11 +98,11 @@ export default function Hero() {
             width={5441}
             height={1238}
             priority
-            className="h-14 w-auto sm:h-20 sm:[@media(max-height:820px)]:h-14"
+            className="h-12 w-auto sm:h-16"
           />
         </motion.div>
 
-        <div className="mt-10 overflow-hidden [@media(max-height:820px)]:mt-6">
+        <div className="mt-6 overflow-hidden">
           <motion.h1
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -115,7 +117,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row [@media(max-height:820px)]:mt-8"
+          className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <a
             href={waLink("Hola, quiero hacer una consulta")}

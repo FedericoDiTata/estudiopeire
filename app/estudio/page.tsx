@@ -37,15 +37,16 @@ export default function PaginaEstudio() {
       <PageHero
         eyebrow="El Estudio"
         titulo="Una firma boutique de Derecho Inmobiliario y Sucesorio"
-        imagen="/img/stock/portadas/puerto-madero.webp"
-        imagenAlt="Torres de Puerto Madero al atardecer, el barrio donde está el estudio"
+        imagen="/img/stock/portadas/edificio-clasico.webp"
+        imagenAlt="Cúpula y ventanales de un edificio clásico de Buenos Aires"
+        posicion="center 62%"
       />
 
       {/* Quiénes somos */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
           <div>
-            <SectionHeading label="El estudio" titulo="Quiénes somos" />
+            <SectionHeading label="Historia" titulo="Quiénes somos" />
 
             <Reveal delay={0.1} className="mt-8">
               <div className="space-y-4 text-[1.15rem] leading-relaxed text-ink">

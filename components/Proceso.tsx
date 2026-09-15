@@ -17,7 +17,8 @@ import StepsCarousel, { type StepItem } from "./ui/steps-carousel";
  * un buen diagnóstico [...] para definir desde el inicio la estrategia más
  * adecuada. A partir de allí, acompañamos y coordinamos todo el proceso».
  *
- * REVISAR: los títulos de cada paso son nuestros, derivados de ese párrafo.
+ * Los títulos de cada paso son nuestros; los textos usan las palabras del
+ * estudio en «De qué se trata» de cada especialidad, sin sumar promesas.
  */
 const PASOS: {
   icono: LucideIcon;
@@ -50,7 +51,7 @@ const PASOS: {
     icono: CheckCircle2,
     titulo: "Resolución",
     detalle:
-      "Cerramos la operación o el trámite, y te explicamos en qué estado está cada vez que lo necesitás.",
+      "Acompañamos el proceso hasta el final: la adjudicación e inscripción, la venta de los bienes o la instrumentación definitiva de la operación.",
     foto: "/img/stock/pasos/resolucion.webp",
   },
 ];
@@ -81,7 +82,7 @@ export default function Proceso() {
         <SectionHeading
           label="Cómo trabajamos"
           titulo="Detrás de cada consulta hay una decisión importante"
-          bajada="Por eso combinamos conocimiento jurídico, estrategia y una atención cercana. Así es el recorrido."
+          bajada="Por eso combinamos especialización jurídica, estrategia y cercanía."
         />
 
         {/* Rota solo y se puede elegir cada paso con un clic */}

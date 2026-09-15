@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
-import { EQUIPO, SILVINA_INTRO, SILVINA_TEMAS } from "@/lib/equipo";
+import { EQUIPO, SILVINA_INTRO } from "@/lib/equipo";
 
 /**
  * Presentación breve en la home: quién es y su trayectoria. La biografía
@@ -39,10 +39,10 @@ export default function SilvinaBreve() {
             {silvina.cargo}
           </p>
 
-          <div className="mt-6 space-y-4 leading-relaxed text-muted">
-            <p className="text-[1.1rem] text-ink">{SILVINA_INTRO}</p>
-            <p>{SILVINA_TEMAS[0].texto}</p>
-          </div>
+          {/* Solo la presentación: la trayectoria completa está en El Estudio */}
+          <p className="mt-6 text-[1.1rem] leading-relaxed text-ink">
+            {SILVINA_INTRO}
+          </p>
 
           <Link
             href="/estudio"

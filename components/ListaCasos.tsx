@@ -42,7 +42,7 @@ export default function ListaCasos({ casos }: { casos: Caso[] }) {
       whileInView="visible"
       viewport={{ once: true, margin: "100% 0px -18% 0px" }}
       variants={fila}
-      className="-mx-6 flex snap-x snap-mandatory scroll-px-6 items-start gap-4 overflow-x-auto px-6 pb-1 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-burdeos [&::-webkit-scrollbar]:hidden"
+      className="-mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-1 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-burdeos [&::-webkit-scrollbar]:hidden"
     >
       {casos.map((caso, i) => {
         const activo = abierto === i;

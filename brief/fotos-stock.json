@@ -1,17 +1,10 @@
 {
- "portadas/puerto-madero.webp": {
-  "fuente": "unsplash",
-  "autor": "telmo-filho",
-  "pagina": "https://unsplash.com/photos/jvibkBbR-xc",
-  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "3000x2250"
- },
  "servicios/sucesiones.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5903963/photo-image-background-public-domain-hand",
+  "fuente": "stocksnap",
+  "autor": "Michal Kulesza",
+  "pagina": "https://stocksnap.io/photo/filefolders-business-6RHKEELJ8F",
   "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x681"
+  "original": "960x639"
  },
  "servicios/derecho-inmobiliario.webp": {
   "fuente": "unsplash",
@@ -58,23 +51,23 @@
  "casos/patrimonio.webp": {
   "fuente": "rawpixel",
   "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5916855/woman-writing-notepad",
+  "pagina": "https://www.rawpixel.com/image/5949855/free-public-domain-cc0-photo",
   "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x684"
+  "original": "1024x683"
  },
  "casos/partner.webp": {
-  "fuente": "stocksnap",
-  "autor": "Startup Stock Photos",
-  "pagina": "https://stocksnap.io/photo/team-meeting-2R1OMUFVO5",
+  "fuente": "rawpixel",
+  "autor": "",
+  "pagina": "https://www.rawpixel.com/image/5913068/image-public-domain-pen-student",
   "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x640"
+  "original": "1024x683"
  },
  "casos/operacion.webp": {
   "fuente": "unsplash",
-  "autor": "jakub-zerdzicki",
-  "pagina": "https://unsplash.com/photos/Ebj87ehFNNU",
+  "autor": "kc-shum",
+  "pagina": "https://unsplash.com/photos/-WKKt8BDpRQ",
   "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "2000x1334"
+  "original": "2000x2667"
  },
  "casos/conflicto.webp": {
   "fuente": "unsplash",
@@ -106,8 +99,8 @@
  },
  "pasos/estrategia.webp": {
   "fuente": "stocksnap",
-  "autor": "Steve Johnson",
-  "pagina": "https://stocksnap.io/photo/notepad-pen-A4GPO5BBZD",
+  "autor": "Benjamin Child",
+  "pagina": "https://stocksnap.io/photo/office-work-FSU5SG0X4U",
   "licencia": "CC0 o dominio público, vía Openverse",
   "original": "960x640"
  },
@@ -132,11 +125,18 @@
   "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
   "original": "3000x3750"
  },
- "portadas/llaves.webp": {
+ "portadas/buenos-aires-plaza-de-mayo.webp": {
   "fuente": "unsplash",
-  "autor": "jakub-zerdzicki",
-  "pagina": "https://unsplash.com/photos/3HfGnyPfWqQ",
+  "autor": "dione-film",
+  "pagina": "https://unsplash.com/photos/ySrALvoZChg",
   "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "3000x2001"
+  "original": "3000x2250"
+ },
+ "portadas/edificio-clasico.webp": {
+  "fuente": "unsplash",
+  "autor": "malena-gonzalez-serena",
+  "pagina": "https://unsplash.com/photos/iLVHnfqkCZA",
+  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
+  "original": "3000x4443"
  }
 }

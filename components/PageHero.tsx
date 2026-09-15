@@ -10,6 +10,8 @@ type Props = {
   /** Sin imagen, la portada va en vino liso y un poco más baja. */
   imagen?: string;
   imagenAlt?: string;
+  /** Encuadre de la foto, por ejemplo "center 60%". */
+  posicion?: string;
 };
 
 /**
@@ -24,6 +26,7 @@ export default function PageHero({
   bajada,
   imagen,
   imagenAlt = "",
+  posicion,
 }: Props) {
   return (
     <section
@@ -46,6 +49,7 @@ export default function PageHero({
               priority
               sizes="100vw"
               className="object-cover"
+              style={posicion ? { objectPosition: posicion } : undefined}
             />
           </motion.div>
 

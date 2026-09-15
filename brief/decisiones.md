@@ -20,8 +20,9 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 ## Fotos (ronda del 2026-09-14)
 - Portada de El Estudio: título con las palabras del estudio, «Una firma boutique de Derecho Inmobiliario y Sucesorio».
 - Quiénes somos usa la grupal con las ocho integrantes en la oficina.
-- Hero de la home: alterna el equipo en la oficina, torres en construcción de Puerto Madero, cuatro integrantes en el estudio y una entrega de llaves. Se descartaron fotos de stock con marcas a la vista (un cartel de banco) y fotos verticales que a lo ancho quedaban borrosas.
-- Portada de El Estudio: torres de Puerto Madero al atardecer. Proptech e IA sigue en vino liso: no apareció una foto libre de tecnología inmobiliaria que no fuera paga.
+- Hero de la home: alterna el equipo en la oficina, torres en construcción de Puerto Madero, cuatro integrantes en el estudio y una vista aérea de Plaza de Mayo con Puerto Madero al fondo. Bloque de logo y título más bajo y compacto para no tapar a la integrante sentada al centro. Se descartaron fotos de stock con marcas a la vista (carteles de banco y de hotel), fotos verticales que a lo ancho quedaban borrosas y las llaves, que se repetían con los casos.
+- Portada de El Estudio: cúpula y ventanales de un edificio clásico de Buenos Aires. Se descartaron por marcas o publicidad a la vista: Puerto Madero al atardecer (hotel), la vista aérea al atardecer (universidades y estación de servicio), 9 de Julio, Palermo y el Obelisco. En la de Plaza de Mayo del hero se tapó el logo de YPF con la misma fachada. Proptech e IA sigue en vino liso: no apareció una foto libre de tecnología inmobiliaria que no fuera paga.
+- Fotos de stock variadas: se evitan varias de manos con lapicera; las llaves quedan solo en «Vender en sucesión».
 - La sección de Silvina usa su retrato de estudio recortado del original. El recorte de la grupal en la oficina se descartó: estaba fuera de foco en su zona y se veía pixelado.
 - Tarjetas de servicios, casos y pasos: fotos de stock con licencia libre (Unsplash, y CC0 o dominio público vía Openverse), relacionadas con cada tema y sin personas presentadas como clientes o equipo. Créditos en `brief/fotos-stock.md`.
 

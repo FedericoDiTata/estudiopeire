@@ -17,10 +17,11 @@ import { cn } from "@/lib/utils";
  *
  * Basado en «Text Scroll Read» de 21st.dev (youcefbnm): texto cuyo relleno
  * avanza con el scroll. Cambios sobre el original:
- * - El original pinta texto transparente con un degradé. Acá el título base
- *   es un gris que se lee (contraste suficiente para texto grande) y encima
- *   va una copia en vino que se descubre con un recorte: nunca hay texto
- *   invisible ni ilegible.
+ * - El original pinta texto transparente con un degradé que avanza letra a
+ *   letra. Acá el título base es un gris que se lee (contraste suficiente
+ *   para texto grande) y encima va una copia en vino que aparece con un
+ *   fundido: cada título se tiñe entero, sin quedar cortado a la mitad, y
+ *   nunca hay texto invisible ni ilegible.
  * - Barlow liviana, un ícono por compromiso y un filo vino abajo.
  * - Sin el espacio vacío que el original suma al final.
  *
@@ -53,8 +54,9 @@ export default function CompromisoScroll({ className }: { className?: string }) 
 
 // Gris del título sin teñir: 3,4 a 1 sobre el fondo, suficiente para texto
 // de este tamaño.
+// Más chico que el título de la sección, que es el que manda.
 const TITULO =
-  "font-display text-[1.9rem] leading-tight font-light tracking-[-0.02em] sm:text-5xl lg:text-[3.25rem]";
+  "font-display text-[1.75rem] leading-tight font-light tracking-[-0.02em] sm:text-4xl lg:text-[2.6rem]";
 
 function Renglon({
   titulo,
@@ -70,11 +72,11 @@ function Renglon({
   hasta: number;
 }) {
   const avance = useTransform(progreso, [desde, hasta], [0, 1]);
-  const recorte = useTransform(avance, (v) => `inset(0 ${(1 - v) * 100}% 0 0)`);
+  const tinta = useTransform(avance, [0.15, 0.85], [0, 1]);
   const opacidadIcono = useTransform(avance, [0, 0.6], [0.35, 1]);
 
   return (
-    <li className="relative flex items-center gap-5 border-b border-line py-5 sm:gap-7 md:py-6">
+    <li className="relative flex items-center gap-5 border-b border-line py-4 sm:gap-7 md:py-5">
       <motion.span
         style={{ opacity: opacidadIcono }}
         className="shrink-0 text-burdeos motion-reduce:opacity-100!"
@@ -86,10 +88,10 @@ function Renglon({
         <h3 className={cn(TITULO, "text-[#8a8780]")}>{titulo}</h3>
         <motion.span
           aria-hidden="true"
-          style={{ clipPath: recorte }}
+          style={{ opacity: tinta }}
           className={cn(
             TITULO,
-            "absolute inset-0 text-burdeos motion-reduce:[clip-path:none]!",
+            "absolute inset-0 text-burdeos motion-reduce:opacity-100!",
           )}
         >
           {titulo}

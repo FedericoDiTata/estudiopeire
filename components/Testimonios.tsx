@@ -48,7 +48,7 @@ export default function Testimonios() {
           whileInView="visible"
           viewport={{ once: true, margin: "100% 0px -18% 0px" }}
           variants={lista}
-          className="-mx-6 mt-10 flex snap-x snap-mandatory scroll-px-6 items-start gap-4 overflow-x-auto px-6 pb-1 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-burdeos md:mx-0 md:block md:columns-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+          className="-mx-6 mt-10 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-1 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-burdeos md:mx-0 md:block md:columns-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
         >
           {TESTIMONIOS.map((t) => (
             <motion.figure
