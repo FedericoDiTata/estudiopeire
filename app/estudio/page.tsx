@@ -37,9 +37,9 @@ export default function PaginaEstudio() {
       <PageHero
         eyebrow="El Estudio"
         titulo="Una firma boutique de Derecho Inmobiliario y Sucesorio"
-        imagen="/img/stock/portadas/edificio-clasico.webp"
-        imagenAlt="Cúpula y ventanales de un edificio clásico de Buenos Aires"
-        posicion="center 62%"
+        imagen="/img/stock/portadas/libros-antiguos.webp"
+        imagenAlt="Libros antiguos encuadernados sobre un escritorio, frente a una biblioteca"
+        posicion="center 45%"
       />
 
       {/* Quiénes somos */}

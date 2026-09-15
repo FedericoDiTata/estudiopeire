@@ -6,29 +6,31 @@ import { useEffect, useState } from "react";
 import { waLink } from "@/lib/site";
 
 // Alterna fotos del equipo (sesión de septiembre de 2026) con fotos de stock
-// del barrio y del trabajo del estudio, para que no sean todas grupales.
-// La grupal con todas sentadas va en Quiénes somos: acá no se repite.
-// `posicion` sube el encuadre para que lo importante quede sobre el texto.
+// del trabajo jurídico, para que no sean todas grupales.
+// Solo van grupales sin nadie sentado al centro: con el logo y el título
+// encima, esa cara quedaba tapada. La grupal completa está en Quiénes somos.
+// `posicion` elige la franja de la foto que se ve: las caras quedan por
+// encima del bloque de texto en todas las pantallas probadas.
 const SLIDES = [
-  {
-    src: "/img/hero/equipo-oficina-2.webp",
-    alt: "Las ocho integrantes del estudio reunidas en la oficina",
-    posicion: "center 30%",
-  },
-  {
-    src: "/img/stock/portadas/puerto-madero-obras.webp",
-    alt: "Torres en construcción en Puerto Madero, el barrio del estudio",
-    posicion: "center 50%",
-  },
   {
     src: "/img/hero/equipo-estudio-1.webp",
     alt: "Cuatro integrantes del equipo del estudio",
-    posicion: "center 30%",
+    posicion: "center 16%",
   },
   {
-    src: "/img/stock/portadas/buenos-aires-plaza-de-mayo.webp",
-    alt: "Vista aérea de Plaza de Mayo con las torres de Puerto Madero al fondo",
+    src: "/img/stock/portadas/biblioteca.webp",
+    alt: "Biblioteca antigua con estantes de madera y libros encuadernados",
     posicion: "center 45%",
+  },
+  {
+    src: "/img/hero/equipo-estudio-2.webp",
+    alt: "Tres integrantes del equipo del estudio",
+    posicion: "center 25%",
+  },
+  {
+    src: "/img/stock/portadas/firma-documento.webp",
+    alt: "Firma de un documento con lapicera",
+    posicion: "center 52%",
   },
 ];
 
@@ -83,9 +85,10 @@ export default function Hero() {
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ink/55 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-burdeos-deep/25 via-transparent to-burdeos-deep/25" />
 
-      {/* Bloque bajo y compacto: en las grupales hay una integrante sentada
-          al centro, y con el logo más arriba le quedaba sobre la cara. */}
-      <div className="relative mx-auto w-full max-w-3xl px-6 pb-10 text-center md:pb-14">
+      {/* Bloque bajo y compacto, más todavía en pantallas de poca altura
+          (una notebook con Windows al 125 %): así queda por debajo de las
+          caras de las fotos del equipo. */}
+      <div className="relative mx-auto w-full max-w-3xl px-6 pb-8 text-center md:pb-10 [@media(max-height:760px)]:pb-6">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,16 +101,16 @@ export default function Hero() {
             width={5441}
             height={1238}
             priority
-            className="h-12 w-auto sm:h-16"
+            className="h-11 w-auto sm:h-14 sm:[@media(max-height:760px)]:h-11"
           />
         </motion.div>
 
-        <div className="mt-6 overflow-hidden">
+        <div className="mt-5 overflow-hidden [@media(max-height:760px)]:mt-3">
           <motion.h1
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-[1.6rem] leading-[1.15] font-light tracking-[-0.01em] text-paper sm:text-3xl md:text-4xl"
+            className="font-display text-[1.6rem] leading-[1.15] font-light tracking-[-0.01em] text-paper sm:text-3xl md:text-4xl md:[@media(max-height:760px)]:text-3xl"
           >
             Derecho Inmobiliario y Sucesiones
           </motion.h1>
@@ -117,7 +120,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row [@media(max-height:760px)]:mt-5"
         >
           <a
             href={waLink("Hola, quiero hacer una consulta")}

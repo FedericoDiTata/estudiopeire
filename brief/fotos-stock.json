@@ -118,25 +118,26 @@
   "licencia": "CC0 o dominio público, vía Openverse",
   "original": "960x640"
  },
- "portadas/puerto-madero-obras.webp": {
+ "portadas/biblioteca.webp": {
   "fuente": "unsplash",
-  "autor": "matias-santana",
-  "pagina": "https://unsplash.com/photos/2ykXqiKHNfk",
+  "autor": "annie-spratt",
+  "pagina": "https://unsplash.com/photos/GWCvnsMtiBg",
   "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "3000x3750"
+  "original": "3000x2552"
  },
- "portadas/buenos-aires-plaza-de-mayo.webp": {
+ "portadas/firma-documento.webp": {
   "fuente": "unsplash",
-  "autor": "dione-film",
-  "pagina": "https://unsplash.com/photos/ySrALvoZChg",
+  "autor": "jakub-zerdzicki",
+  "pagina": "https://unsplash.com/photos/QI6NLgN5XnM",
   "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "3000x2250"
+  "original": "3000x4480"
  },
- "portadas/edificio-clasico.webp": {
+ "portadas/libros-antiguos.webp": {
   "fuente": "unsplash",
-  "autor": "malena-gonzalez-serena",
-  "pagina": "https://unsplash.com/photos/iLVHnfqkCZA",
+  "autor": "prateek-katyal",
+  "pagina": "https://unsplash.com/photos/_YzGQvASeMk",
   "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "3000x4443"
+  "original": "3000x1730",
+  "retoque": "desenfoque leve para que no se lean los títulos de los lomos"
  }
 }

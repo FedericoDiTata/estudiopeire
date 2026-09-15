@@ -18,11 +18,11 @@ Fotos de bancos con licencia libre usadas en el sitio. Ninguna exige atribución
 | pasos/diagnostico.webp | stocksnap | Alejandro Escamilla | CC0 o dominio público, vía Openverse | https://stocksnap.io/photo/work-bag-96E1A8F1CB |
 | pasos/estrategia.webp | stocksnap | Benjamin Child | CC0 o dominio público, vía Openverse | https://stocksnap.io/photo/office-work-FSU5SG0X4U |
 | pasos/resolucion.webp | stocksnap | Kristin Hardwick | CC0 o dominio público, vía Openverse | https://stocksnap.io/photo/work-business-J5LXKNDREC |
-| portadas/buenos-aires-plaza-de-mayo.webp | unsplash | dione-film | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/ySrALvoZChg |
-| portadas/edificio-clasico.webp | unsplash | malena-gonzalez-serena | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/iLVHnfqkCZA |
-| portadas/puerto-madero-obras.webp | unsplash | matias-santana | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/2ykXqiKHNfk |
+| portadas/biblioteca.webp | unsplash | annie-spratt | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/GWCvnsMtiBg |
+| portadas/firma-documento.webp | unsplash | jakub-zerdzicki | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/QI6NLgN5XnM |
+| portadas/libros-antiguos.webp | unsplash | prateek-katyal | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/_YzGQvASeMk |
 | servicios/derecho-inmobiliario.webp | unsplash | theo-laflamme | Unsplash License (uso comercial libre, sin atribución obligatoria) | https://unsplash.com/photos/90kZ3TlPhho |
 | servicios/proptech-ia.webp | stocksnap | energepic.com | CC0 o dominio público, vía Openverse | https://stocksnap.io/photo/office-work-42H3JH8QI5 |
 | servicios/sucesiones.webp | stocksnap | Michal Kulesza | CC0 o dominio público, vía Openverse | https://stocksnap.io/photo/filefolders-business-6RHKEELJ8F |
 
-Retoques: en portadas/buenos-aires-plaza-de-mayo.webp se tapó el logo de YPF con la misma fachada.
+Retoques: portadas/libros-antiguos.webp lleva un desenfoque leve para que no se lean los títulos de los lomos.
