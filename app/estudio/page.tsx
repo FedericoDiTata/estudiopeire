@@ -66,7 +66,7 @@ export default function PaginaEstudio() {
             className="relative aspect-[3/2] overflow-hidden rounded-[var(--radius-card)] bg-line"
           >
             <Image
-              src="/img/hero/equipo-oficina-1.webp"
+              src="/img/hero/equipo-oficina-2.webp"
               alt="Las ocho integrantes de Estudio Peiré en la oficina"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
