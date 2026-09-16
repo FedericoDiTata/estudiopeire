@@ -51,3 +51,9 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 - Tarjetas de equipo: el renglón de profesión va siempre, aunque esté vacío, y el nombre reserva dos renglones, así el cargo en vino arranca a la misma altura en toda la fila. En celular los dos tramos del cargo se apilan sin el punto, que quedaba colgado al final del renglón.
 
 **Para pedirle al estudio:** otra toma de Silvina (la misma foto se usa en la home, en su sección de El Estudio y en su tarjeta del equipo), y confirmar si quieren repetir la foto de Jazmin, que es la única sin saco.
+
+## Fotos y hero por pantalla (2026-09-16)
+- El estudio mandó también las tomas de la primera sesión. Se compararon una por una: se mantienen las nuevas en seis, y **Flavia y Abril vuelven a la toma vieja**, donde están de frente y con la sonrisa resuelta (en las nuevas Flavia quedaba a media palabra y Abril con la cabeza inclinada en pleno reírse, fuera de tono con el resto). Son de la misma sesión y la misma ropa, así que el conjunto no se rompe.
+- Hero por pantalla: en compu sigue la grupal con las ocho. En celular y tablet vertical esa foto entraba recortada a un tercio de su ancho, así que se usa un recorte vertical de la misma toma con Silvina sentada y dos integrantes de pie: tres caras grandes en vez de un pedazo de la grupal. El navegador descarga una sola de las dos.
+- Se descartaron las grupales de 3 y 4 integrantes para el celular: están sobre fondo gris de estudio y chocan con la foto de oficina de la compu, y en ninguna aparece Silvina.
+- La foto de Jazmin sin saco queda como está: decisión de Fede del 16/9.

@@ -1,28 +1,44 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { waLink } from "@/lib/site";
 
-// Foto del equipo completo en la oficina (sesión de septiembre de 2026). Es
-// lo primero que se ve: quien entra conoce a las personas que lo van a
-// atender. La otra toma con las ocho está en Quiénes somos.
+// La foto del equipo es lo primero que se ve: quien entra conoce a las
+// personas que lo van a atender.
 //
-// `grupo` marca la franja de la foto que tiene que quedar a la vista, en
-// fracción del alto: desde la cabeza más alta hasta el mentón de la
-// integrante sentada al centro, que es la que queda más cerca del texto.
-const FOTO = {
+// Hay dos tomas del mismo momento en la oficina. En compu entra la de las
+// ocho. En celular y tablet vertical esa foto entraría recortada a un tercio
+// de su ancho, así que se usa un recorte vertical con Silvina y dos
+// integrantes más: se ven tres caras grandes en vez de un pedazo de la
+// grupal. El navegador elige una sola y descarga solo esa.
+//
+// `grupo` es la franja que tiene que quedar sobre el texto, en fracción del
+// alto: del pelo más alto al mentón de la que queda más abajo. `caras` son
+// los centros de cada cara, en fracción del ancho: los bordes del recorte
+// tienen que caer entre dos personas.
+const ANCHA = {
   src: "/img/hero/equipo-oficina-1.webp",
-  alt: "Las ocho integrantes de Estudio Peiré en la oficina del estudio",
+  srcSet:
+    "/img/hero/equipo-oficina-1-1600.webp 1600w, /img/hero/equipo-oficina-1.webp 2400w",
   ancho: 2400,
   alto: 1600,
   grupo: { arriba: 0.21, abajo: 0.58 },
-  // Centro de cada cara, en fracción del ancho. En celular y tablet la foto
-  // entra recortada a lo ancho y el borde tiene que caer entre dos personas,
-  // nunca sobre una cara.
   caras: [0.121, 0.238, 0.346, 0.463, 0.493, 0.579, 0.729, 0.863],
 };
+
+const ALTA = {
+  src: "/img/hero/equipo-vertical-1400.webp",
+  srcSet:
+    "/img/hero/equipo-vertical-800.webp 800w, /img/hero/equipo-vertical-1400.webp 1400w",
+  ancho: 1400,
+  alto: 2489,
+  grupo: { arriba: 0.2, abajo: 0.53 },
+  caras: [0.177, 0.516, 0.829],
+};
+
+// Debajo de esta proporción de pantalla, la apaisada entraría muy recortada.
+const PANTALLA_ALTA = "(max-aspect-ratio: 5/4)";
 
 // Media cabeza, con pelo, en fracción del ancho de la foto.
 const RADIO_CARA = 0.045;
@@ -40,7 +56,7 @@ const TOPE_NAV = 72;
  * borde. Acá se prueban los desplazamientos posibles y se elige el que deja
  * los dos bordes más lejos de cualquier cara, contemplando el acercamiento.
  */
-function elegirHorizontal(ventana: number) {
+function elegirHorizontal(foto: typeof ANCHA | typeof ALTA, ventana: number) {
   if (ventana >= 1) return "50%";
 
   let mejor = { x: 0.5, puntaje: -Infinity };
@@ -51,14 +67,14 @@ function elegirHorizontal(ventana: number) {
     for (const zoom of [1, ZOOM_MAX]) {
       const mitad = ventana / (2 * zoom);
       for (const borde of [centro - mitad, centro + mitad]) {
-        for (const cara of FOTO.caras) {
+        for (const cara of foto.caras) {
           claro = Math.min(claro, Math.abs(borde - cara));
         }
       }
     }
     // Primero que los bordes estén libres; entre los que lo están, el que
     // muestre más caras y, a igualdad, el más centrado.
-    const adentro = FOTO.caras.filter(
+    const adentro = foto.caras.filter(
       (c) => c > izquierda && c < izquierda + ventana,
     ).length;
     const puntaje =
@@ -82,11 +98,16 @@ function elegirHorizontal(ventana: number) {
  * Si no entra el grupo entero, primero se cuida que el texto no tape ninguna
  * cara. Devuelve el valor de `object-position`.
  */
-function encuadrar(anchoCaja: number, altoCaja: number, topeTexto: number) {
-  const escala = Math.max(anchoCaja / FOTO.ancho, altoCaja / FOTO.alto);
-  const altoFoto = FOTO.alto * escala;
-  const anchoFoto = FOTO.ancho * escala;
-  const x = elegirHorizontal(anchoCaja / anchoFoto);
+function encuadrar(
+  foto: typeof ANCHA | typeof ALTA,
+  anchoCaja: number,
+  altoCaja: number,
+  topeTexto: number,
+) {
+  const escala = Math.max(anchoCaja / foto.ancho, altoCaja / foto.alto);
+  const altoFoto = foto.alto * escala;
+  const anchoFoto = foto.ancho * escala;
+  const x = elegirHorizontal(foto, anchoCaja / anchoFoto);
   const sobra = altoFoto - altoCaja;
   if (sobra < 1) return `${x} 50%`;
 
@@ -102,11 +123,11 @@ function encuadrar(anchoCaja: number, altoCaja: number, topeTexto: number) {
   for (const zoom of [1, ZOOM_MAX]) {
     desdeMin = Math.max(
       desdeMin,
-      FOTO.grupo.abajo * altoFoto - centro - (limiteAbajo - centro) / zoom,
+      foto.grupo.abajo * altoFoto - centro - (limiteAbajo - centro) / zoom,
     );
     desdeMax = Math.min(
       desdeMax,
-      FOTO.grupo.arriba * altoFoto - centro - (limiteArriba - centro) / zoom,
+      foto.grupo.arriba * altoFoto - centro - (limiteArriba - centro) / zoom,
     );
   }
 
@@ -126,17 +147,26 @@ export default function Hero() {
     const texto = textoRef.current;
     if (!seccion || !texto) return;
 
+    // La misma consulta que usa el navegador para elegir la foto, así el
+    // encuadre se calcula sobre la que efectivamente se ve.
+    const pantallaAlta = window.matchMedia(PANTALLA_ALTA);
+
     const medir = () => {
       const caja = seccion.getBoundingClientRect();
       const tope = texto.getBoundingClientRect().top - caja.top;
-      setPosicion(encuadrar(caja.width, caja.height, tope));
+      const foto = pantallaAlta.matches ? ALTA : ANCHA;
+      setPosicion(encuadrar(foto, caja.width, caja.height, tope));
     };
 
     medir();
     const observador = new ResizeObserver(medir);
     observador.observe(seccion);
     observador.observe(texto);
-    return () => observador.disconnect();
+    pantallaAlta.addEventListener("change", medir);
+    return () => {
+      observador.disconnect();
+      pantallaAlta.removeEventListener("change", medir);
+    };
   }, []);
 
   return (
@@ -153,16 +183,31 @@ export default function Hero() {
           scale: { duration: 16, ease: "linear" },
         }}
       >
-        <Image
-          src={FOTO.src}
-          alt={FOTO.alt}
-          fill
-          priority
-          sizes="100vw"
-          data-hero-foto
-          className="object-cover"
-          style={{ objectPosition: posicion }}
-        />
+        {/* `picture` en vez del componente de imagen de Next: es la única
+            forma de que el navegador elija entre dos fotos distintas y
+            descargue una sola, antes de empezar a bajar nada. */}
+        <picture>
+          <source
+            media={PANTALLA_ALTA}
+            srcSet={ALTA.srcSet}
+            sizes="100vw"
+            width={ALTA.ancho}
+            height={ALTA.alto}
+          />
+          <img
+            src={ANCHA.src}
+            srcSet={ANCHA.srcSet}
+            sizes="100vw"
+            width={ANCHA.ancho}
+            height={ANCHA.alto}
+            alt="El equipo de Estudio Peiré en la oficina del estudio"
+            fetchPriority="high"
+            decoding="async"
+            data-hero-foto
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: posicion }}
+          />
+        </picture>
       </motion.div>
 
       {/* La foto muestra al equipo: el velo es liviano arriba, donde están
