@@ -22,7 +22,7 @@ export default function Home() {
       <SilvinaBreve />
       <VideoRecomendacion />
       <Testimonios />
-      <CierreContacto />
+      <CierreContacto texto="Escribinos por WhatsApp y coordinamos una entrevista para conocer tu situación. Atendemos en la oficina de Puerto Madero o de manera virtual." />
     </>
   );
 }

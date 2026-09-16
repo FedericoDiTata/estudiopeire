@@ -57,3 +57,7 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 - Hero por pantalla: en compu sigue la grupal con las ocho. En celular y tablet vertical esa foto entraba recortada a un tercio de su ancho, así que se usa un recorte vertical de la misma toma con Silvina sentada y dos integrantes de pie: tres caras grandes en vez de un pedazo de la grupal. El navegador descarga una sola de las dos.
 - Se descartaron las grupales de 3 y 4 integrantes para el celular: están sobre fondo gris de estudio y chocan con la foto de oficina de la compu, y en ninguna aparece Silvina.
 - La foto de Jazmin sin saco queda como está: decisión de Fede del 16/9.
+
+## Textos de relleno que quedaban (2026-09-16)
+- El bloque de cierre de la home, El Estudio y Preguntas Frecuentes mostraba la palabra «Descripción» como párrafo: era el valor por defecto del componente y esas tres páginas no le pasaban texto. Se escribió el texto de cada una con datos confirmados (entrevista previa, horario, oficina de Puerto Madero o virtual) y el texto pasó a ser obligatorio, para que no vuelva a publicarse vacío.
+- «La oficina» en El Estudio quedaba con tres recuadros vacíos y la palabra «Descripción». La sección no se publica hasta que el estudio mande las 3 fotos y la línea que la describe; el código queda comentado en `app/estudio/page.tsx`.

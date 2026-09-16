@@ -3,14 +3,12 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import Placeholder from "@/components/Placeholder";
 import AmbasAreas from "@/components/AmbasAreas";
 import CompromisoScroll from "@/components/CompromisoScroll";
 import TarjetasEquipo from "@/components/TarjetasEquipo";
 import CierreContacto from "@/components/CierreContacto";
 import { QUIENES_SOMOS } from "@/lib/estudio";
 import { EQUIPO, SILVINA_INTRO, SILVINA_TEMAS } from "@/lib/equipo";
-import { numerados } from "@/lib/placeholder";
 
 export const metadata: Metadata = {
   title: "El Estudio",
@@ -165,25 +163,13 @@ export default function PaginaEstudio() {
         </div>
       </section>
 
-      {/* La oficina */}
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <SectionHeading
-          label="Dónde trabajamos"
-          titulo="La oficina"
-          bajada="Descripción"
-        />
-
-        <div className="mt-10 grid gap-px bg-line sm:grid-cols-3">
-          {numerados("Foto", 3).map((etiqueta, i) => (
-            <Reveal key={etiqueta} delay={i * 0.08}>
-              <Placeholder ratio="aspect-[4/3]" etiqueta={etiqueta} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {/* «La oficina» (3 fotos y una línea que la describa) espera material
+          del estudio; ver brief/decisiones.md. Hasta que llegue no se
+          publica, para no dejar recuadros vacíos en la página. */}
 
       <CierreContacto
         titulo="Vení a contarnos tu caso"
+        texto="Atendemos de lunes a viernes de 10 a 18 h, con entrevista previa coordinada, en Alicia Moreau de Justo 1750 o de forma virtual."
       />
     </>
   );

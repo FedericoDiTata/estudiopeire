@@ -3,14 +3,15 @@ import Reveal from "./Reveal";
 
 type Props = {
   titulo?: string;
-  texto?: string;
+  /** Obligatorio: si no, la página se publica con un texto de relleno. */
+  texto: string;
   waMensaje?: string;
 };
 
 /** Cierre común a todas las páginas. */
 export default function CierreContacto({
   titulo = "Contanos tu caso",
-  texto = "Descripción",
+  texto,
   waMensaje = "Hola, quiero hacer una consulta",
 }: Props) {
   return (

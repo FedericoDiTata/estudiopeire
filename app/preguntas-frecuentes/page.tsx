@@ -46,6 +46,7 @@ export default function PaginaFaq() {
 
       <CierreContacto
         titulo="¿No encontraste tu respuesta?"
+        texto="Escribinos por WhatsApp con tu consulta y te contamos cómo seguir según tu caso."
       />
     </>
   );
