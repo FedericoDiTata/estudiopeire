@@ -25,6 +25,10 @@ const ANCHA = {
   alto: 1600,
   grupo: { arriba: 0.21, abajo: 0.58 },
   caras: [0.121, 0.238, 0.346, 0.463, 0.493, 0.579, 0.729, 0.863],
+  // Dónde se acomoda el grupo dentro del margen disponible: 0 es lo más
+  // abajo posible y 1 lo más arriba. Acá va alto porque centrado quedaba
+  // con demasiado techo encima (pedido de Fede, 16/9).
+  sesgo: 0.8,
 };
 
 const ALTA = {
@@ -35,6 +39,8 @@ const ALTA = {
   alto: 2489,
   grupo: { arriba: 0.2, abajo: 0.53 },
   caras: [0.177, 0.516, 0.829],
+  // El recorte vertical ya viene ajustado al grupo: centrado queda mejor.
+  sesgo: 0.5,
 };
 
 // Debajo de esta proporción de pantalla, la apaisada entraría muy recortada.
@@ -131,7 +137,10 @@ function encuadrar(
     );
   }
 
-  const deseado = desdeMin <= desdeMax ? (desdeMin + desdeMax) / 2 : desdeMin;
+  const deseado =
+    desdeMin <= desdeMax
+      ? desdeMin + (desdeMax - desdeMin) * foto.sesgo
+      : desdeMin;
   const desplazamiento = Math.min(Math.max(deseado, 0), sobra);
   return `${x} ${((desplazamiento / sobra) * 100).toFixed(2)}%`;
 }

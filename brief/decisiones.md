@@ -72,3 +72,7 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 - Al cliente solo se le compartió **v2**. Para no saltar de v2 a v4, se llevó `v3` al día con todo lo de `v4` (v4 ya contenía v3 entero, así que fue directo). **La rama vigente es `v3`.**
 - `v4` queda apuntando al mismo commit; se puede borrar cuando Fede quiera.
 - No existe v5.
+
+## Hero un poco más arriba (2026-09-16)
+- Pedido de Fede: la grupal quedaba con demasiado techo encima. Dentro del margen que deja el menú arriba y el texto abajo, el grupo ya no se centra: se acomoda cerca del tope. En 1897x862 el pelo pasó de 58 a 36 px por debajo de los links y el aire entre el mentón de la sentada al centro y el título subió de 54 a 76 px.
+- Solo cambia la foto de compu. El recorte vertical de celular y tablet sigue centrado: ahí el encuadre ya viene hecho a medida del grupo y subirlo dejaba un hueco entre las caras y el título.
