@@ -3,9 +3,10 @@ import { Fragment } from "react";
 /**
  * Cargo con el área separada por un punto: «Líder · Litigios».
  *
- * Cada parte va entera: si no entra en un renglón, corta después del punto
- * y no en el medio de «Proptech e IA». Un cargo de una sola parte se reparte
- * parejo para no dejar una palabra sola abajo.
+ * Cada parte va entera: nunca corta en el medio de «Proptech e IA». En
+ * pantallas angostas las partes se apilan sin el punto, que si no quedaba
+ * colgado al final del renglón. Un cargo de una sola parte se reparte parejo
+ * para no dejar una palabra sola abajo.
  */
 export default function CargoIntegrante({
   cargo,
@@ -24,15 +25,15 @@ export default function CargoIntegrante({
     <p className={className}>
       {partes.map((parte, k) => (
         <Fragment key={k}>
-          <span className="whitespace-nowrap">
-            {parte}
-            {k < partes.length - 1 && (
-              <span aria-hidden="true" className="mx-1.5 text-grey">
-                ·
-              </span>
-            )}
-          </span>
-          {k < partes.length - 1 && " "}
+          {k > 0 && (
+            <span
+              aria-hidden="true"
+              className="mx-1.5 hidden text-grey sm:inline"
+            >
+              ·
+            </span>
+          )}
+          <span className="block whitespace-nowrap sm:inline">{parte}</span>
         </Fragment>
       ))}
     </p>

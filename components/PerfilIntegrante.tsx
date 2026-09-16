@@ -188,7 +188,7 @@ function Ventana({
                   alt={persona.nombre}
                   fill
                   sizes="(max-width: 768px) 100vw, 380px"
-                  className="object-cover object-[50%_22%] md:object-center"
+                  className="object-cover object-[50%_7%] md:object-center"
                 />
               </motion.div>
             </AnimatePresence>

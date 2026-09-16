@@ -31,3 +31,23 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 - Entradas animadas que arrancan con el elemento ya dentro de la pantalla y secciones más compactas.
 - Tarjetas de equipo con WhatsApp de cada integrante; la biografía se abre en una ventana con foto, texto y paso a la siguiente.
 - Página de Proptech e IA con la misma estructura de portada que las otras especialidades.
+
+## Fotos del equipo (ronda del 2026-09-15)
+- El estudio mandó retratos de estudio nuevos de las ocho (fondo gris, misma sesión): reemplazan a los recortes de las grupales, que se veían blandos.
+- Encuadre parejo en las ocho: la cabeza ocupa el mismo porcentaje del cuadro (40 %) y queda el mismo aire arriba, así la grilla se lee como un set y no como ocho fotos sueltas.
+- El gris del fondo venía de 184 a 224 de luz según la integrante. Se emparejó con un ajuste de exposición de la foto entera, con tope del 5 %: quedan entre 194 y 212. No se retocó a nadie; emparejarlo del todo pedía tocar el fondo pegado a la piel y el pelo.
+- El retrato de Silvina en El Estudio y en la home sale del mismo original nuevo: se terminó la pixelación que se veía antes.
+- Las cuatro grupales nuevas son de la misma sesión que las que ya usa el sitio (hero y Quiénes somos): no se cambió ninguna de las dos.
+
+## Hero sin logo (2026-09-15)
+- Decisión de Fede: el logo sale del hero para que se vea mejor la foto grupal, porque ya está en la barra de navegación arriba a la izquierda. Queda el título y los dos botones.
+- El encuadre que se calcula en cada pantalla quedó mejor que antes: en las doce ventanas medidas el pelo de la más alta queda por debajo de los links del menú (antes en 1280x600 se metía) y sobran entre 20 y 250 px entre el mentón de la sentada al centro y el texto.
+
+## Revisión del crítico (2026-09-15)
+- Hero en celular y tablet: el borde de la foto partía una cara al medio (Oriana en celular, Mariana en tablet). Ahora el encuadre también se calcula a lo ancho: se prueban las posiciones posibles y se elige la que deja los dos bordes lejos de cualquier cara y muestra más gente. En compu la foto entra entera, así que no cambia nada.
+- En celular entran 3 o 4 de las ocho, y 5 en tablet vertical: la foto es apaisada y no hay forma de mostrar a las ocho sin que las caras queden diminutas. El equipo completo se ve en compu y en «Quiénes somos».
+- Abril Irazábal: su recorte había quedado más cerrado que el del resto (la medida automática toma el ancho de cara y ella tiene el pelo pegado al cráneo). Se rehizo desde el original. Las ocho coinciden ahora en línea de ojos (30 % del alto) y de boca (42 %).
+- Fondos: además del brillo se emparejó la temperatura, con ganancia por canal y tope del 10 %. Las ocho quedan en el mismo gris.
+- Tarjetas de equipo: el renglón de profesión va siempre, aunque esté vacío, y el nombre reserva dos renglones, así el cargo en vino arranca a la misma altura en toda la fila. En celular los dos tramos del cargo se apilan sin el punto, que quedaba colgado al final del renglón.
+
+**Para pedirle al estudio:** otra toma de Silvina (la misma foto se usa en la home, en su sección de El Estudio y en su tarjeta del equipo), y confirmar si quieren repetir la foto de Jazmin, que es la única sin saco.

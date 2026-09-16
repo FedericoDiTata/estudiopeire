@@ -168,45 +168,42 @@ function Tarjeta({
         </div>
       </div>
 
-      <div className="mt-3 sm:mt-5">
-        <h3 className="font-display text-base leading-snug font-medium tracking-[-0.01em] sm:text-lg">
-          {persona.ancla ? (
-            <a
-              ref={disparadorRef}
-              href={`#${persona.ancla}`}
-              aria-label={`Ver la biografía de ${persona.nombre}`}
-              className={claseDisparador}
-            >
-              {nombre}
-            </a>
-          ) : (
-            <button
-              ref={disparadorRef}
-              type="button"
-              onClick={onAbrir}
-              aria-haspopup="dialog"
-              aria-label={`Ver el perfil de ${persona.nombre}`}
-              className={claseDisparador}
-            >
-              {nombre}
-            </button>
-          )}
-        </h3>
-
-        {persona.profesion && (
-          <p className="mt-1 text-xs text-muted sm:mt-1.5 sm:text-sm">
-            {persona.profesion}
-          </p>
+      {/* Alto de dos renglones: así la profesión y el cargo arrancan a la
+          misma altura en toda la fila, tengan el nombre largo o corto. */}
+      <h3 className="mt-3 min-h-[2lh] font-display text-base leading-snug font-medium tracking-[-0.01em] sm:mt-5 sm:text-lg">
+        {persona.ancla ? (
+          <a
+            ref={disparadorRef}
+            href={`#${persona.ancla}`}
+            aria-label={`Ver la biografía de ${persona.nombre}`}
+            className={claseDisparador}
+          >
+            {nombre}
+          </a>
+        ) : (
+          <button
+            ref={disparadorRef}
+            type="button"
+            onClick={onAbrir}
+            aria-haspopup="dialog"
+            aria-label={`Ver el perfil de ${persona.nombre}`}
+            className={claseDisparador}
+          >
+            {nombre}
+          </button>
         )}
+      </h3>
 
-        <CargoIntegrante
-          cargo={persona.cargo}
-          className={cn(
-            "text-xs font-medium text-burdeos sm:text-sm",
-            persona.profesion ? "mt-0.5" : "mt-1 sm:mt-1.5",
-          )}
-        />
-      </div>
+      {/* Va siempre, aunque esté vacía: así el cargo en vino arranca a la
+          misma altura en todas las tarjetas de la fila. */}
+      <p className="mt-1 min-h-[1lh] text-xs text-muted sm:mt-1.5 sm:text-sm">
+        {persona.profesion}
+      </p>
+
+      <CargoIntegrante
+        cargo={persona.cargo}
+        className="mt-0.5 text-xs font-medium text-burdeos sm:text-sm"
+      />
     </motion.li>
   );
 }
