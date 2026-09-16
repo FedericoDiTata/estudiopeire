@@ -1,83 +1,239 @@
 {
-  "cliente": {
-    "nombre": "Estudio Peiré",
-    "rubro": "Estudio jurídico: Derecho Inmobiliario, Sucesiones y Proptech e IA",
-    "descripcion": "Firma boutique fundada en 2008 por Silvina Peiré, con oficina en Puerto Madero (CABA). Equipo de mujeres.",
-    "fuente": "Documento INFO WEB (2026-09-13) y material del estudio (2026-09-03)"
+ "cliente": {
+  "nombre": "Estudio Peiré",
+  "rubro": "Estudio jurídico: Derecho Inmobiliario, Sucesiones y Proptech e IA",
+  "descripcion": "Firma boutique fundada en 2008 por Silvina Peiré, con oficina en Puerto Madero (CABA). Equipo de mujeres.",
+  "fuente": "Documento INFO WEB (2026-09-13) y material del estudio (2026-09-03)"
+ },
+ "accion_principal": {
+  "tipo": "whatsapp",
+  "detalle": "Escribir por WhatsApp al número general o a cada integrante para contar el caso y coordinar una entrevista"
+ },
+ "accion_secundaria": {
+  "tipo": "telefono",
+  "detalle": "Llamar al número general"
+ },
+ "contacto": {
+  "whatsapp": [
+   {
+    "valor": "5491158435856",
+    "estado": "confirmado",
+    "fuente": "material del estudio 2026-09-03"
+   }
+  ],
+  "telefonos": [
+   {
+    "valor": "+541158435856",
+    "estado": "confirmado",
+    "fuente": "material del estudio 2026-09-03"
+   }
+  ],
+  "emails": [
+   {
+    "valor": "consultas@estudiopeire.com.ar",
+    "estado": "confirmado",
+    "fuente": "sitio actual y material del estudio"
+   }
+  ],
+  "direcciones": [
+   {
+    "valor": "Alicia Moreau de Justo 1750, piso 1° «C», Puerto Madero, (1107) CABA",
+    "estado": "confirmado",
+    "fuente": "material del estudio 2026-09-03"
+   }
+  ],
+  "horarios": [
+   {
+    "valor": "Lunes a viernes de 10 a 18 hs, con entrevista previa coordinada. También atención virtual.",
+    "estado": "confirmado",
+    "fuente": "material del estudio 2026-09-03"
+   }
+  ],
+  "redes": [],
+  "dominio": {
+   "valor": "estudiopeire.com.ar",
+   "estado": "confirmado"
+  }
+ },
+ "servicios": [
+  {
+   "nombre": "Sucesiones",
+   "descripcion": "5 casos con ampliación en lib/servicios.ts",
+   "estado": "confirmado",
+   "fuente": "PDF de textos 2026-09-03"
   },
-  "accion_principal": {
-    "tipo": "whatsapp",
-    "detalle": "Escribir por WhatsApp al número general o a cada integrante para contar el caso y coordinar una entrevista"
+  {
+   "nombre": "Derecho Inmobiliario",
+   "descripcion": "5 casos con ampliación en lib/servicios.ts; Civil y Comercial como bloque dentro",
+   "estado": "confirmado",
+   "fuente": "PDF de textos 2026-09-03"
   },
-  "accion_secundaria": {
-    "tipo": "telefono",
-    "detalle": "Llamar al número general"
+  {
+   "nombre": "Proptech e IA",
+   "descripcion": "Asesoramiento legal estratégico para la incorporación de nuevas tecnologías en el sector inmobiliario. 7 áreas en lib/proptech.ts",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 4"
+  }
+ ],
+ "proyectos": [],
+ "personas": [
+  {
+   "nombre": "Silvina Peiré",
+   "rol": "Abogada, Fundadora",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491140938715",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 1"
   },
-  "contacto": {
-    "whatsapp": [
-      { "valor": "5491158435856", "estado": "confirmado", "fuente": "material del estudio 2026-09-03" }
-    ],
-    "telefonos": [
-      { "valor": "+541158435856", "estado": "confirmado", "fuente": "material del estudio 2026-09-03" }
-    ],
-    "emails": [
-      { "valor": "consultas@estudiopeire.com.ar", "estado": "confirmado", "fuente": "sitio actual y material del estudio" }
-    ],
-    "direcciones": [
-      { "valor": "Alicia Moreau de Justo 1750, piso 1° «C», Puerto Madero, (1107) CABA", "estado": "confirmado", "fuente": "material del estudio 2026-09-03" }
-    ],
-    "horarios": [
-      { "valor": "Lunes a viernes de 10 a 18 hs, con entrevista previa coordinada. También atención virtual.", "estado": "confirmado", "fuente": "material del estudio 2026-09-03" }
-    ],
-    "redes": [],
-    "dominio": { "valor": "estudiopeire.com.ar", "estado": "confirmado" }
+  {
+   "nombre": "Flavia Mariel Peiré",
+   "rol": "Líder Operativa y de Administración",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491158435856",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 2"
   },
-  "servicios": [
-    { "nombre": "Sucesiones", "descripcion": "5 casos con ampliación en lib/servicios.ts", "estado": "confirmado", "fuente": "PDF de textos 2026-09-03" },
-    { "nombre": "Derecho Inmobiliario", "descripcion": "5 casos con ampliación en lib/servicios.ts; Civil y Comercial como bloque dentro", "estado": "confirmado", "fuente": "PDF de textos 2026-09-03" },
-    { "nombre": "Proptech e IA", "descripcion": "Asesoramiento legal estratégico para la incorporación de nuevas tecnologías en el sector inmobiliario. 7 áreas en lib/proptech.ts", "estado": "confirmado", "fuente": "INFO WEB, pág. 4" }
-  ],
-  "proyectos": [],
-  "personas": [
-    { "nombre": "Silvina Peiré", "rol": "Abogada, Fundadora", "bio": "lib/equipo.ts", "whatsapp": "5491140938715", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 1" },
-    { "nombre": "Flavia Mariel Peiré", "rol": "Líder Operativa y de Administración", "bio": "lib/equipo.ts", "whatsapp": "5491158435856", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 2" },
-    { "nombre": "Micaela Romano Güemes", "rol": "Abogada, Líder | Litigios", "bio": "lib/equipo.ts", "whatsapp": "5491125871805", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 2" },
-    { "nombre": "Florencia Ailín Moreira", "rol": "Abogada, Líder | Asesoramiento Legal", "bio": "lib/equipo.ts", "whatsapp": "5491122999305", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 2" },
-    { "nombre": "Abril Irazábal", "rol": "Abogada, Líder de Proyecto | Proptech e IA", "bio": "lib/equipo.ts", "whatsapp": "5491125876167", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3" },
-    { "nombre": "Mariana Clara Fernández Vázquez", "rol": "Abogada, Litigios", "bio": "lib/equipo.ts", "whatsapp": "5491123770019", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3" },
-    { "nombre": "Oriana Aldana Maggio", "rol": "Paralegal", "bio": "lib/equipo.ts", "whatsapp": "5491128313930", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3" },
-    { "nombre": "Jazmin Lin", "rol": "Asistente Administrativa", "bio": "lib/equipo.ts", "whatsapp": "5491169034898", "estado": "confirmado", "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3" }
-  ],
-  "testimonios": [
-    { "texto": "4 testimonios y la valoración de prensa en lib/testimonios.ts (uno menciona más de 15 años)", "autor": "varios", "rol": "clientes y Radio UBA", "autorizado": true, "estado": "confirmado", "fuente": "PDF de testimonios 2026-09-03" }
-  ],
-  "preguntas_frecuentes": [
-    { "pregunta": "10 preguntas en lib/faq.ts", "respuesta": "", "estado": "confirmado", "fuente": "PDF de textos 2026-09-03" }
-  ],
-  "claims": [
-    { "texto": "Silvina Peiré: más de 20 años de trayectoria", "estado": "confirmado", "fuente": "INFO WEB, pág. 1" },
-    { "texto": "Estudio Peiré nació en 2008", "estado": "confirmado", "fuente": "INFO WEB, pág. 1" },
-    { "texto": "Firma boutique especializada en Derecho Inmobiliario y Sucesorio", "estado": "confirmado", "fuente": "INFO WEB, pág. 1" },
-    { "texto": "Somos un equipo de mujeres", "estado": "confirmado", "fuente": "INFO WEB, pág. 2" },
-    { "texto": "Atención presencial y virtual, también para clientes en otras localidades o en el exterior", "estado": "confirmado", "fuente": "Preguntas frecuentes del estudio, 2026-09-03" }
-  ],
-  "numeros": [
-    { "valor": "20", "significa": "años de trayectoria de Silvina", "estado": "confirmado", "fuente": "INFO WEB, pág. 1" },
-    { "valor": "2008", "significa": "año de fundación", "estado": "confirmado", "fuente": "INFO WEB, pág. 1" },
-    { "valor": "15", "significa": "años que menciona un testimonio", "estado": "confirmado", "fuente": "PDF de testimonios 2026-09-03" }
-  ],
-  "material_visual": {
-    "logos": ["public/img/logo-negro.png", "public/img/logo-blanco.png"],
-    "fotos": "Retratos y grupales de la sesión de septiembre de 2026 en public/img/equipo y public/img/hero",
-    "videos": ["public/video/julio-valente.mp4"]
+  {
+   "nombre": "Micaela Romano Güemes",
+   "rol": "Abogada, Líder | Litigios",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491125871805",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 2"
   },
-  "faltante": [
-    "Título para la portada de El Estudio",
-    "Fotos de la oficina (3) y una línea que la describa",
-    "Archivos descargables de cada servicio",
-    "Testimonio de la CEO de RE/MAX Argentina"
+  {
+   "nombre": "Florencia Ailín Moreira",
+   "rol": "Abogada, Líder | Asesoramiento Legal",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491122999305",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 2"
+  },
+  {
+   "nombre": "Abril Irazábal",
+   "rol": "Abogada, Líder de Proyecto | Proptech e IA",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491125876167",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3"
+  },
+  {
+   "nombre": "Mariana Clara Fernández Vázquez",
+   "rol": "Abogada, Litigios",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491123770019",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3"
+  },
+  {
+   "nombre": "Oriana Aldana Maggio",
+   "rol": "Paralegal",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491128313930",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3"
+  },
+  {
+   "nombre": "Jazmin Lin",
+   "rol": "Asistente Administrativa",
+   "bio": "lib/equipo.ts",
+   "whatsapp": "5491169034898",
+   "estado": "confirmado",
+   "fuente": "Equipo 2026-09-12 e INFO WEB, pág. 3"
+  }
+ ],
+ "testimonios": [
+  {
+   "texto": "5 testimonios y la valoración de prensa en lib/testimonios.ts (uno menciona más de 15 años)",
+   "autor": "varios",
+   "rol": "clientes y Radio UBA",
+   "autorizado": true,
+   "estado": "confirmado",
+   "fuente": "PDF de testimonios 2026-09-03"
+  },
+  {
+   "texto": "Testimonio de sucesión: proceso explicado, expediente en tiempo y forma, disponibilidad y honorarios hablados con claridad",
+   "autor": "Federico Pérez Martín",
+   "rol": "cliente de sucesiones",
+   "autorizado": true,
+   "estado": "confirmado",
+   "fuente": "Silvina Peiré, por mensaje de Fede, 2026-09-16"
+  }
+ ],
+ "preguntas_frecuentes": [
+  {
+   "pregunta": "10 preguntas en lib/faq.ts",
+   "respuesta": "",
+   "estado": "confirmado",
+   "fuente": "PDF de textos 2026-09-03"
+  }
+ ],
+ "claims": [
+  {
+   "texto": "Silvina Peiré: más de 20 años de trayectoria",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 1"
+  },
+  {
+   "texto": "Estudio Peiré nació en 2008",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 1"
+  },
+  {
+   "texto": "Firma boutique especializada en Derecho Inmobiliario y Sucesorio",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 1"
+  },
+  {
+   "texto": "Somos un equipo de mujeres",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 2"
+  },
+  {
+   "texto": "Atención presencial y virtual, también para clientes en otras localidades o en el exterior",
+   "estado": "confirmado",
+   "fuente": "Preguntas frecuentes del estudio, 2026-09-03"
+  }
+ ],
+ "numeros": [
+  {
+   "valor": "20",
+   "significa": "años de trayectoria de Silvina",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 1"
+  },
+  {
+   "valor": "2008",
+   "significa": "año de fundación",
+   "estado": "confirmado",
+   "fuente": "INFO WEB, pág. 1"
+  },
+  {
+   "valor": "15",
+   "significa": "años que menciona un testimonio",
+   "estado": "confirmado",
+   "fuente": "PDF de testimonios 2026-09-03"
+  }
+ ],
+ "material_visual": {
+  "logos": [
+   "public/img/logo-negro.png",
+   "public/img/logo-blanco.png"
   ],
-  "dudoso": [
-    { "tema": "Zona de atención", "detalle": "El sitio decía «CABA y GBA», pero no figura en el material del estudio. Se muestra solo CABA hasta que confirmen si también atienden GBA." }
+  "fotos": "Retratos y grupales de la sesión de septiembre de 2026 en public/img/equipo y public/img/hero",
+  "videos": [
+   "public/video/julio-valente.mp4"
   ]
+ },
+ "faltante": [
+  "Fotos de la oficina (3) y una línea que la describa",
+  "Archivos descargables de cada servicio",
+  "Testimonio de la CEO de RE/MAX Argentina (confirmar con Silvina si sigue pendiente)"
+ ],
+ "dudoso": [
+  {
+   "tema": "Zona de atención",
+   "detalle": "El sitio decía «CABA y GBA», pero no figura en el material del estudio. Se muestra solo CABA hasta que confirmen si también atienden GBA."
+  }
+ ]
 }

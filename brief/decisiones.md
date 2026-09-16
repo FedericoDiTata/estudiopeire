@@ -61,3 +61,9 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 ## Textos de relleno que quedaban (2026-09-16)
 - El bloque de cierre de la home, El Estudio y Preguntas Frecuentes mostraba la palabra «Descripción» como párrafo: era el valor por defecto del componente y esas tres páginas no le pasaban texto. Se escribió el texto de cada una con datos confirmados (entrevista previa, horario, oficina de Puerto Madero o virtual) y el texto pasó a ser obligatorio, para que no vuelva a publicarse vacío.
 - «La oficina» en El Estudio quedaba con tres recuadros vacíos y la palabra «Descripción». La sección no se publica hasta que el estudio mande las 3 fotos y la línea que la describe; el código queda comentado en `app/estudio/page.tsx`.
+
+## Testimonio de sucesiones (2026-09-16)
+- Llegó el testimonio de Federico Pérez Martín, cliente de sucesiones, que mandó Silvina. Es el más completo de todos: cuenta el proceso explicado desde el inicio, los tiempos del juzgado, la disponibilidad del estudio y los honorarios hablados con claridad. Justo lo que preocupa antes de empezar una sucesión.
+- Por eso va destacado, entero y a todo el ancho arriba de los demás, en cuatro párrafos: en una columna angosta quedaba una pared de texto.
+- Se le corrigió «Me explicaran» por «Me explicaron» y «estudio Peire» por «Estudio Peiré», como en el resto del sitio. Nada más se tocó.
+- Sigue faltando el testimonio de la CEO de RE/MAX: conviene confirmarle a Silvina si es otro o si este lo reemplaza.

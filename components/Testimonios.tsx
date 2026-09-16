@@ -2,7 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { TESTIMONIOS, PRENSA } from "@/lib/testimonios";
+import { TESTIMONIOS, PRENSA, type Testimonio } from "@/lib/testimonios";
 
 const lista: Variants = {
   oculto: {},
@@ -28,9 +28,18 @@ const tarjeta: Variants = {
  *
  * La entrada la dispara la lista y no cada tarjeta: en la fila deslizable las
  * que están fuera de la pantalla nunca entrarían en vista.
+ *
+ * El destacado va arriba y a todo el ancho: es el más largo y en una columna
+ * angosta quedaba una pared de texto.
  */
+const parrafos = (texto: Testimonio["texto"]) =>
+  Array.isArray(texto) ? texto : [texto];
+
 export default function Testimonios() {
   if (TESTIMONIOS.length === 0) return null;
+
+  const destacados = TESTIMONIOS.filter((t) => t.destacado);
+  const resto = TESTIMONIOS.filter((t) => !t.destacado);
 
   return (
     <section className="border-y border-line bg-surface">
@@ -40,6 +49,35 @@ export default function Testimonios() {
           titulo="Lo que dicen quienes ya pasaron por acá"
         />
 
+        {destacados.map((t) => (
+          <motion.figure
+            key={t.nombre}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "100% 0px -18% 0px" }}
+            transition={{ type: "spring", stiffness: 85, damping: 18 }}
+            className="group mt-10 border border-line bg-paper p-7 transition-colors duration-500 hover:border-burdeos/40 md:p-10"
+          >
+            <span
+              aria-hidden="true"
+              className="font-display text-5xl leading-none text-burdeos/25 transition-colors duration-500 group-hover:text-burdeos/50"
+            >
+              &ldquo;
+            </span>
+
+            <blockquote className="mt-3 max-w-3xl space-y-4 leading-relaxed text-ink md:text-[1.05rem]">
+              {parrafos(t.texto).map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </blockquote>
+
+            <figcaption className="mt-7 border-t border-line pt-5">
+              <span className="block text-sm font-semibold">{t.nombre}</span>
+              <span className="mt-1 block text-sm text-muted">{t.detalle}</span>
+            </figcaption>
+          </motion.figure>
+        ))}
+
         <motion.div
           role="region"
           aria-label="Testimonios de clientes"
@@ -48,9 +86,9 @@ export default function Testimonios() {
           whileInView="visible"
           viewport={{ once: true, margin: "100% 0px -18% 0px" }}
           variants={lista}
-          className="-mx-6 mt-10 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-1 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-burdeos md:mx-0 md:block md:columns-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+          className="-mx-6 mt-5 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-1 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-burdeos md:mx-0 md:block md:columns-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
         >
-          {TESTIMONIOS.map((t) => (
+          {resto.map((t) => (
             <motion.figure
               key={t.nombre}
               variants={tarjeta}
@@ -63,8 +101,10 @@ export default function Testimonios() {
                 &ldquo;
               </span>
 
-              <blockquote className="mt-3 flex-1 leading-relaxed text-ink">
-                {t.texto}
+              <blockquote className="mt-3 flex-1 space-y-4 leading-relaxed text-ink">
+                {parrafos(t.texto).map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
               </blockquote>
 
               <figcaption className="mt-7 border-t border-line pt-5">

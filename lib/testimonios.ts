@@ -2,19 +2,37 @@
  * Testimonios reales, enviados por el estudio con autorización de cada persona
  * (documento «Testimonios clientes», 2026-09-03).
  *
+ * El de Federico Pérez Martín lo mandó Silvina el 16/9/2026. Se le corrigió
+ * «explicaran» por «explicaron» y el nombre del estudio con tilde.
+ *
  * PENDIENTE: falta el de la CEO de RE/MAX Argentina, que el estudio va a
  * mandar más adelante. Se agrega acá y aparece solo.
  */
 
 export type Testimonio = {
-  texto: string;
+  /** Varios párrafos cuando el texto es largo: en un bloque solo no se lee. */
+  texto: string | string[];
   nombre: string;
   detalle: string;
-  /** Los más largos ocupan el ancho completo en la grilla. */
+  /** Va entero y a todo el ancho, antes de los demás. */
   destacado?: boolean;
 };
 
 export const TESTIMONIOS: Testimonio[] = [
+  {
+    // El más completo de sucesiones: cuenta el proceso, los tiempos del
+    // juzgado y los honorarios, que es lo que más preocupa antes de empezar.
+    // Por eso va destacado y entero.
+    texto: [
+      "Llegué al Estudio Peiré por la sucesión de mi padre. Me explicaron el proceso completo desde el inicio: qué etapas había, qué dependía del estudio y qué de los tiempos del juzgado.",
+      "El expediente se tramitó en regla y en tiempo y forma, sin ningún contratiempo. Todo estuvo bien presentado desde el principio y no hubo nada que corregir después.",
+      "Además, estuvieron siempre disponibles. Cuando consulté algo, tuve respuesta; cuando hubo una novedad, me la informaron sin que yo tuviera que ir detrás.",
+      "Los honorarios se hablaron con claridad al comienzo y se adecuaron a mi situación real, sin sorpresas. Es un estudio serio, accesible y que trabaja con criterio. Lo recomiendo con total tranquilidad.",
+    ],
+    nombre: "Federico Pérez Martín",
+    detalle: "Cliente de sucesiones",
+    destacado: true,
+  },
   {
     texto:
       "Silvina combina un excelente rigor profesional con la sensibilidad de cuidar a las personas y facilitar que los negocios se concreten. Trabajar con ella y su equipo desde hace más de 15 años es sinónimo de tranquilidad y total confianza. Gracias por la dedicación de cada día.",
@@ -26,7 +44,6 @@ export const TESTIMONIOS: Testimonio[] = [
       "Transité una sucesión bastante compleja. El letrado que me patrocinaba en un principio me hizo perder tiempo y dinero, ya que nunca pudo defender mis intereses. Un amigo me recomendó hablar con la Dra. Silvina Peiré. La fui a visitar allá por el 2013 y le conté mi situación jurídica y familiar. Ella me dijo que se comprometía a leer el expediente y darme una respuesta. Aceptó ser mi abogada y recibí no solo su asesoramiento, sino compañía profesional y humana. La sucesión logró llegar a buen término y al respecto le estoy por siempre agradecida.",
     nombre: "Verónica Schenone",
     detalle: "Clienta de sucesiones",
-    destacado: true,
   },
   {
     texto:
