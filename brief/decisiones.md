@@ -67,3 +67,8 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 - Por eso va destacado, entero y a todo el ancho arriba de los demás, en cuatro párrafos: en una columna angosta quedaba una pared de texto.
 - Se le corrigió «Me explicaran» por «Me explicaron» y «estudio Peire» por «Estudio Peiré», como en el resto del sitio. Nada más se tocó.
 - Sigue faltando el testimonio de la CEO de RE/MAX: conviene confirmarle a Silvina si es otro o si este lo reemplaza.
+
+## Ramas (2026-09-16)
+- Al cliente solo se le compartió **v2**. Para no saltar de v2 a v4, se llevó `v3` al día con todo lo de `v4` (v4 ya contenía v3 entero, así que fue directo). **La rama vigente es `v3`.**
+- `v4` queda apuntando al mismo commit; se puede borrar cuando Fede quiera.
+- No existe v5.
