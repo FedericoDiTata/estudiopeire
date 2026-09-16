@@ -42,6 +42,8 @@ export type ServicioDetalle = {
   waMensaje: string;
   imagen: string;
   imagenAlt: string;
+  /** Encuadre, para las fotos verticales. */
+  imagenPosicion?: string;
   deQueSeTrata: string[];
   casos: Caso[];
   preguntas: ItemFaq[];
@@ -116,8 +118,11 @@ export const SERVICIOS_DETALLE: ServicioDetalle[] = [
     bajada:
       "Partners legales del negocio inmobiliario: desde la negociación inicial de una operación hasta la estructuración de un desarrollo.",
     waMensaje: "Hola, quiero consultar por un tema inmobiliario",
-    imagen: "/img/estudio_peire-equipo-background.jpg",
-    imagenAlt: "Sala de reuniones del estudio",
+    // La misma foto que la tarjeta de la home: la sala de reuniones pasó a
+    // ser la portada de El Estudio y no se repite en dos páginas.
+    imagen: "/img/stock/servicios/derecho-inmobiliario.webp",
+    imagenAlt: "Fachada de un edificio de departamentos a la luz de la tarde",
+    imagenPosicion: "center 28%",
     deQueSeTrata: [
       "Acompañamos operaciones inmobiliarias desde la negociación inicial hasta su instrumentación definitiva, anticipando riesgos y protegiendo los intereses de nuestros clientes.",
       "Trabajamos tanto con particulares como con inmobiliarias, brokers, desarrolladores e inversores, en operaciones puntuales o con asesoramiento permanente.",

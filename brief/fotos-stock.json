@@ -1,129 +1,19 @@
-{
- "servicios/sucesiones.webp": {
-  "fuente": "stocksnap",
-  "autor": "Michal Kulesza",
-  "pagina": "https://stocksnap.io/photo/filefolders-business-6RHKEELJ8F",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x639"
- },
- "servicios/derecho-inmobiliario.webp": {
-  "fuente": "unsplash",
-  "autor": "theo-laflamme",
-  "pagina": "https://unsplash.com/photos/90kZ3TlPhho",
-  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "1750x2621"
- },
- "servicios/proptech-ia.webp": {
-  "fuente": "stocksnap",
-  "autor": "energepic.com",
-  "pagina": "https://stocksnap.io/photo/office-work-42H3JH8QI5",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x720"
- },
- "casos/sucesion.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5962416/free-public-domain-cc0-photo",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x683"
- },
- "casos/venta.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5969541/house-keys",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x683"
- },
- "casos/acuerdo.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/3336872/free-photo-image-desk-meeting-men",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x683"
- },
- "casos/empresa.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5913556/image-public-domain-business-office",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "682x1024"
- },
- "casos/patrimonio.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5949855/free-public-domain-cc0-photo",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x683"
- },
- "casos/partner.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5913068/image-public-domain-pen-student",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x683"
- },
- "casos/operacion.webp": {
-  "fuente": "unsplash",
-  "autor": "kc-shum",
-  "pagina": "https://unsplash.com/photos/-WKKt8BDpRQ",
-  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "2000x2667"
- },
- "casos/conflicto.webp": {
-  "fuente": "unsplash",
-  "autor": "evgeniy-beloshytskiy",
-  "pagina": "https://unsplash.com/photos/U9oiF9S7QbE",
-  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "2000x2000"
- },
- "casos/contrato.webp": {
-  "fuente": "rawpixel",
-  "autor": "",
-  "pagina": "https://www.rawpixel.com/image/5917619/signing-contract-free-public-domain-cc0-photo",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "1024x683"
- },
- "casos/desarrollo.webp": {
-  "fuente": "unsplash",
-  "autor": "novila-misastra",
-  "pagina": "https://unsplash.com/photos/4BTjXeMwcb8",
-  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "2000x1335"
- },
- "pasos/diagnostico.webp": {
-  "fuente": "stocksnap",
-  "autor": "Alejandro Escamilla",
-  "pagina": "https://stocksnap.io/photo/work-bag-96E1A8F1CB",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x643"
- },
- "pasos/estrategia.webp": {
-  "fuente": "stocksnap",
-  "autor": "Benjamin Child",
-  "pagina": "https://stocksnap.io/photo/office-work-FSU5SG0X4U",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x640"
- },
- "pasos/coordinacion.webp": {
-  "fuente": "stocksnap",
-  "autor": "Direct Media",
-  "pagina": "https://stocksnap.io/photo/business-working-RRJH1KMRMW",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x640"
- },
- "pasos/resolucion.webp": {
-  "fuente": "stocksnap",
-  "autor": "Kristin Hardwick",
-  "pagina": "https://stocksnap.io/photo/work-business-J5LXKNDREC",
-  "licencia": "CC0 o dominio público, vía Openverse",
-  "original": "960x640"
- },
- "portadas/libros-antiguos.webp": {
-  "fuente": "unsplash",
-  "autor": "prateek-katyal",
-  "pagina": "https://unsplash.com/photos/_YzGQvASeMk",
-  "licencia": "Unsplash License (uso comercial libre, sin atribución obligatoria)",
-  "original": "3000x1730",
-  "retoque": "desenfoque leve para que no se lean los títulos de los lomos"
- }
-}
+[
+ "servicios/sucesiones.webp",
+ "servicios/derecho-inmobiliario.webp",
+ "servicios/proptech-ia.webp",
+ "casos/sucesion.webp",
+ "casos/venta.webp",
+ "casos/acuerdo.webp",
+ "casos/empresa.webp",
+ "casos/patrimonio.webp",
+ "casos/partner.webp",
+ "casos/operacion.webp",
+ "casos/conflicto.webp",
+ "casos/contrato.webp",
+ "casos/desarrollo.webp",
+ "pasos/diagnostico.webp",
+ "pasos/estrategia.webp",
+ "pasos/coordinacion.webp",
+ "pasos/resolucion.webp"
+]

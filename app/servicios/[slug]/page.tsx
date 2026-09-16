@@ -53,6 +53,7 @@ export default async function PaginaServicio({
         bajada={servicio.bajada}
         imagen={servicio.imagen}
         imagenAlt={servicio.imagenAlt}
+        posicion={servicio.imagenPosicion}
       />
 
       {/* De qué se trata */}

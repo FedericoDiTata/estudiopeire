@@ -76,3 +76,7 @@ Lo que pidió o aprobó este cliente. No es gusto general de Fede y no se repite
 ## Hero un poco más arriba (2026-09-16)
 - Pedido de Fede: la grupal quedaba con demasiado techo encima. Dentro del margen que deja el menú arriba y el texto abajo, el grupo ya no se centra: se acomoda cerca del tope. En 1897x862 el pelo pasó de 58 a 36 px por debajo de los links y el aire entre el mentón de la sentada al centro y el título subió de 54 a 76 px.
 - Solo cambia la foto de compu. El recorte vertical de celular y tablet sigue centrado: ahí el encuadre ya viene hecho a medida del grupo y subirlo dejaba un hueco entre las caras y el título.
+
+## Portada de El Estudio (2026-09-16)
+- Pedido de Fede: vuelve la foto de la v2, la sala de reuniones de la oficina. Los libros apilados «quedan raros». Se borró `portadas/libros-antiguos.webp` y su crédito.
+- Esa foto era la portada de Derecho Inmobiliario, así que esa página pasa a la fachada del edificio, que ya es la foto de su tarjeta en la home. Queda una portada distinta por página, salvo Preguntas Frecuentes y Sucesiones, que comparten los códigos sobre el escritorio desde la v2.
